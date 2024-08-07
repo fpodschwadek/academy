@@ -35,16 +35,12 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class HcardsController extends ActionController
 {
     /**
-     * @param ConfigurationManagerInterface $configurationManager
      * @param HcardsRepository $hcardsRepository
      */
     public function __construct(
-        protected readonly ConfigurationManagerInterface $configurationManager,
         protected readonly HcardsRepository $hcardsRepository
     )
-    {
-        $this->injectConfigurationManager($this->configurationManager);
-    }
+    {}
 
     /**
      * Initializes the current action
