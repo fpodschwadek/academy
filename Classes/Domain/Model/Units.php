@@ -40,7 +40,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -49,7 +49,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * The title of the unit
      *
-     * @var \string $title
+     * @var string $title
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
@@ -57,26 +57,26 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * An acronym for the unit
      *
-     * @var \string $acronym
+     * @var string $acronym
      */
     protected $acronym;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
     /**
      * The internal sorting for unit list (if not alphabetic)
      *
-     * @var \string $sorting
+     * @var string $sorting
      */
     protected $sorting;
 
     /**
      * A description of the units activities
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
@@ -90,7 +90,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * The page where the unit details are listed
      *
-     * @var \integer $page
+     * @var int $page
      */
     protected $page;
 
@@ -128,7 +128,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
     public function getPersistentIdentifier()
     {
@@ -138,11 +138,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -150,11 +150,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the title
      *
-     * @return void
+     * @param string $title
      *
-     * @param $title
+     * @return void
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -162,9 +162,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -172,9 +172,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the acronym
      *
-     * @return \string $acronym
+     * @return string $acronym
      */
-    public function getAcronym()
+    public function getAcronym(): string
     {
         return $this->acronym;
     }
@@ -182,11 +182,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the acronym
      *
-     * @param \string $acronym
+     * @param string $acronym
      *
      * @return void
      */
-    public function setAcronym($acronym)
+    public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
     }
@@ -194,9 +194,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -204,11 +204,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -216,9 +216,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the sorting
      *
-     * @return \string $sorting
+     * @return string $sorting
      */
-    public function getSorting()
+    public function getSorting(): string
     {
         return $this->sorting;
     }
@@ -226,11 +226,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the sorting
      *
-     * @param \string $sorting
+     * @param string $sorting
      *
      * @return void
      */
-    public function setSorting($sorting)
+    public function setSorting(string $sorting): void
     {
         $this->sorting = $sorting;
     }
@@ -238,9 +238,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string $description
+     * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -248,11 +248,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -281,9 +281,9 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the page
      *
-     * @return \integer $page
+     * @return int $page
      */
-    public function getPage()
+    public function getPage(): int
     {
         return $this->page;
     }
@@ -291,11 +291,11 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the page
      *
-     * @param \integer $page
+     * @param int $page
      *
      * @return void
      */
-    public function setPage($page)
+    public function setPage(int $page): void
     {
         $this->page = $page;
     }
@@ -317,7 +317,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return void
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -339,7 +339,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return void
      */
-    public function setDateRange(DateRanges $dateRange)
+    public function setDateRange(DateRanges $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
@@ -370,7 +370,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return void
      */
-    public function setRelations($relations)
+    public function setRelations($relations): void
     {
         $this->relations = $relations;
     }
@@ -392,7 +392,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return void
      */
-    public function setCategories($categories)
+    public function setCategories($categories): void
     {
         $this->categories = $categories;
     }

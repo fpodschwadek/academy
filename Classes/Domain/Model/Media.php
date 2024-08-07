@@ -39,7 +39,7 @@ class Media extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -48,21 +48,21 @@ class Media extends AbstractEntity
     /**
      * Display type of the media object
      *
-     * @var \integer $type
+     * @var int $type
      */
     protected $type;
 
     /**
      * Creation date of the media object
      *
-     * @var \integer $crdate
+     * @var int $crdate
      */
     protected $crdate;
 
     /**
      * The title of the medium
      *
-     * @var \string $title
+     * @var string $title
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
@@ -70,12 +70,12 @@ class Media extends AbstractEntity
     /**
      * A description of the mediums scientific activities
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
@@ -122,9 +122,9 @@ class Media extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
-    public function getPersistentIdentifier()
+    public function getPersistentIdentifier(): string
     {
         return $this->persistentIdentifier;
     }
@@ -132,11 +132,11 @@ class Media extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -144,9 +144,9 @@ class Media extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return \integer $type
+     * @return int $type
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->type;
     }
@@ -154,11 +154,11 @@ class Media extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param \integer $type
+     * @param int $type
      *
      * @return void
      */
-    public function setType($type)
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
@@ -166,9 +166,9 @@ class Media extends AbstractEntity
     /**
      * Returns the crdate
      *
-     * @return \integer $crdate
+     * @return int $crdate
      */
-    public function getCrdate()
+    public function getCrdate(): int
     {
         return $this->crdate;
     }
@@ -176,11 +176,11 @@ class Media extends AbstractEntity
     /**
      * Sets the crdate
      *
-     * @param \integer $crdate
+     * @param int $crdate
      *
      * @return void
      */
-    public function setCrdate($crdate)
+    public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
     }
@@ -188,9 +188,9 @@ class Media extends AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string $title
+     * @return string $title
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -198,11 +198,11 @@ class Media extends AbstractEntity
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      *
      * @return void
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -210,9 +210,9 @@ class Media extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string $description
+     * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -220,11 +220,11 @@ class Media extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -232,9 +232,9 @@ class Media extends AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -242,11 +242,11 @@ class Media extends AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -268,7 +268,7 @@ class Media extends AbstractEntity
      *
      * @return void
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -290,7 +290,7 @@ class Media extends AbstractEntity
      *
      * @return void
      */
-    public function setFiles($files)
+    public function setFiles($files): void
     {
         $this->files = $files;
     }
@@ -312,7 +312,7 @@ class Media extends AbstractEntity
      *
      * @return void
      */
-    public function setCollections($collections)
+    public function setCollections($collections): void
     {
         $this->collections = $collections;
     }
@@ -343,7 +343,7 @@ class Media extends AbstractEntity
      *
      * @return void
      */
-    public function setRelations($relations)
+    public function setRelations($relations): void
     {
         $this->relations = $relations;
     }
@@ -365,7 +365,7 @@ class Media extends AbstractEntity
      *
      * @return void
      */
-    public function setCategories($categories)
+    public function setCategories($categories): void
     {
         $this->categories = $categories;
     }

@@ -41,7 +41,7 @@ class Projects extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -50,14 +50,14 @@ class Projects extends AbstractEntity
     /**
      * The identifier of the project
      *
-     * @var \string $identifier
+     * @var string $identifier
      */
     protected $identifier;
 
     /**
      * The title of the project
      *
-     * @var \string $title
+     * @var string $title
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
@@ -65,26 +65,26 @@ class Projects extends AbstractEntity
     /**
      * An acronym for the project
      *
-     * @var \string $acronym
+     * @var string $acronym
      */
     protected $acronym;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
     /**
      * The internal sorting for project list (if not alphabetic)
      *
-     * @var \string $sorting
+     * @var string $sorting
      */
     protected $sorting;
 
     /**
      * A description of the projects scientific activities
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
@@ -113,7 +113,7 @@ class Projects extends AbstractEntity
     /**
      * The page where the project details are listed
      *
-     * @var \integer $page
+     * @var int $page
      */
     protected $page;
 
@@ -136,7 +136,7 @@ class Projects extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
     public function getPersistentIdentifier()
     {
@@ -146,11 +146,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -158,9 +158,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the identifier
      *
-     * @return \string $identifier
+     * @return string $identifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): string
     {
         return $this->identifier;
     }
@@ -168,11 +168,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the identifier
      *
-     * @param \string $identifier
+     * @param string $identifier
      *
      * @return void
      */
-    public function setIdentifier($identifier)
+    public function setIdentifier(string $identifier): void
     {
         $this->identifier = $identifier;
     }
@@ -180,9 +180,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string $title
+     * @return string $title
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -190,11 +190,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      *
      * @return void
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -202,9 +202,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the acronym
      *
-     * @return \string $acronym
+     * @return string $acronym
      */
-    public function getAcronym()
+    public function getAcronym(): string
     {
         return $this->acronym;
     }
@@ -212,11 +212,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the acronym
      *
-     * @param \string $acronym
+     * @param string $acronym
      *
      * @return void
      */
-    public function setAcronym($acronym)
+    public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
     }
@@ -224,9 +224,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -234,11 +234,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -246,9 +246,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the sorting
      *
-     * @return \string $sorting
+     * @return string $sorting
      */
-    public function getSorting()
+    public function getSorting(): string
     {
         return $this->sorting;
     }
@@ -256,11 +256,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the sorting
      *
-     * @param \string $sorting
+     * @param string $sorting
      *
      * @return void
      */
-    public function setSorting($sorting)
+    public function setSorting(string $sorting): void
     {
         $this->sorting = $sorting;
     }
@@ -268,9 +268,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string $description
+     * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -278,11 +278,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -325,7 +325,7 @@ class Projects extends AbstractEntity
      *
      * @return void
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -347,7 +347,7 @@ class Projects extends AbstractEntity
      *
      * @return void
      */
-    public function setDateRange(DateRanges $dateRange)
+    public function setDateRange(DateRanges $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
@@ -355,9 +355,9 @@ class Projects extends AbstractEntity
     /**
      * Returns the page
      *
-     * @return \integer $page
+     * @return int $page
      */
-    public function getPage()
+    public function getPage(): int
     {
         return $this->page;
     }
@@ -365,11 +365,11 @@ class Projects extends AbstractEntity
     /**
      * Sets the page
      *
-     * @param \integer $page
+     * @param int $page
      *
      * @return void
      */
-    public function setPage($page)
+    public function setPage(int $page): void
     {
         $this->page = $page;
     }
@@ -400,7 +400,7 @@ class Projects extends AbstractEntity
      *
      * @return void
      */
-    public function setRelations($relations)
+    public function setRelations($relations): void
     {
         $this->relations = $relations;
     }
@@ -422,7 +422,7 @@ class Projects extends AbstractEntity
      *
      * @return void
      */
-    public function setCategories($categories)
+    public function setCategories($categories): void
     {
         $this->categories = $categories;
     }

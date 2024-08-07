@@ -36,7 +36,7 @@ class Relations extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -236,7 +236,7 @@ class Relations extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
     public function getPersistentIdentifier()
     {
@@ -246,11 +246,11 @@ class Relations extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -258,9 +258,9 @@ class Relations extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return integer $type
+     * @return int $type
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->type;
     }
@@ -268,11 +268,11 @@ class Relations extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param integer $type
+     * @param int $type
      *
      * @return void
      */
-    public function setType($type)
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
@@ -294,7 +294,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setRole(Roles $role)
+    public function setRole(Roles $role): void
     {
         $this->role = $role;
     }
@@ -304,7 +304,7 @@ class Relations extends AbstractEntity
      *
      * @return string $roleFreetext
      */
-    public function getRoleFreetext()
+    public function getRoleFreetext(): string
     {
         return $this->roleFreetext;
     }
@@ -316,7 +316,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setRoleFreetext($roleFreetext)
+    public function setRoleFreetext(string $roleFreetext): void
     {
         $this->roleFreetext = $roleFreetext;
     }
@@ -338,7 +338,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setProject(Projects $project)
+    public function setProject(Projects $project): void
     {
         $this->project = $project;
     }
@@ -360,7 +360,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setProjectSymmetric(Projects $projectSymmetric)
+    public function setProjectSymmetric(Projects $projectSymmetric): void
     {
         $this->projectSymmetric = $projectSymmetric;
     }
@@ -382,7 +382,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setPerson(Persons $person)
+    public function setPerson(Persons $person): void
     {
         $this->person = $person;
     }
@@ -404,7 +404,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setPersonSymmetric(Persons $personSymmetric)
+    public function setPersonSymmetric(Persons $personSymmetric): void
     {
         $this->personSymmetric = $personSymmetric;
     }
@@ -426,7 +426,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setHcard(Hcards $hcard)
+    public function setHcard(Hcards $hcard): void
     {
         $this->hcard = $hcard;
     }
@@ -448,7 +448,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setUnit(Units $unit)
+    public function setUnit(Units $unit): void
     {
         $this->unit = $unit;
     }
@@ -470,7 +470,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setUnitSymmetric(Units $unitSymmetric)
+    public function setUnitSymmetric(Units $unitSymmetric): void
     {
         $this->unitSymmetric = $unitSymmetric;
     }
@@ -492,7 +492,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setNews(News $news)
+    public function setNews(News $news): void
     {
         $this->news = $news;
     }
@@ -514,7 +514,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setNewsSymmetric(News $newsSymmetric)
+    public function setNewsSymmetric(News $newsSymmetric): void
     {
         $this->newsSymmetric = $newsSymmetric;
     }
@@ -536,7 +536,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setEvent(Events $event)
+    public function setEvent(Events $event): void
     {
         $this->event = $event;
     }
@@ -558,7 +558,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setEventSymmetric(Events $eventSymmetric)
+    public function setEventSymmetric(Events $eventSymmetric): void
     {
         $this->eventSymmetric = $eventSymmetric;
     }
@@ -580,7 +580,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setMedium(Media $medium)
+    public function setMedium(Media $medium): void
     {
         $this->medium = $medium;
     }
@@ -602,7 +602,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setMediumSymmetric(Media $mediumSymmetric)
+    public function setMediumSymmetric(Media $mediumSymmetric): void
     {
         $this->mediumSymmetric = $mediumSymmetric;
     }
@@ -624,7 +624,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setService(Services $service)
+    public function setService(Services $service): void
     {
         $this->service = $service;
     }
@@ -646,7 +646,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setServiceSymmetric(Services $serviceSymmetric)
+    public function setServiceSymmetric(Services $serviceSymmetric): void
     {
         $this->serviceSymmetric = $serviceSymmetric;
     }
@@ -668,7 +668,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setProduct(Products $product)
+    public function setProduct(Products $product): void
     {
         $this->product = $product;
     }
@@ -690,7 +690,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setProductSymmetric(Products $productSymmetric)
+    public function setProductSymmetric(Products $productSymmetric): void
     {
         $this->productSymmetric = $productSymmetric;
     }
@@ -712,7 +712,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setPublication(Publications $publication)
+    public function setPublication(Publications $publication): void
     {
         $this->publication = $publication;
     }
@@ -734,7 +734,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setPublicationSymmetric(Publications $publicationSymmetric)
+    public function setPublicationSymmetric(Publications $publicationSymmetric): void
     {
         $this->publicationSymmetric = $publicationSymmetric;
     }
@@ -744,7 +744,7 @@ class Relations extends AbstractEntity
      *
      * @return string $freetext
      */
-    public function getFreetext()
+    public function getFreetext(): string
     {
         return $this->freetext;
     }
@@ -756,7 +756,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setFreetext($freetext)
+    public function setFreetext(string $freetext): void
     {
         $this->freetext = $freetext;
     }
@@ -778,7 +778,7 @@ class Relations extends AbstractEntity
      *
      * @return void
      */
-    public function setDateRange(DateRanges $dateRange)
+    public function setDateRange(DateRanges $dateRange): void
     {
         $this->dateRange = $dateRange;
     }

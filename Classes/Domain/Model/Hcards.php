@@ -35,7 +35,7 @@ class Hcards extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -44,7 +44,7 @@ class Hcards extends AbstractEntity
     /**
      * The label of the hcard
      *
-     * @var \string $label
+     * @var string $label
      * @Extbase\Validate("NotEmpty")
      */
     protected $label;
@@ -52,7 +52,7 @@ class Hcards extends AbstractEntity
     /**
      * The type of the hcard
      *
-     * @var integer $type
+     * @var int $type
      */
     protected $type;
 
@@ -91,21 +91,21 @@ class Hcards extends AbstractEntity
     /**
      * Geo coordinates
      *
-     * @var \string $geo
+     * @var string $geo
      */
     protected $geo;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
-    public function getPersistentIdentifier()
+    public function getPersistentIdentifier(): string
     {
         return $this->persistentIdentifier;
     }
@@ -113,11 +113,11 @@ class Hcards extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -125,9 +125,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the label
      *
-     * @return \string $label
+     * @return string $label
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -135,11 +135,11 @@ class Hcards extends AbstractEntity
     /**
      * Sets the label
      *
-     * @param \string $label
+     * @param string $label
      *
      * @return void
      */
-    public function setLabel($label)
+    public function setLabel(string $label): void
     {
         $this->label = $label;
     }
@@ -147,9 +147,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return \string $type
+     * @return string $type
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -157,11 +157,11 @@ class Hcards extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param \string $type
+     * @param string $type
      *
      * @return void
      */
-    public function setType($type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
@@ -183,7 +183,7 @@ class Hcards extends AbstractEntity
      *
      * @return void
      */
-    public function setAdr($adr)
+    public function setAdr($adr): void
     {
         $this->adr = $adr;
     }
@@ -205,7 +205,7 @@ class Hcards extends AbstractEntity
      *
      * @return void
      */
-    public function setTel($tel)
+    public function setTel($tel): void
     {
         $this->tel = $tel;
     }
@@ -227,7 +227,7 @@ class Hcards extends AbstractEntity
      *
      * @return void
      */
-    public function setEmail($email)
+    public function setEmail($email): void
     {
         $this->email = $email;
     }
@@ -249,7 +249,7 @@ class Hcards extends AbstractEntity
      *
      * @return void
      */
-    public function setUrl($url)
+    public function setUrl($url): void
     {
         $this->url = $url;
     }
@@ -257,9 +257,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns geo
      *
-     * @return \string $geo
+     * @return string $geo
      */
-    public function getGeo()
+    public function getGeo(): string
     {
         return $this->geo;
     }
@@ -267,11 +267,11 @@ class Hcards extends AbstractEntity
     /**
      * Sets geo
      *
-     * @param \string $geo
+     * @param string $geo
      *
      * @return void
      */
-    public function setGeo($geo)
+    public function setGeo(string $geo): void
     {
         $this->geo = $geo;
     }
@@ -279,9 +279,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -289,11 +289,11 @@ class Hcards extends AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }

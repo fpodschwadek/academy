@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  # Class registration
+  Digicademy\Academy\:
+    resource: '../Classes/*'
+
+  # We need the to inject the container instance for some dependency fetching,
+  # so we need to autowire the container itself.
+  TYPO3\CMS\Extbase\Object\Container\Container:

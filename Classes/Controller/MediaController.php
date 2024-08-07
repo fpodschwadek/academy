@@ -60,7 +60,7 @@ class MediaController extends ActionController
      *
      * @return void
      */
-    public function listAction()
+    public function listAction(): void
     {
         $arguments = $this->request->getArguments();
         $this->view->assign('arguments', $arguments);
@@ -71,11 +71,11 @@ class MediaController extends ActionController
     /**
      * Displays a list of media, possibly filtered by categories
      *
-     * @param \integer $type
+     * @param int $type
      *
      * @return void
      */
-    public function listByTypesAction($type)
+    public function listByTypesAction($type): int
     {
         $arguments = $this->request->getArguments();
         $this->view->assign('arguments', $arguments);
@@ -87,7 +87,7 @@ class MediaController extends ActionController
      *
      * @return void
      */
-    public function listByGroupsAction()
+    public function listByGroupsAction(): void
     {
         $arguments = $this->request->getArguments();
         $this->view->assign('arguments', $arguments);
@@ -100,7 +100,7 @@ class MediaController extends ActionController
      *
      * @return void
      */
-    public function listByRecentAction()
+    public function listByRecentAction(): void
     {
         $arguments = $this->request->getArguments();
         $this->view->assign('arguments', $arguments);
@@ -110,11 +110,11 @@ class MediaController extends ActionController
     /**
      * Displays a medium by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Media $medium
+     * @param Media $medium
      *
      * @return void
      */
-    public function showAction(Media $medium)
+    public function showAction(Media $medium): void
     {
         // transfer media type to GLOBAL register for use in TypoScript (inclusion of JS files)
         $GLOBALS['TSFE']->register['mediatype'] = $medium->getType();
@@ -127,8 +127,10 @@ class MediaController extends ActionController
 
     /**
      * Sets the medium vor the viewer from plugin settings
+     *
+     * @return void
      */
-    public function initializeViewerAction()
+    public function initializeViewerAction(): void
     {
         $this->request->setArgument('medium', $this->settings['medium']);
     }
@@ -140,7 +142,7 @@ class MediaController extends ActionController
      *
      * @return void
      */
-    public function viewerAction(Media $medium)
+    public function viewerAction(Media $medium): void
     {
 
         // transfer media type to GLOBAL register for use in TypoScript (inclusion of JS files)

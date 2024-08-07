@@ -70,7 +70,7 @@ class Events extends EventNews
      *
      * @return void
      */
-    public function setEventRelations($eventRelations)
+    public function setEventRelations($eventRelations): void
     {
         $this->eventRelations = $eventRelations;
     }

@@ -41,7 +41,7 @@ class Persons extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -50,21 +50,21 @@ class Persons extends AbstractEntity
     /**
      * Given name of the person
      *
-     * @var \string $givenName
+     * @var string $givenName
      */
     protected $givenName;
 
     /**
      * Additional name
      *
-     * @var \string $additionalName
+     * @var string $additionalName
      */
     protected $additionalName;
 
     /**
      * Family name of the person
      *
-     * @var \string $familyName
+     * @var string $familyName
      * @Extbase\Validate("NotEmpty")
      */
     protected $familyName;
@@ -72,26 +72,26 @@ class Persons extends AbstractEntity
     /**
      * honorificSuffix
      *
-     * @var \string $honorificPrefix
+     * @var string $honorificPrefix
      */
     protected $honorificPrefix;
 
     /**
      * honorificSuffix
      *
-     * @var \string $honorificSuffix
+     * @var string $honorificSuffix
      */
     protected $honorificSuffix;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
     /**
      * sorting
      *
-     * @var \string $sorting
+     * @var string $sorting
      */
     protected $sorting;
 
@@ -120,35 +120,35 @@ class Persons extends AbstractEntity
     /**
      * A page where details about the person can be found
      *
-     * @var \integer $page
+     * @var int $page
      */
     protected $page;
 
     /**
      * cv
      *
-     * @var \string $cv
+     * @var string $cv
      */
     protected $cv;
 
     /**
      * expertise
      *
-     * @var \string $expertise
+     * @var string $expertise
      */
     protected $expertise;
 
     /**
      * awards
      *
-     * @var \string $awards
+     * @var string $awards
      */
     protected $awards;
 
     /**
      * publications
      *
-     * @var \string $publications
+     * @var string $publications
      */
     protected $publications;
 
@@ -171,9 +171,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
-    public function getPersistentIdentifier()
+    public function getPersistentIdentifier(): string
     {
         return $this->persistentIdentifier;
     }
@@ -181,11 +181,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -193,9 +193,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the given name
      *
-     * @return \string $givenName
+     * @return string $givenName
      */
-    public function getGivenName()
+    public function getGivenName(): string
     {
         return $this->givenName;
     }
@@ -203,11 +203,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the givenName
      *
-     * @param \string $givenName
+     * @param string $givenName
      *
      * @return void
      */
-    public function setGivenName($givenName)
+    public function setGivenName(string $givenName): void
     {
         $this->givenName = $givenName;
     }
@@ -215,9 +215,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the additional name
      *
-     * @return \string $additionalName
+     * @return string $additionalName
      */
-    public function getAdditionalName()
+    public function getAdditionalName(): string
     {
         return $this->additionalName;
     }
@@ -225,11 +225,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the additionalName
      *
-     * @param \string $additionalName
+     * @param string $additionalName
      *
      * @return void
      */
-    public function setAdditionalName($additionalName)
+    public function setAdditionalName(string $additionalName): void
     {
         $this->additionalName = $additionalName;
     }
@@ -237,9 +237,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the family name
      *
-     * @return \string $familyName
+     * @return string $familyName
      */
-    public function getFamilyName()
+    public function getFamilyName(): string
     {
         return $this->familyName;
     }
@@ -247,11 +247,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the familyName
      *
-     * @param \string $familyName
+     * @param string $familyName
      *
      * @return void
      */
-    public function setFamilyName($familyName)
+    public function setFamilyName(string $familyName): void
     {
         $this->familyName = $familyName;
     }
@@ -259,9 +259,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the honorific prefix
      *
-     * @return \string $honorificPrefix
+     * @return string $honorificPrefix
      */
-    public function getHonorificPrefix()
+    public function getHonorificPrefix(): string
     {
         return $this->honorificPrefix;
     }
@@ -269,11 +269,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the honorific prefix
      *
-     * @param \string $honorificPrefix
+     * @param string $honorificPrefix
      *
      * @return void
      */
-    public function setHonorificPrefix($honorificPrefix)
+    public function setHonorificPrefix(string $honorificPrefix): void
     {
         $this->honorificPrefix = $honorificPrefix;
     }
@@ -281,9 +281,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the honorific suffix
      *
-     * @return \string $honorificSuffix
+     * @return string $honorificSuffix
      */
-    public function getHonorificSuffix()
+    public function getHonorificSuffix(): string
     {
         return $this->honorificSuffix;
     }
@@ -291,11 +291,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the honorific suffix
      *
-     * @param \string $honorificSuffix
+     * @param string $honorificSuffix
      *
      * @return void
      */
-    public function setHonorificSuffix($honorificSuffix)
+    public function setHonorificSuffix(string $honorificSuffix): void
     {
         $this->honorificSuffix = $honorificSuffix;
     }
@@ -303,9 +303,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -313,11 +313,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -339,7 +339,7 @@ class Persons extends AbstractEntity
      *
      * @return void
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -361,7 +361,7 @@ class Persons extends AbstractEntity
      *
      * @return void
      */
-    public function setDateRange(DateRanges $dateRange)
+    public function setDateRange(DateRanges $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
@@ -390,9 +390,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the page
      *
-     * @return \integer $page
+     * @return int $page
      */
-    public function getPage()
+    public function getPage(): int
     {
         return $this->page;
     }
@@ -400,11 +400,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the page
      *
-     * @param \integer $page
+     * @param int $page
      *
      * @return void
      */
-    public function setPage($page)
+    public function setPage(int $page): void
     {
         $this->page = $page;
     }
@@ -412,9 +412,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the CV
      *
-     * @return \string $cv
+     * @return string $cv
      */
-    public function getCv()
+    public function getCv(): string
     {
         return $this->cv;
     }
@@ -422,11 +422,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the CV
      *
-     * @param \string $cv
+     * @param string $cv
      *
      * @return void
      */
-    public function setCv($cv)
+    public function setCv(string $cv): void
     {
         $this->cv = $cv;
     }
@@ -434,9 +434,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the expertise
      *
-     * @return \string $expertise
+     * @return string $expertise
      */
-    public function getExpertise()
+    public function getExpertise(): string
     {
         return $this->expertise;
     }
@@ -444,11 +444,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the expertise
      *
-     * @param \string $expertise
+     * @param string $expertise
      *
      * @return void
      */
-    public function setExpertise($expertise)
+    public function setExpertise(string $expertise): void
     {
         $this->expertise = $expertise;
     }
@@ -456,9 +456,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the awards
      *
-     * @return \string $awards
+     * @return string $awards
      */
-    public function getAwards()
+    public function getAwards(): string
     {
         return $this->awards;
     }
@@ -466,11 +466,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the awards
      *
-     * @param \string $awards
+     * @param string $awards
      *
      * @return void
      */
-    public function setAwards($awards)
+    public function setAwards(string $awards): void
     {
         $this->awards = $awards;
     }
@@ -478,9 +478,9 @@ class Persons extends AbstractEntity
     /**
      * Returns the publications
      *
-     * @return \string $publications
+     * @return string $publications
      */
-    public function getPublications()
+    public function getPublications(): string
     {
         return $this->publications;
     }
@@ -488,11 +488,11 @@ class Persons extends AbstractEntity
     /**
      * Sets the publications
      *
-     * @param \string $publications
+     * @param string $publications
      *
      * @return void
      */
-    public function setPublications($publications)
+    public function setPublications(string $publications): void
     {
         $this->publications = $publications;
     }
@@ -523,7 +523,7 @@ class Persons extends AbstractEntity
      *
      * @return void
      */
-    public function setRelations($relations)
+    public function setRelations($relations): void
     {
         $this->relations = $relations;
     }
@@ -545,7 +545,7 @@ class Persons extends AbstractEntity
      *
      * @return void
      */
-    public function setCategories($categories)
+    public function setCategories($categories): void
     {
         $this->categories = $categories;
     }

@@ -69,7 +69,7 @@ class News extends GeorgRingerNews
      *
      * @return void
      */
-    public function setNewsRelations($newsRelations)
+    public function setNewsRelations($newsRelations): void
     {
         $this->newsRelations = $newsRelations;
     }

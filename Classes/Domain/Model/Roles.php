@@ -35,7 +35,7 @@ class Roles extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -44,7 +44,7 @@ class Roles extends AbstractEntity
     /**
      * The title of the role
      *
-     * @var \string $title
+     * @var string $title
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
@@ -52,9 +52,9 @@ class Roles extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
-    public function getPersistentIdentifier()
+    public function getPersistentIdentifier(): string
     {
         return $this->persistentIdentifier;
     }
@@ -62,11 +62,11 @@ class Roles extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -74,11 +74,11 @@ class Roles extends AbstractEntity
     /**
      * Sets the title
      *
-     * @return void
+     * @param string $title
      *
-     * @param $title
+     * @return void
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -86,9 +86,9 @@ class Roles extends AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }

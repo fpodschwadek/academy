@@ -35,21 +35,21 @@ class HcardsAdr extends AbstractValueObject
     /**
      * The label of the address
      *
-     * @var \string $label
+     * @var string $label
      */
     protected $label;
 
     /**
      * The name of the organisation
      *
-     * @var \string $org
+     * @var string $org
      */
     protected $org;
 
     /**
      * The type of the address
      *
-     * @var \integer $type
+     * @var int $type
      */
     protected $type;
 
@@ -64,9 +64,9 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Returns the label
      *
-     * @return \string $label
+     * @return string $label
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -74,11 +74,11 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Sets the label
      *
-     * @param \string $label
+     * @param string $label
      *
      * @return void
      */
-    public function setLabel($label)
+    public function setLabel(string $label): void
     {
         $this->label = $label;
     }
@@ -86,9 +86,9 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Returns the org
      *
-     * @return \string $org
+     * @return string $org
      */
-    public function getOrg()
+    public function getOrg(): string
     {
         return $this->org;
     }
@@ -96,11 +96,11 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Sets the org
      *
-     * @param \string $org
+     * @param string $org
      *
      * @return void
      */
-    public function setOrg($org)
+    public function setOrg(string $org): void
     {
         $this->org = $org;
     }
@@ -108,9 +108,9 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Returns the type
      *
-     * @return \integer $type
+     * @return int $type
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->type;
     }
@@ -118,11 +118,11 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Sets the type
      *
-     * @param \integer $type
+     * @param int $type
      *
      * @return void
      */
-    public function setType($type)
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
@@ -144,7 +144,7 @@ class HcardsAdr extends AbstractValueObject
      *
      * @return void
      */
-    public function setAdrcomponents($adrcomponents)
+    public function setAdrcomponents($adrcomponents): void
     {
         $this->adrcomponents = $adrcomponents;
     }

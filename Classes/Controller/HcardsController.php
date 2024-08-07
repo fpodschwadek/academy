@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Controller;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -26,34 +24,26 @@ namespace Digicademy\Academy\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+namespace Digicademy\Academy\Controller;
+
+use Digicademy\Academy\Domain\Repository\HcardsRepository;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use Digicademy\Academy\Domain\Repository\HcardsRepository;
 
 class HcardsController extends ActionController
 {
-
     /**
-     * @var \Digicademy\Academy\Domain\Repository\HcardsRepository
-     */
-    protected $hcardsRepository;
-
-    /**
-     * Use constructor DI and not (at)inject
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface    $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\HcardsRepository            $hcardsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param HcardsRepository $hcardsRepository
      */
     public function __construct(
-        ConfigurationManagerInterface $configurationManager,
-        HcardsRepository $hcardsRepository
+        protected readonly ConfigurationManagerInterface $configurationManager,
+        protected readonly HcardsRepository $hcardsRepository
     )
     {
-        $this->injectConfigurationManager($configurationManager);
-        $this->hcardsRepository = $hcardsRepository;
+        $this->injectConfigurationManager($this->configurationManager);
     }
 
     /**
@@ -61,7 +51,7 @@ class HcardsController extends ActionController
      *
      * @return void
      */
-    public function initializeAction()
+    public function initializeAction(): void
     {
         if ($this->settings['selectedHcards']) {
             $this->request->setArgument('selectedHcards', $this->settings['selectedHcards']);
@@ -73,7 +63,7 @@ class HcardsController extends ActionController
      *
      * @return void
      */
-    public function listSelectedAction()
+    public function listSelectedAction(): void
     {
         $selectedHcardsArray = GeneralUtility::trimExplode(',', $this->request->getArgument('selectedHcards'));
         $selectedHcards = $this->objectManager->get(ObjectStorage::class);

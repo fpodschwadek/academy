@@ -46,7 +46,8 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return array
      */
-    public function findAllChildren($categoryUid, $maxLevels = 1, $getChildrenOnLevel = 0) {
+    public function findAllChildren($categoryUid, $maxLevels = 1, $getChildrenOnLevel = 0): array
+    {
 
         $this->childCategoryUids = [];
 

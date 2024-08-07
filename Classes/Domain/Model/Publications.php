@@ -41,7 +41,7 @@ class Publications extends AbstractEntity
     /**
      * persistentIdentifier
      *
-     * @var \string
+     * @var string
      *
      * @Extbase\Validate("NotEmpty")
      */
@@ -50,14 +50,14 @@ class Publications extends AbstractEntity
     /**
      * The identifier of the publication
      *
-     * @var \string $identifier
+     * @var string $identifier
      */
     protected $identifier;
 
     /**
      * The title of the publication
      *
-     * @var \string $title
+     * @var string $title
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
@@ -65,89 +65,89 @@ class Publications extends AbstractEntity
     /**
      * An subtitle for the publication
      *
-     * @var \string $subtitle
+     * @var string $subtitle
      */
     protected $subtitle;
 
     /**
      * An abbreviation for the publication
      *
-     * @var \string $abbreviation
+     * @var string $abbreviation
      */
     protected $abbreviation;
 
     /**
      * An volume for the publication
      *
-     * @var \string $volume
+     * @var string $volume
      */
     protected $volume;
 
     /**
      * An number for the publication
      *
-     * @var \string $number
+     * @var string $number
      */
     protected $number;
 
     /**
      * An issue for the publication
      *
-     * @var \string $issue
+     * @var string $issue
      */
     protected $issue;
 
     /**
      * An edition for the publication
      *
-     * @var \string $edition
+     * @var string $edition
      */
     protected $edition;
 
     /**
      * An series for the publication
      *
-     * @var \string $series
+     * @var string $series
      */
     protected $series;
 
     /**
      * An startPage for the publication
      *
-     * @var \string $startPage
+     * @var string $startPage
      */
     protected $startPage;
 
     /**
      * An endPage for the publication
      *
-     * @var \string $endPage
+     * @var string $endPage
      */
     protected $endPage;
 
     /**
      * An totalPages for the publication
      *
-     * @var \string $totalPages
+     * @var string $totalPages
      */
     protected $totalPages;
 
     /**
-     * @var \string $slug
+     * @var string $slug
      */
     protected $slug;
 
     /**
      * A description of the publication
      *
-     * @var \string $description
+     * @var string $description
      */
     protected $description;
 
     /**
      * A bibliographic note
      *
-     * @var \string $bibliographicNote
+     * @var string $bibliographicNote
      */
     protected $bibliographicNote;
 
@@ -176,7 +176,7 @@ class Publications extends AbstractEntity
     /**
      * The page where the publication details are listed
      *
-     * @var \integer $page
+     * @var int $page
      */
     protected $page;
 
@@ -199,7 +199,7 @@ class Publications extends AbstractEntity
     /**
      * Returns the persistentIdentifier
      *
-     * @return \string $persistentIdentifier
+     * @return string $persistentIdentifier
      */
     public function getPersistentIdentifier()
     {
@@ -209,11 +209,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the persistentIdentifier
      *
-     * @param \string $persistentIdentifier
+     * @param string $persistentIdentifier
      *
      * @return void
      */
-    public function setPersistentIdentifier($persistentIdentifier)
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
         $this->persistentIdentifier = $persistentIdentifier;
     }
@@ -221,9 +221,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the identifier
      *
-     * @return \string $identifier
+     * @return string $identifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): string
     {
         return $this->identifier;
     }
@@ -231,11 +231,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the identifier
      *
-     * @param \string $identifier
+     * @param string $identifier
      *
      * @return void
      */
-    public function setIdentifier($identifier)
+    public function setIdentifier(string $identifier): void
     {
         $this->identifier = $identifier;
     }
@@ -243,9 +243,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string $title
+     * @return string $title
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -253,11 +253,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      *
      * @return void
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -265,9 +265,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the subtitle
      *
-     * @return \string $subtitle
+     * @return string $subtitle
      */
-    public function getSubtitle()
+    public function getSubtitle(): string
     {
         return $this->subtitle;
     }
@@ -275,11 +275,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the subtitle
      *
-     * @param \string $subtitle
+     * @param string $subtitle
      *
      * @return void
      */
-    public function setSubtitle($subtitle)
+    public function setSubtitle(string $subtitle): void
     {
         $this->subtitle = $subtitle;
     }
@@ -287,9 +287,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the abbreviation
      *
-     * @return \string $abbreviation
+     * @return string $abbreviation
      */
-    public function getAbbreviation()
+    public function getAbbreviation(): string
     {
         return $this->abbreviation;
     }
@@ -297,11 +297,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the abbreviation
      *
-     * @param \string $abbreviation
+     * @param string $abbreviation
      *
      * @return void
      */
-    public function setAbbreviation($abbreviation)
+    public function setAbbreviation(string $abbreviation): void
     {
         $this->abbreviation = $abbreviation;
     }
@@ -309,9 +309,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the volume
      *
-     * @return \string $volume
+     * @return string $volume
      */
-    public function getVolume()
+    public function getVolume(): string
     {
         return $this->volume;
     }
@@ -319,11 +319,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the volume
      *
-     * @param \string $volume
+     * @param string $volume
      *
      * @return void
      */
-    public function setVolume($volume)
+    public function setVolume(string $volume): void
     {
         $this->volume = $volume;
     }
@@ -331,9 +331,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the number
      *
-     * @return \string $number
+     * @return string $number
      */
-    public function getNumber()
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -341,11 +341,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the number
      *
-     * @param \string $number
+     * @param string $number
      *
      * @return void
      */
-    public function setNumber($number)
+    public function setNumber(string $number): void
     {
         $this->number = $number;
     }
@@ -353,9 +353,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the issue
      *
-     * @return \string $issue
+     * @return string $issue
      */
-    public function getIssue()
+    public function getIssue(): string
     {
         return $this->issue;
     }
@@ -363,11 +363,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the issue
      *
-     * @param \string $issue
+     * @param string $issue
      *
      * @return void
      */
-    public function setIssue($issue)
+    public function setIssue(string $issue): void
     {
         $this->issue = $issue;
     }
@@ -375,9 +375,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the edition
      *
-     * @return \string $edition
+     * @return string $edition
      */
-    public function getEdition()
+    public function getEdition(): string
     {
         return $this->edition;
     }
@@ -385,11 +385,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the edition
      *
-     * @param \string $edition
+     * @param string $edition
      *
      * @return void
      */
-    public function setEdition($edition)
+    public function setEdition(string $edition): void
     {
         $this->edition = $edition;
     }
@@ -397,9 +397,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the series
      *
-     * @return \string $series
+     * @return string $series
      */
-    public function getSeries()
+    public function getSeries(): string
     {
         return $this->series;
     }
@@ -407,11 +407,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the series
      *
-     * @param \string $series
+     * @param string $series
      *
      * @return void
      */
-    public function setSeries($series)
+    public function setSeries(string $series): void
     {
         $this->series = $series;
     }
@@ -419,9 +419,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the startPage
      *
-     * @return \string $startPage
+     * @return string $startPage
      */
-    public function getStartPage()
+    public function getStartPage(): string
     {
         return $this->startPage;
     }
@@ -429,11 +429,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the startPage
      *
-     * @param \string $startPage
+     * @param string $startPage
      *
      * @return void
      */
-    public function setStartPage($startPage)
+    public function setStartPage(string $startPage): void
     {
         $this->startPage = $startPage;
     }
@@ -441,9 +441,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the endPage
      *
-     * @return \string $endPage
+     * @return string $endPage
      */
-    public function getEndPage()
+    public function getEndPage(): string
     {
         return $this->endPage;
     }
@@ -451,11 +451,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the endPage
      *
-     * @param \string $endPage
+     * @param string $endPage
      *
      * @return void
      */
-    public function setEndPage($endPage)
+    public function setEndPage(string $endPage): void
     {
         $this->endPage = $endPage;
     }
@@ -463,9 +463,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the totalPages
      *
-     * @return \string $totalPages
+     * @return string $totalPages
      */
-    public function getTotalPages()
+    public function getTotalPages(): string
     {
         return $this->totalPages;
     }
@@ -473,11 +473,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the totalPages
      *
-     * @param \string $totalPages
+     * @param string $totalPages
      *
      * @return void
      */
-    public function setTotalPages($totalPages)
+    public function setTotalPages(string $totalPages): void
     {
         $this->totalPages = $totalPages;
     }
@@ -485,9 +485,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the slug
      *
-     * @return \string $slug
+     * @return string $slug
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -495,11 +495,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the slug
      *
-     * @param \string $slug
+     * @param string $slug
      *
      * @return void
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -507,9 +507,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string $description
+     * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -517,11 +517,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      *
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -529,9 +529,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the bibliographicNote
      *
-     * @return \string $bibliographicNote
+     * @return string $bibliographicNote
      */
-    public function getBibliographicNote()
+    public function getBibliographicNote(): string
     {
         return $this->bibliographicNote;
     }
@@ -539,11 +539,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the bibliographicNote
      *
-     * @param \string $bibliographicNote
+     * @param string $bibliographicNote
      *
      * @return void
      */
-    public function setBibliographicNote($bibliographicNote)
+    public function setBibliographicNote(string $bibliographicNote): void
     {
         $this->bibliographicNote = $bibliographicNote;
     }
@@ -586,7 +586,7 @@ class Publications extends AbstractEntity
      *
      * @return void
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -608,7 +608,7 @@ class Publications extends AbstractEntity
      *
      * @return void
      */
-    public function setDateRange(DateRanges $dateRange)
+    public function setDateRange(DateRanges $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
@@ -616,9 +616,9 @@ class Publications extends AbstractEntity
     /**
      * Returns the page
      *
-     * @return \integer $page
+     * @return int $page
      */
-    public function getPage()
+    public function getPage(): int
     {
         return $this->page;
     }
@@ -626,11 +626,11 @@ class Publications extends AbstractEntity
     /**
      * Sets the page
      *
-     * @param \integer $page
+     * @param int $page
      *
      * @return void
      */
-    public function setPage($page)
+    public function setPage(int $page): void
     {
         $this->page = $page;
     }
@@ -661,7 +661,7 @@ class Publications extends AbstractEntity
      *
      * @return void
      */
-    public function setRelations($relations)
+    public function setRelations($relations): void
     {
         $this->relations = $relations;
     }
@@ -683,7 +683,7 @@ class Publications extends AbstractEntity
      *
      * @return void
      */
-    public function setCategories($categories)
+    public function setCategories($categories): void
     {
         $this->categories = $categories;
     }
