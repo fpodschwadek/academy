@@ -23,6 +23,10 @@
     "georgringer/eventnews": "^6.0",
     "digicademy/chf_time": "dev-master"
   },
+  "require-dev": {
+    "phpstan/phpstan": "^1.11",
+    "typo3/coding-standards": "^0.8"
+  },
   "replace": {
     "typo3-ter/academy": "self.version"
   },
@@ -34,6 +38,18 @@
   "extra": {
     "typo3/cms": {
       "extension-key": "academy"
+    }
+  },
+  "scripts": {
+    "phpstan": "phpstan analyse -c phpstan.neon --memory-limit 2G"
+  },
+  "scripts-aliases": {
+    "phpstan": ["analyse", "analyze", "stan"]
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
     }
   }
 }
