@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Domain\Repository;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,8 @@ namespace Digicademy\Academy\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;

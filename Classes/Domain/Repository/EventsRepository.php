@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Domain\Repository;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -26,4 +24,9 @@ namespace Digicademy\Academy\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-class EventsRepository extends \GeorgRinger\Eventnews\Domain\Repository\AbstractRepository {}
+namespace Digicademy\Academy\Domain\Repository;
+
+use GeorgRinger\Eventnews\Domain\Repository\AbstractRepository;
+
+class EventsRepository extends AbstractRepository
+{}
