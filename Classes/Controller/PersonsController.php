@@ -28,7 +28,9 @@ namespace Digicademy\Academy\Controller;
 
 use Digicademy\Academy\Domain\Model\Persons;
 use Digicademy\Academy\Domain\Repository\PersonsRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class PersonsController extends ActionController
@@ -77,16 +79,20 @@ class PersonsController extends ActionController
     }
 
     /**
+     * @return ResponseInterface
+     *
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
      */
-    public function listByRoleAction()
+    public function listByRoleAction(): ResponseInterface
     {
         $persons = $this->personsRepository->findByRole($this->settings['selectedRole']);
         if ($persons->count() > 0) {
-            $this->forward('list', null, null, ['persons' => $persons]);
+            $response = new ForwardResponse('list');
+            $response = $response->withArguments(['persons' => $persons]);
         } else {
-            $this->forward('list');
+            $response = new ForwardResponse('list');
         }
+        return $response;
     }
 
     /**
