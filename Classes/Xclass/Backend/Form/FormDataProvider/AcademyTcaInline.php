@@ -66,7 +66,7 @@ class AcademyTcaInline extends TcaInline
         }
 
         $result['databaseRow'][$fieldName] = implode(',', $connectedUidsOfDefaultLanguageRecord);
-        $connectedUidsOfDefaultLanguageRecord = $this->getWorkspacedUids($connectedUidsOfDefaultLanguageRecord, $childTableName);
+        $connectedUidsOfDefaultLanguageRecord = $this->getSubstitutedWorkspacedUids($connectedUidsOfDefaultLanguageRecord, $childTableName);
 
         if ($result['inlineCompileExistingChildren']) {
             foreach ($connectedUidsOfDefaultLanguageRecord as $uid) {
