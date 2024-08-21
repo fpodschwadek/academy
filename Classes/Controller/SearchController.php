@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Controller;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,8 @@ namespace Digicademy\Academy\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Controller;
 
 class SearchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
