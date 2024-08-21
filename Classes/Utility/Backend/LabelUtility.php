@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Utility\Backend;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,8 @@ namespace Digicademy\Academy\Utility\Backend;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Utility\Backend;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
