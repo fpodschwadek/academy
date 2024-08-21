@@ -26,7 +26,11 @@
 
 namespace Digicademy\Academy\Controller;
 
-class SearchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Http\ForwardResponse;
+
+class SearchController extends ActionController
 {
     /**
      * Initializes the current action
@@ -51,10 +55,14 @@ class SearchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
     /**
      * Search through a single object index. Forwards to searchAll to avoid DRY
+     *
+     * @return ResponseInterface
      */
-    public function searchSingleAction()
+    public function searchSingleAction(): ResponseInterface
     {
-        $this->forward('searchAll', null, null, $this->request->getArguments());
+        $response = new ForwardResponse('searchAll');
+        $response = $response->withArguments($this->request->getArguments());
+        return $response;
     }
 
 }
