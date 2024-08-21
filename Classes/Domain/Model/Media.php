@@ -35,7 +35,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -85,7 +84,7 @@ class Media extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Files
@@ -93,7 +92,7 @@ class Media extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $files = null;
+    protected $files;
 
     /**
      * File collections
@@ -101,7 +100,7 @@ class Media extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\FileCollection>
      * @Extbase\ORM\Lazy
      */
-    protected $collections = null;
+    protected $collections;
 
     /**
      * Relations of the medium with persons, events, news, media etc.
@@ -109,7 +108,7 @@ class Media extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      * @Extbase\ORM\Lazy
      */
-    protected $relations = null;
+    protected $relations;
 
     /**
      * Selected categories for the medium
@@ -117,7 +116,7 @@ class Media extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * Returns the persistentIdentifier
@@ -133,8 +132,6 @@ class Media extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -155,8 +152,6 @@ class Media extends AbstractEntity
      * Sets the type
      *
      * @param int $type
-     *
-     * @return void
      */
     public function setType(int $type): void
     {
@@ -177,8 +172,6 @@ class Media extends AbstractEntity
      * Sets the crdate
      *
      * @param int $crdate
-     *
-     * @return void
      */
     public function setCrdate(int $crdate): void
     {
@@ -199,8 +192,6 @@ class Media extends AbstractEntity
      * Sets the title
      *
      * @param string $title
-     *
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -221,8 +212,6 @@ class Media extends AbstractEntity
      * Sets the description
      *
      * @param string $description
-     *
-     * @return void
      */
     public function setDescription(string $description): void
     {
@@ -243,8 +232,6 @@ class Media extends AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {
@@ -265,8 +252,6 @@ class Media extends AbstractEntity
      * Sets the image
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     *
-     * @return void
      */
     public function setImage($image): void
     {
@@ -287,8 +272,6 @@ class Media extends AbstractEntity
      * Sets the files
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $files
-     *
-     * @return void
      */
     public function setFiles($files): void
     {
@@ -309,8 +292,6 @@ class Media extends AbstractEntity
      * Sets the collections
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\FileCollection> $collections
-     *
-     * @return void
      */
     public function setCollections($collections): void
     {
@@ -340,8 +321,6 @@ class Media extends AbstractEntity
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     *
-     * @return void
      */
     public function setRelations($relations): void
     {
@@ -362,8 +341,6 @@ class Media extends AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     *
-     * @return void
      */
     public function setCategories($categories): void
     {

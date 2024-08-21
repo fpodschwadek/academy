@@ -25,7 +25,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'persistent_identifier,identifier,title,acronym,description',
-        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_publications.svg'
+        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_publications.svg',
     ],
     'interface' => [
         'showRecordFieldList' => '
@@ -92,7 +92,7 @@ return [
                 sys_language_uid,
                 l10n_parent,
                 l10n_diffsource,
-        '
+        ',
         ],
     ],
     'palettes' => [
@@ -110,11 +110,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -140,7 +140,7 @@ return [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '255',
-            ]
+            ],
         ],
         'hidden' => [
             'exclude' => 1,
@@ -175,7 +175,7 @@ return [
                 'default' => '0',
                 'range' => [
                     'upper' => mktime(0, 0, 0, 12, 31, date('Y') + 10),
-                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y')),
                 ],
             ],
         ],
@@ -186,7 +186,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'readOnly' => 1
+                'readOnly' => 1,
             ],
         ],
         'identifier' => [
@@ -195,7 +195,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'title' => [
@@ -204,7 +204,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'subtitle' => [
@@ -213,7 +213,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'abbreviation' => [
@@ -222,7 +222,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim, required'
+                'eval' => 'trim, required',
             ],
         ],
         'volume' => [
@@ -231,7 +231,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'number' => [
@@ -240,7 +240,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'issue' => [
@@ -249,7 +249,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'edition' => [
@@ -258,7 +258,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'series' => [
@@ -267,7 +267,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'start_page' => [
@@ -276,7 +276,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'end_page' => [
@@ -285,7 +285,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'total_pages' => [
@@ -294,7 +294,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'slug' => [
@@ -311,7 +311,7 @@ return [
                 ],
                 'fallbackCharacter' => '-',
                 'eval' => 'uniqueInSite',
-                'default' => ''
+                'default' => '',
             ],
         ],
         'date_range' => [
@@ -335,7 +335,7 @@ return [
                     'levelLinksPosition' => 'bottom',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
+                    'showAllLocalizationLink' => 1,
                 ],
             ],
         ],
@@ -362,26 +362,29 @@ return [
         'image' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_publications.image',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
+                'image',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                    ],
+                    'minitems' => 0,
+                    'maxitems' => 1,
+                    'foreign_types' => [
+                        '0' => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette',
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette',
+                        ],
+                    ],
                 ],
-                'minitems' => 0,
-                'maxitems' => 1,
-                'foreign_types' => [
-                    '0' => [
-                        'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                    ],
-                    File::FILETYPE_IMAGE => [
-                        'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                    ],
-                ]
-            ],
-            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
         ],
         'description' => [
             'exclude' => 1,
@@ -426,12 +429,12 @@ return [
                     'useSortable' => true,
                     'enabledControls' => [
                         'info' => false,
-                    ]
+                    ],
                 ],
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
         'relations' => [
             'exclude' => 1,
@@ -448,7 +451,7 @@ return [
                 'maxitems' => 9999,
                 'behaviour' => [
                     'disableMovingChildrenWithParent' => 1,
-//                    'allowLanguageSynchronization' => true,
+                    //                    'allowLanguageSynchronization' => true,
                 ],
                 'appearance' => [
                     'collapseAll' => 1,
@@ -463,51 +466,51 @@ return [
                                 'items' => [
                                     90 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.90',
-                                        '90'
+                                        '90',
                                     ],
                                     91 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.91',
-                                        '91'
+                                        '91',
                                     ],
                                     92 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.92',
-                                        '92'
+                                        '92',
                                     ],
                                     93 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.93',
-                                        '93'
+                                        '93',
                                     ],
                                     94 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.94',
-                                        '94'
+                                        '94',
                                     ],
                                     95 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.95',
-                                        '95'
+                                        '95',
                                     ],
                                     96 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.96',
-                                        '96'
+                                        '96',
                                     ],
                                     77 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.77',
-                                        '77'
+                                        '77',
                                     ],
                                     86 => [
                                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.86',
-                                        '86'
+                                        '86',
                                     ],
-                                ]
-                            ]
-                        ]
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
         ],
         'categories' => [
             'config' => [
-                'type' => 'category'
-            ]
-        ]
+                'type' => 'category',
+            ],
+        ],
     ],
 ];

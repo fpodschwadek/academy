@@ -31,10 +31,8 @@ use Digicademy\Academy\Domain\Repository\PersonsRepository;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-
 class PersonsController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\PersonsRepository
      */
@@ -58,8 +56,6 @@ class PersonsController extends ActionController
 
     /**
      * Displays a list of persons, possibly filtered by categories
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -87,19 +83,16 @@ class PersonsController extends ActionController
     {
         $persons = $this->personsRepository->findByRole($this->settings['selectedRole']);
         if ($persons->count() > 0) {
-            $this->forward('list', null, null, array('persons' => $persons));
+            $this->forward('list', null, null, ['persons' => $persons]);
         } else {
             $this->forward('list');
         }
     }
 
-
     /**
      * Displays a person by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Persons $person
-     *
-     * @return void
      */
     public function showAction(Persons $person)
     {

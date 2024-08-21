@@ -26,10 +26,10 @@ namespace Digicademy\Academy\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Reflection\ObjectAccess;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 /* Copies the standard groupedFor view helper and adds iteration; needed for eventDateMenu */
 
@@ -38,7 +38,6 @@ class GroupedForViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -98,19 +97,21 @@ class GroupedForViewHelper extends AbstractViewHelper
         }
         if (is_object($each)) {
             if (!$each instanceof \Traversable) {
-                throw new Exception('GroupedForViewHelper only supports arrays and objects implementing \Traversable interface',
-                    1253108907);
+                throw new Exception(
+                    'GroupedForViewHelper only supports arrays and objects implementing \Traversable interface',
+                    1253108907
+                );
             }
             $each = iterator_to_array($each);
         }
 
         $groups = $this->groupElements($each, $groupBy);
 
-        $iterationData = array(
+        $iterationData = [
             'index' => 0,
             'cycle' => 1,
-            'total' => count($each)
-        );
+            'total' => count($each),
+        ];
 
         foreach ($groups['values'] as $currentGroupIndex => $group) {
             $this->templateVariableContainer->add($groupKey, $groups['keys'][$currentGroupIndex]);
@@ -146,15 +147,17 @@ class GroupedForViewHelper extends AbstractViewHelper
      */
     protected function groupElements(array $elements, $groupBy)
     {
-        $groups = array('keys' => array(), 'values' => array());
+        $groups = ['keys' => [], 'values' => []];
         foreach ($elements as $key => $value) {
             if (is_array($value)) {
                 $currentGroupIndex = isset($value[$groupBy]) ? $value[$groupBy] : null;
             } elseif (is_object($value)) {
                 $currentGroupIndex = ObjectAccess::getPropertyPath($value, $groupBy);
             } else {
-                throw new Exception('GroupedForViewHelper only supports multi-dimensional arrays and objects',
-                    1253120365);
+                throw new Exception(
+                    'GroupedForViewHelper only supports multi-dimensional arrays and objects',
+                    1253120365
+                );
             }
             $currentGroupKeyValue = $currentGroupIndex;
             if (is_object($currentGroupIndex)) {

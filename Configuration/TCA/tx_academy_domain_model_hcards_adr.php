@@ -26,7 +26,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'label,org',
-        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards_adr.svg'
+        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards_adr.svg',
     ],
     'interface' => [
         'showRecordFieldList' => '
@@ -53,7 +53,7 @@ return [
                 l10n_parent,
                 l10n_diffsource,
                 sorting
-        '
+        ',
         ],
     ],
     'palettes' => [
@@ -71,11 +71,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -100,7 +100,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'max' => '255',
-            ]
+            ],
         ],
         'sorting' => [
             'config' => [
@@ -140,7 +140,7 @@ return [
                 'default' => '0',
                 'range' => [
                     'upper' => mktime(0, 0, 0, 12, 31, date('Y') + 10),
-                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y')),
                 ],
             ],
         ],
@@ -150,7 +150,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'org' => [
@@ -160,7 +160,7 @@ return [
                 'type' => 'text',
                 'rows' => 5,
                 'cols' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'type' => [
@@ -172,36 +172,36 @@ return [
                 'items' => [
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.1',
-                        '1'
+                        '1',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.2',
-                        '2'
+                        '2',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.3',
-                        '3'
+                        '3',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.4',
-                        '4'
+                        '4',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.5',
-                        '5'
+                        '5',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.6',
-                        '6'
+                        '6',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_adr.type.I.7',
-                        '7'
+                        '7',
                     ],
                 ],
                 'size' => 1,
                 'maxitems' => 1,
-                'eval' => 'required'
+                'eval' => 'required',
             ],
         ],
         'adrcomponents' => [

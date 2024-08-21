@@ -24,7 +24,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'label,geo',
-        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards.svg'
+        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards.svg',
     ],
     'interface' => [
         'showRecordFieldList' => '
@@ -58,7 +58,7 @@ return [
                 sys_language_uid,
                 l10n_parent,
                 l10n_diffsource
-            '
+            ',
         ],
     ],
     'palettes' => [
@@ -76,11 +76,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -106,7 +106,7 @@ return [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '255',
-            ]
+            ],
         ],
         'hidden' => [
             'exclude' => 1,
@@ -141,7 +141,7 @@ return [
                 'default' => '0',
                 'range' => [
                     'upper' => mktime(0, 0, 0, 12, 31, date('Y') + 10),
-                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y')),
                 ],
             ],
         ],
@@ -152,7 +152,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'readOnly' => 1
+                'readOnly' => 1,
             ],
         ],
         'type' => [
@@ -164,11 +164,11 @@ return [
                 'items' => [
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards.type.I.1',
-                        '1'
+                        '1',
                     ],
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards.type.I.2',
-                        '2'
+                        '2',
                     ],
                 ],
                 'size' => 1,
@@ -181,7 +181,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim,required'
+                'eval' => 'trim,required',
             ],
         ],
         'adr' => [
@@ -212,7 +212,7 @@ return [
                         'params' => [
                             'table' => 'tx_academy_domain_model_hcards_adr',
                             'pid' => '###PAGE_TSCONFIG_ID###',
-                            'setValue' => 'set'
+                            'setValue' => 'set',
                         ],
                     ],
                     'edit' => [
@@ -306,7 +306,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'slug' => [
@@ -323,7 +323,7 @@ return [
                 ],
                 'fallbackCharacter' => '-',
                 'eval' => 'uniqueInSite',
-                'default' => ''
+                'default' => '',
             ],
         ],
     ],

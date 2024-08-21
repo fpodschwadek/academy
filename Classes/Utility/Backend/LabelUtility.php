@@ -27,12 +27,9 @@
 namespace Digicademy\Academy\Utility\Backend;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class LabelUtility
 {
-
     public function relationsLabel(array &$parameters)
     {
         // get basic contact information label from lang file
@@ -167,9 +164,9 @@ class LabelUtility
                 break;
             case 11:
                 if ($parameters['parent']['config']['foreign_label'] == 'projects') {
-                    $parameters['title'] = $roleAndSeparator  . $personLabel;
+                    $parameters['title'] = $roleAndSeparator . $personLabel;
                 } elseif ($parameters['parent']['config']['foreign_label'] == 'persons') {
-                    $parameters['title'] = $roleAndSeparator  . $projectLabel;
+                    $parameters['title'] = $roleAndSeparator . $projectLabel;
                 } else {
                     $parameters['title'] = $roleAndSeparator . $personLabel . ' (' . $projectLabel . ')';
                 }

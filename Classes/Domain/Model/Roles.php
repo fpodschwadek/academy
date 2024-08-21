@@ -31,7 +31,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Roles extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -63,8 +62,6 @@ class Roles extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -75,8 +72,6 @@ class Roles extends AbstractEntity
      * Sets the title
      *
      * @param string $title
-     *
-     * @return void
      */
     public function setTitle(string $title): void
     {

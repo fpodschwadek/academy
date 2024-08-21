@@ -30,7 +30,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
     /**
      * Finds selected objects
      *
@@ -43,7 +42,7 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         $query = $this->createQuery();
 
-        $constraints = array();
+        $constraints = [];
 
         $selectedObjects = GeneralUtility::trimExplode(',', $selectedObjects);
 
@@ -72,14 +71,14 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         $query = $this->createQuery();
 
-        $constraints = array();
+        $constraints = [];
 
         $selectedCategories = GeneralUtility::trimExplode(',', $selectedCategories);
 
         foreach ($selectedCategories as $selectedCategory) {
             $constraints[] = $query->contains('categories', $selectedCategory);
         }
-// TODO: implement OR mode as well
+        // TODO: implement OR mode as well
         $query->matching(
             $query->logicalAnd($constraints)
         );
@@ -92,16 +91,16 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     /**
      * Finds objects based on a specific role/relation
      *
-     * @param integer $role
+     * @param int $role
      *
      * @return object
      */
     public function findByRole($role)
     {
-// TODO: change this to allow multiple selected roles
+        // TODO: change this to allow multiple selected roles
         $query = $this->createQuery();
 
-        $constraints = array();
+        $constraints = [];
         $constraints[] = $query->equals('relations.role', $role);
 
         $query->matching(

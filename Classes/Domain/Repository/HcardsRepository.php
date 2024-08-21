@@ -30,7 +30,6 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class HcardsRepository extends CommonRepository
 {
-
-    protected $defaultOrderings = array('label' => QueryInterface::ORDER_ASCENDING);
+    protected $defaultOrderings = ['label' => QueryInterface::ORDER_ASCENDING];
 
 }

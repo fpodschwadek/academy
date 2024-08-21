@@ -26,16 +26,15 @@
 
 namespace Digicademy\Academy\ViewHelpers;
 
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 class MergeVariableViewHelper extends AbstractViewHelper
 {
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -73,8 +72,6 @@ class MergeVariableViewHelper extends AbstractViewHelper
      * Merges array2 with array1; array1 is an existing variable in the current template variable container and the key of the argument
      * is used to identify it. If it can't be identified, nothing happens. Zeros, NULL and empty values in the melted array can be removed
      * using the according arguments.
-     *
-     * @return void
      */
     public function render()
     {
@@ -102,7 +99,7 @@ class MergeVariableViewHelper extends AbstractViewHelper
             ArrayUtility::mergeRecursiveWithOverrule($melt, $array2);
             // possibly remove zeros, NULL and empty values
             if ($removeEmptyElements === true && $keepZeros === true) {
-                $melt = array_diff($melt, array(''));
+                $melt = array_diff($melt, ['']);
             } elseif ($removeEmptyElements === true && $keepZeros === false) {
                 $melt = array_filter($melt);
             }

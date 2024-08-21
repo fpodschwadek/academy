@@ -27,17 +27,16 @@ namespace Digicademy\Academy\Domain\Model;
  ***************************************************************/
 
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
+use Digicademy\ChfTime\Domain\Model\DateRanges;
 use GeorgRinger\News\Domain\Model\TtContent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Publications extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -164,14 +163,14 @@ class Publications extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Publication date of the publication
      *
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
-    protected $dateRange = null;
+    protected $dateRange;
 
     /**
      * The page where the publication details are listed
@@ -186,7 +185,7 @@ class Publications extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      * @Extbase\ORM\Lazy
      */
-    protected $relations = null;
+    protected $relations;
 
     /**
      * Selected categories for the publication
@@ -194,7 +193,7 @@ class Publications extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * Returns the persistentIdentifier
@@ -210,8 +209,6 @@ class Publications extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -232,8 +229,6 @@ class Publications extends AbstractEntity
      * Sets the identifier
      *
      * @param string $identifier
-     *
-     * @return void
      */
     public function setIdentifier(string $identifier): void
     {
@@ -254,8 +249,6 @@ class Publications extends AbstractEntity
      * Sets the title
      *
      * @param string $title
-     *
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -276,8 +269,6 @@ class Publications extends AbstractEntity
      * Sets the subtitle
      *
      * @param string $subtitle
-     *
-     * @return void
      */
     public function setSubtitle(string $subtitle): void
     {
@@ -298,8 +289,6 @@ class Publications extends AbstractEntity
      * Sets the abbreviation
      *
      * @param string $abbreviation
-     *
-     * @return void
      */
     public function setAbbreviation(string $abbreviation): void
     {
@@ -320,8 +309,6 @@ class Publications extends AbstractEntity
      * Sets the volume
      *
      * @param string $volume
-     *
-     * @return void
      */
     public function setVolume(string $volume): void
     {
@@ -342,8 +329,6 @@ class Publications extends AbstractEntity
      * Sets the number
      *
      * @param string $number
-     *
-     * @return void
      */
     public function setNumber(string $number): void
     {
@@ -364,8 +349,6 @@ class Publications extends AbstractEntity
      * Sets the issue
      *
      * @param string $issue
-     *
-     * @return void
      */
     public function setIssue(string $issue): void
     {
@@ -386,8 +369,6 @@ class Publications extends AbstractEntity
      * Sets the edition
      *
      * @param string $edition
-     *
-     * @return void
      */
     public function setEdition(string $edition): void
     {
@@ -408,8 +389,6 @@ class Publications extends AbstractEntity
      * Sets the series
      *
      * @param string $series
-     *
-     * @return void
      */
     public function setSeries(string $series): void
     {
@@ -430,8 +409,6 @@ class Publications extends AbstractEntity
      * Sets the startPage
      *
      * @param string $startPage
-     *
-     * @return void
      */
     public function setStartPage(string $startPage): void
     {
@@ -452,8 +429,6 @@ class Publications extends AbstractEntity
      * Sets the endPage
      *
      * @param string $endPage
-     *
-     * @return void
      */
     public function setEndPage(string $endPage): void
     {
@@ -474,8 +449,6 @@ class Publications extends AbstractEntity
      * Sets the totalPages
      *
      * @param string $totalPages
-     *
-     * @return void
      */
     public function setTotalPages(string $totalPages): void
     {
@@ -496,8 +469,6 @@ class Publications extends AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {
@@ -518,8 +489,6 @@ class Publications extends AbstractEntity
      * Sets the description
      *
      * @param string $description
-     *
-     * @return void
      */
     public function setDescription(string $description): void
     {
@@ -540,8 +509,6 @@ class Publications extends AbstractEntity
      * Sets the bibliographicNote
      *
      * @param string $bibliographicNote
-     *
-     * @return void
      */
     public function setBibliographicNote(string $bibliographicNote): void
     {
@@ -562,7 +529,6 @@ class Publications extends AbstractEntity
      * Set content element list
      *
      * @param ObjectStorage $contentElements content elements
-     * @return void
      */
     public function setContentElements(ObjectStorage $contentElements): void
     {
@@ -583,8 +549,6 @@ class Publications extends AbstractEntity
      * Sets the image
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     *
-     * @return void
      */
     public function setImage($image): void
     {
@@ -605,8 +569,6 @@ class Publications extends AbstractEntity
      * Sets the dateRange
      *
      * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     *
-     * @return void
      */
     public function setDateRange(DateRanges $dateRange): void
     {
@@ -627,8 +589,6 @@ class Publications extends AbstractEntity
      * Sets the page
      *
      * @param int $page
-     *
-     * @return void
      */
     public function setPage(int $page): void
     {
@@ -658,8 +618,6 @@ class Publications extends AbstractEntity
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     *
-     * @return void
      */
     public function setRelations($relations): void
     {
@@ -680,8 +638,6 @@ class Publications extends AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     *
-     * @return void
      */
     public function setCategories($categories): void
     {

@@ -27,10 +27,9 @@
 namespace Digicademy\Academy\Controller;
 
 use Digicademy\Academy\Domain\Repository\HcardsRepository;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class HcardsController extends ActionController
 {
@@ -39,13 +38,10 @@ class HcardsController extends ActionController
      */
     public function __construct(
         protected readonly HcardsRepository $hcardsRepository
-    )
-    {}
+    ) {}
 
     /**
      * Initializes the current action
-     *
-     * @return void
      */
     public function initializeAction(): void
     {
@@ -56,8 +52,6 @@ class HcardsController extends ActionController
 
     /**
      * Displays hcards by their uid
-     *
-     * @return void
      */
     public function listSelectedAction(): void
     {

@@ -14,7 +14,7 @@ $tca = [
             'type' => 'input',
             'size' => 30,
             'eval' => 'trim,',
-            'readOnly' => 1
+            'readOnly' => 1,
         ],
     ],
 ];

@@ -33,7 +33,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class MediaController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\MediaRepository
      */
@@ -57,8 +56,6 @@ class MediaController extends ActionController
 
     /**
      * Displays a list of media
-     *
-     * @return void
      */
     public function listAction(): void
     {
@@ -72,8 +69,6 @@ class MediaController extends ActionController
      * Displays a list of media, possibly filtered by categories
      *
      * @param int $type
-     *
-     * @return void
      */
     public function listByTypesAction($type): int
     {
@@ -84,8 +79,6 @@ class MediaController extends ActionController
 
     /**
      * Displays a list of media, grouped by their type
-     *
-     * @return void
      */
     public function listByGroupsAction(): void
     {
@@ -97,8 +90,6 @@ class MediaController extends ActionController
 
     /**
      * Displays a list of the most recently created media
-     *
-     * @return void
      */
     public function listByRecentAction(): void
     {
@@ -111,8 +102,6 @@ class MediaController extends ActionController
      * Displays a medium by uid
      *
      * @param Media $medium
-     *
-     * @return void
      */
     public function showAction(Media $medium): void
     {
@@ -127,8 +116,6 @@ class MediaController extends ActionController
 
     /**
      * Sets the medium vor the viewer from plugin settings
-     *
-     * @return void
      */
     public function initializeViewerAction(): void
     {
@@ -139,8 +126,6 @@ class MediaController extends ActionController
      * Viewer for media to be inserted on standard pages
      *
      * @param \Digicademy\Academy\Domain\Model\Media $medium
-     *
-     * @return void
      */
     public function viewerAction(Media $medium): void
     {

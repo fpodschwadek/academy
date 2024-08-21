@@ -26,13 +26,12 @@ namespace Digicademy\Academy\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Digicademy\ChfTime\Domain\Model\DateRanges;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
 
 class Relations extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -45,7 +44,7 @@ class Relations extends AbstractEntity
     /**
      * The type of relation
      *
-     * @var integer $type
+     * @var int $type
      * @Extbase\Validate("NotEmpty")
      */
     protected $type;
@@ -71,7 +70,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Projects $project
      * @Extbase\ORM\Lazy
      */
-    protected $project = null;
+    protected $project;
 
     /**
      * Related project
@@ -79,7 +78,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Projects $projectSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $projectSymmetric = null;
+    protected $projectSymmetric;
 
     /**
      * Related Person
@@ -87,7 +86,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Persons $person
      * @Extbase\ORM\Lazy
      */
-    protected $person = null;
+    protected $person;
 
     /**
      * Related Person
@@ -95,7 +94,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Persons $personSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $personSymmetric = null;
+    protected $personSymmetric;
 
     /**
      * Related Hcard
@@ -103,7 +102,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Hcards $hcard
      * @Extbase\ORM\Lazy
      */
-    protected $hcard = null;
+    protected $hcard;
 
     /**
      * Related Unit
@@ -111,7 +110,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Units $unit
      * @Extbase\ORM\Lazy
      */
-    protected $unit = null;
+    protected $unit;
 
     /**
      * Related Unit
@@ -119,7 +118,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Units $unitSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $unitSymmetric = null;
+    protected $unitSymmetric;
 
     /**
      * Related News
@@ -127,7 +126,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\News $news
      * @Extbase\ORM\Lazy
      */
-    protected $news = null;
+    protected $news;
 
     /**
      * Related News
@@ -135,7 +134,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\News $newsSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $newsSymmetric = null;
+    protected $newsSymmetric;
 
     /**
      * Related Event
@@ -143,7 +142,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Events $event
      * @Extbase\ORM\Lazy
      */
-    protected $event = null;
+    protected $event;
 
     /**
      * Related Event
@@ -151,7 +150,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Events $eventSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $eventSymmetric = null;
+    protected $eventSymmetric;
 
     /**
      * Related medium
@@ -159,7 +158,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Media $medium
      * @Extbase\ORM\Lazy
      */
-    protected $medium = null;
+    protected $medium;
 
     /**
      * Related medium
@@ -167,7 +166,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Media $mediumSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $mediumSymmetric = null;
+    protected $mediumSymmetric;
 
     /**
      * Related Service
@@ -175,7 +174,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Services $service
      * @Extbase\ORM\Lazy
      */
-    protected $service = null;
+    protected $service;
 
     /**
      * Related Service
@@ -183,16 +182,15 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Services $serviceSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $serviceSymmetric = null;
+    protected $serviceSymmetric;
 
     /**
      * Related Products
      *
      * @var \Digicademy\Academy\Domain\Model\Products $product
      * @Extbase\ORM\Lazy
-     *
      */
-    protected $product = null;
+    protected $product;
 
     /**
      * Related symmetric products
@@ -200,16 +198,15 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Products $productSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $productSymmetric = null;
+    protected $productSymmetric;
 
     /**
      * Related Publications
      *
      * @var \Digicademy\Academy\Domain\Model\Publications $publication
      * @Extbase\ORM\Lazy
-     *
      */
-    protected $publication = null;
+    protected $publication;
 
     /**
      * Related symmetric publication
@@ -217,7 +214,7 @@ class Relations extends AbstractEntity
      * @var \Digicademy\Academy\Domain\Model\Publications $publicationSymmetric
      * @Extbase\ORM\Lazy
      */
-    protected $publicationSymmetric = null;
+    protected $publicationSymmetric;
 
     /**
      * Freetext relation
@@ -231,7 +228,7 @@ class Relations extends AbstractEntity
      *
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
-    protected $dateRange = null;
+    protected $dateRange;
 
     /**
      * Returns the persistentIdentifier
@@ -247,8 +244,6 @@ class Relations extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -269,8 +264,6 @@ class Relations extends AbstractEntity
      * Sets the type
      *
      * @param int $type
-     *
-     * @return void
      */
     public function setType(int $type): void
     {
@@ -291,8 +284,6 @@ class Relations extends AbstractEntity
      * setRole
      *
      * @param \Digicademy\Academy\Domain\Model\Roles $role
-     *
-     * @return void
      */
     public function setRole(Roles $role): void
     {
@@ -313,8 +304,6 @@ class Relations extends AbstractEntity
      * setRoleFreetext
      *
      * @param string $roleFreetext
-     *
-     * @return void
      */
     public function setRoleFreetext(string $roleFreetext): void
     {
@@ -335,8 +324,6 @@ class Relations extends AbstractEntity
      * Sets the project
      *
      * @param \Digicademy\Academy\Domain\Model\Projects $project
-     *
-     * @return void
      */
     public function setProject(Projects $project): void
     {
@@ -357,8 +344,6 @@ class Relations extends AbstractEntity
      * Sets the projectSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Projects $projectSymmetric
-     *
-     * @return void
      */
     public function setProjectSymmetric(Projects $projectSymmetric): void
     {
@@ -379,8 +364,6 @@ class Relations extends AbstractEntity
      * Sets the person
      *
      * @param \Digicademy\Academy\Domain\Model\Persons $person
-     *
-     * @return void
      */
     public function setPerson(Persons $person): void
     {
@@ -401,8 +384,6 @@ class Relations extends AbstractEntity
      * Sets the personSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Persons $personSymmetric
-     *
-     * @return void
      */
     public function setPersonSymmetric(Persons $personSymmetric): void
     {
@@ -423,8 +404,6 @@ class Relations extends AbstractEntity
      * Sets the person
      *
      * @param \Digicademy\Academy\Domain\Model\Hcards $hcard
-     *
-     * @return void
      */
     public function setHcard(Hcards $hcard): void
     {
@@ -445,8 +424,6 @@ class Relations extends AbstractEntity
      * Sets the person
      *
      * @param \Digicademy\Academy\Domain\Model\Units $unit
-     *
-     * @return void
      */
     public function setUnit(Units $unit): void
     {
@@ -467,8 +444,6 @@ class Relations extends AbstractEntity
      * Sets the person
      *
      * @param \Digicademy\Academy\Domain\Model\Units $unitSymmetric
-     *
-     * @return void
      */
     public function setUnitSymmetric(Units $unitSymmetric): void
     {
@@ -489,8 +464,6 @@ class Relations extends AbstractEntity
      * Sets the news
      *
      * @param \Digicademy\Academy\Domain\Model\News $news
-     *
-     * @return void
      */
     public function setNews(News $news): void
     {
@@ -511,8 +484,6 @@ class Relations extends AbstractEntity
      * Sets the newsSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\News $newsSymmetric
-     *
-     * @return void
      */
     public function setNewsSymmetric(News $newsSymmetric): void
     {
@@ -533,8 +504,6 @@ class Relations extends AbstractEntity
      * Sets the event
      *
      * @param \Digicademy\Academy\Domain\Model\Events $event
-     *
-     * @return void
      */
     public function setEvent(Events $event): void
     {
@@ -555,8 +524,6 @@ class Relations extends AbstractEntity
      * Sets the eventSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Events $eventSymmetric
-     *
-     * @return void
      */
     public function setEventSymmetric(Events $eventSymmetric): void
     {
@@ -577,8 +544,6 @@ class Relations extends AbstractEntity
      * Sets the medium
      *
      * @param \Digicademy\Academy\Domain\Model\Media $medium
-     *
-     * @return void
      */
     public function setMedium(Media $medium): void
     {
@@ -599,8 +564,6 @@ class Relations extends AbstractEntity
      * Sets the mediumSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Media $mediumSymmetric
-     *
-     * @return void
      */
     public function setMediumSymmetric(Media $mediumSymmetric): void
     {
@@ -621,8 +584,6 @@ class Relations extends AbstractEntity
      * Sets the service
      *
      * @param \Digicademy\Academy\Domain\Model\Services $service
-     *
-     * @return void
      */
     public function setService(Services $service): void
     {
@@ -643,8 +604,6 @@ class Relations extends AbstractEntity
      * Sets the serviceSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Services $serviceSymmetric
-     *
-     * @return void
      */
     public function setServiceSymmetric(Services $serviceSymmetric): void
     {
@@ -665,8 +624,6 @@ class Relations extends AbstractEntity
      * Sets the product
      *
      * @param \Digicademy\Academy\Domain\Model\Products $product
-     *
-     * @return void
      */
     public function setProduct(Products $product): void
     {
@@ -687,8 +644,6 @@ class Relations extends AbstractEntity
      * Sets the productSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Products $productSymmetric
-     *
-     * @return void
      */
     public function setProductSymmetric(Products $productSymmetric): void
     {
@@ -709,8 +664,6 @@ class Relations extends AbstractEntity
      * Sets the publication
      *
      * @param \Digicademy\Academy\Domain\Model\Publications $publication
-     *
-     * @return void
      */
     public function setPublication(Publications $publication): void
     {
@@ -731,8 +684,6 @@ class Relations extends AbstractEntity
      * Sets the publicationSymmetric
      *
      * @param \Digicademy\Academy\Domain\Model\Publications $publicationSymmetric
-     *
-     * @return void
      */
     public function setPublicationSymmetric(Publications $publicationSymmetric): void
     {
@@ -753,8 +704,6 @@ class Relations extends AbstractEntity
      * setFreetext
      *
      * @param string $freetext
-     *
-     * @return void
      */
     public function setFreetext(string $freetext): void
     {
@@ -775,8 +724,6 @@ class Relations extends AbstractEntity
      * Sets the dateRange
      *
      * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     *
-     * @return void
      */
     public function setDateRange(DateRanges $dateRange): void
     {

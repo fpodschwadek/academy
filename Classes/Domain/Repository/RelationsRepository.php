@@ -26,21 +26,22 @@ namespace Digicademy\Academy\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class RelationsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'type' => QueryInterface::ORDER_ASCENDING,
         'role' => QueryInterface::ORDER_ASCENDING,
-        'persistent_identifier' => QueryInterface::ORDER_ASCENDING
-    );
+        'persistent_identifier' => QueryInterface::ORDER_ASCENDING,
+    ];
 
-    public function initializeObject() {
-      /** @var Typo3QuerySettings $querySettings */
-      $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
-      $querySettings->setRespectStoragePage(false);
-      $this->setDefaultQuerySettings($querySettings);
+    public function initializeObject()
+    {
+        /** @var Typo3QuerySettings $querySettings */
+        $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
+        $querySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($querySettings);
     }
 }

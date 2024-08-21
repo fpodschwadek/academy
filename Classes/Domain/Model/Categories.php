@@ -27,7 +27,7 @@ namespace Digicademy\Academy\Domain\Model;
  ***************************************************************/
 
 use TYPO3\CMS\Extbase\Annotation as Extbase;
-use \TYPO3\CMS\Extbase\Domain\Model\Category;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 
 class Categories extends Category
 {
@@ -54,8 +54,6 @@ class Categories extends Category
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier($persistentIdentifier): void
     {

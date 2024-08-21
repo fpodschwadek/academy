@@ -34,7 +34,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class ServicesController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\ServicesRepository
      */
@@ -58,8 +57,6 @@ class ServicesController extends ActionController
 
     /**
      * Initializes the current action
-     *
-     * @return void
      */
     public function initializeAction()
     {
@@ -75,7 +72,7 @@ class ServicesController extends ActionController
                     $selectedServices = GeneralUtility::trimExplode(',', $this->settings['selectedServices']);
                     $this->request->setArgument('service', $selectedServices[0]);
                 }
-            break;
+                break;
 
             default:
                 break;
@@ -84,8 +81,6 @@ class ServicesController extends ActionController
 
     /**
      * Displays a list of services
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -112,8 +107,6 @@ class ServicesController extends ActionController
      * Displays a service by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Services $service
-     *
-     * @return void
      */
     public function showAction(Services $service)
     {

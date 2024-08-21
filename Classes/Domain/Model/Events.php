@@ -27,21 +27,19 @@ namespace Digicademy\Academy\Domain\Model;
  ***************************************************************/
 
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use GeorgRinger\Eventnews\Domain\Model\News as EventNews;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Events extends EventNews
 {
-
     /**
      * Relations of the event with persons, projects, events, news, media etc.
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      */
-    protected $eventRelations = null;
+    protected $eventRelations;
 
     /**
      * Returns the relations
@@ -67,8 +65,6 @@ class Events extends EventNews
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $eventRelations
-     *
-     * @return void
      */
     public function setEventRelations($eventRelations): void
     {

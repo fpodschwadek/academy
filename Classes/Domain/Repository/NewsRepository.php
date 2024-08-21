@@ -31,7 +31,6 @@ use GeorgRinger\News\Domain\Repository\NewsRepository as GeorgRingerNewsReposito
 
 class NewsRepository extends GeorgRingerNewsRepository
 {
-
     /**
      * Get the count of news records by month/year and
      * returns the result compiled as array; overrides the original function
@@ -43,48 +42,48 @@ class NewsRepository extends GeorgRingerNewsRepository
      */
     public function countByDate(DemandInterface $demand): array
     {
-        $data = array();
+        $data = [];
 
-// @TODO: 10.4 migration; check if this repository method still makes sense or should be removed
-die('Digicademy\Academy\Domain\Repository\NewsRepository needs API migration to TYPO3 10.4');
+        // @TODO: 10.4 migration; check if this repository method still makes sense or should be removed
+        die('Digicademy\Academy\Domain\Repository\NewsRepository needs API migration to TYPO3 10.4');
 
-/*
-        $dateField = trim($GLOBALS['TYPO3_DB']->fullQuoteStr($demand->getDateField(), 'tx_news_domain_model_news'),'\'');
+        /*
+                $dateField = trim($GLOBALS['TYPO3_DB']->fullQuoteStr($demand->getDateField(), 'tx_news_domain_model_news'),'\'');
 
-        $sql = $this->findDemandedRaw($demand);
-        $sql = 'SELECT FROM_UNIXTIME(' . $dateField . ', "%m") AS "_Month",' .
-            ' FROM_UNIXTIME(' . $dateField . ', "%Y") AS "_Year" ,' .
-            ' count(FROM_UNIXTIME(' . $dateField . ', "%m")) as count_month,' .
-            ' count(FROM_UNIXTIME(' . $dateField . ', "%y")) as count_year' .
-            ' FROM tx_news_domain_model_news ' . substr($sql, strpos($sql, 'WHERE '));
+                $sql = $this->findDemandedRaw($demand);
+                $sql = 'SELECT FROM_UNIXTIME(' . $dateField . ', "%m") AS "_Month",' .
+                    ' FROM_UNIXTIME(' . $dateField . ', "%Y") AS "_Year" ,' .
+                    ' count(FROM_UNIXTIME(' . $dateField . ', "%m")) as count_month,' .
+                    ' count(FROM_UNIXTIME(' . $dateField . ', "%y")) as count_year' .
+                    ' FROM tx_news_domain_model_news ' . substr($sql, strpos($sql, 'WHERE '));
 
-        // strip unwanted order by
-        $sql = $GLOBALS['TYPO3_DB']->stripOrderBy($sql);
+                // strip unwanted order by
+                $sql = $GLOBALS['TYPO3_DB']->stripOrderBy($sql);
 
-        // group by custom month/year fields
-        $orderDirection = strtolower($demand->getOrder());
-        if ($orderDirection !== 'desc' && $orderDirection != 'asc') {
-            $orderDirection = 'asc';
-        }
-        $sql .= ' GROUP BY _Month, _Year ORDER BY _Year ' . $orderDirection . ', _Month ' . $orderDirection;
+                // group by custom month/year fields
+                $orderDirection = strtolower($demand->getOrder());
+                if ($orderDirection !== 'desc' && $orderDirection != 'asc') {
+                    $orderDirection = 'asc';
+                }
+                $sql .= ' GROUP BY _Month, _Year ORDER BY _Year ' . $orderDirection . ', _Month ' . $orderDirection;
 
-        $res = $GLOBALS['TYPO3_DB']->sql_query($sql);
-        while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-            $data['single'][$row['_Year']][$row['_Month']] = $row['count_month'];
-        }
-        $GLOBALS['TYPO3_DB']->sql_free_result($res);
+                $res = $GLOBALS['TYPO3_DB']->sql_query($sql);
+                while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
+                    $data['single'][$row['_Year']][$row['_Month']] = $row['count_month'];
+                }
+                $GLOBALS['TYPO3_DB']->sql_free_result($res);
 
-        // Add totals
-        foreach ($data['single'] as $year => $months) {
-            $countOfYear = 0;
-            foreach ($months as $month) {
-                $countOfYear += $month;
-            }
-            $data['total'][$year] = $countOfYear;
-        }
+                // Add totals
+                foreach ($data['single'] as $year => $months) {
+                    $countOfYear = 0;
+                    foreach ($months as $month) {
+                        $countOfYear += $month;
+                    }
+                    $data['total'][$year] = $countOfYear;
+                }
 
-        return $data;
-*/
+                return $data;
+        */
     }
 
 }

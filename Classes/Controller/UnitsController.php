@@ -34,7 +34,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class UnitsController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\UnitsRepository
      */
@@ -59,7 +58,6 @@ class UnitsController extends ActionController
     /**
      * Initializes the current action
      *
-     * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidArgumentNameException
      */
     public function initializeAction()
@@ -76,6 +74,7 @@ class UnitsController extends ActionController
                     $selectedUnits = GeneralUtility::trimExplode(',', $this->settings['selectedUnits']);
                     $this->request->setArgument('unit', $selectedUnits[0]);
                 }
+                // no break
             default:
                 break;
         }
@@ -83,8 +82,6 @@ class UnitsController extends ActionController
 
     /**
      * Displays a list of units
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -111,8 +108,6 @@ class UnitsController extends ActionController
      * Displays a unit by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Units $unit
-     *
-     * @return void
      */
     public function showAction(Units $unit)
     {

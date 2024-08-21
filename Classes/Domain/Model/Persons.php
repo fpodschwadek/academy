@@ -26,18 +26,17 @@ namespace Digicademy\Academy\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Digicademy\Academy\Domain\Repository\RelationsRepository;
+use Digicademy\ChfTime\Domain\Model\DateRanges;
 use GeorgRinger\News\Domain\Model\TtContent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Persons extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -101,14 +100,14 @@ class Persons extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Life date of the person
      *
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
-    protected $dateRange = null;
+    protected $dateRange;
 
     /**
      * Additional free text information about a person
@@ -158,7 +157,7 @@ class Persons extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      * @Extbase\ORM\Lazy
      */
-    protected $relations = null;
+    protected $relations;
 
     /**
      * Selected categories for the person
@@ -166,7 +165,7 @@ class Persons extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * Returns the persistentIdentifier
@@ -182,8 +181,6 @@ class Persons extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -204,8 +201,6 @@ class Persons extends AbstractEntity
      * Sets the givenName
      *
      * @param string $givenName
-     *
-     * @return void
      */
     public function setGivenName(string $givenName): void
     {
@@ -226,8 +221,6 @@ class Persons extends AbstractEntity
      * Sets the additionalName
      *
      * @param string $additionalName
-     *
-     * @return void
      */
     public function setAdditionalName(string $additionalName): void
     {
@@ -248,8 +241,6 @@ class Persons extends AbstractEntity
      * Sets the familyName
      *
      * @param string $familyName
-     *
-     * @return void
      */
     public function setFamilyName(string $familyName): void
     {
@@ -270,8 +261,6 @@ class Persons extends AbstractEntity
      * Sets the honorific prefix
      *
      * @param string $honorificPrefix
-     *
-     * @return void
      */
     public function setHonorificPrefix(string $honorificPrefix): void
     {
@@ -292,8 +281,6 @@ class Persons extends AbstractEntity
      * Sets the honorific suffix
      *
      * @param string $honorificSuffix
-     *
-     * @return void
      */
     public function setHonorificSuffix(string $honorificSuffix): void
     {
@@ -314,8 +301,6 @@ class Persons extends AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {
@@ -336,8 +321,6 @@ class Persons extends AbstractEntity
      * Sets the image
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     *
-     * @return void
      */
     public function setImage($image): void
     {
@@ -358,8 +341,6 @@ class Persons extends AbstractEntity
      * Sets the dateRange
      *
      * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     *
-     * @return void
      */
     public function setDateRange(DateRanges $dateRange): void
     {
@@ -380,7 +361,6 @@ class Persons extends AbstractEntity
      * Set content element list
      *
      * @param ObjectStorage $contentElements content elements
-     * @return void
      */
     public function setContentElements(ObjectStorage $contentElements): void
     {
@@ -401,8 +381,6 @@ class Persons extends AbstractEntity
      * Sets the page
      *
      * @param int $page
-     *
-     * @return void
      */
     public function setPage(int $page): void
     {
@@ -423,8 +401,6 @@ class Persons extends AbstractEntity
      * Sets the CV
      *
      * @param string $cv
-     *
-     * @return void
      */
     public function setCv(string $cv): void
     {
@@ -445,8 +421,6 @@ class Persons extends AbstractEntity
      * Sets the expertise
      *
      * @param string $expertise
-     *
-     * @return void
      */
     public function setExpertise(string $expertise): void
     {
@@ -467,8 +441,6 @@ class Persons extends AbstractEntity
      * Sets the awards
      *
      * @param string $awards
-     *
-     * @return void
      */
     public function setAwards(string $awards): void
     {
@@ -489,8 +461,6 @@ class Persons extends AbstractEntity
      * Sets the publications
      *
      * @param string $publications
-     *
-     * @return void
      */
     public function setPublications(string $publications): void
     {
@@ -520,8 +490,6 @@ class Persons extends AbstractEntity
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     *
-     * @return void
      */
     public function setRelations($relations): void
     {
@@ -542,8 +510,6 @@ class Persons extends AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     *
-     * @return void
      */
     public function setCategories($categories): void
     {

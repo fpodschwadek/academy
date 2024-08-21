@@ -26,7 +26,4 @@ namespace Digicademy\Academy\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-class EventsRepository extends \GeorgRinger\Eventnews\Domain\Repository\AbstractRepository
-{
-
-}
+class EventsRepository extends \GeorgRinger\Eventnews\Domain\Repository\AbstractRepository {}

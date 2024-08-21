@@ -30,8 +30,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class MediaRepository extends CommonRepository
 {
-
-    protected $defaultOrderings = array('crdate' => QueryInterface::ORDER_DESCENDING);
+    protected $defaultOrderings = ['crdate' => QueryInterface::ORDER_DESCENDING];
 
     /**
      * Finds 20 most recent objects grouped by media type
@@ -76,14 +75,14 @@ class MediaRepository extends CommonRepository
     /**
      * Finds media by type
      *
-     * @param integer $type
+     * @param int $type
      *
      * @return object
      */
     public function findByType($type)
     {
         $query = $this->createQuery();
-        $query->setOrderings(array('title' => QueryInterface::ORDER_ASCENDING));
+        $query->setOrderings(['title' => QueryInterface::ORDER_ASCENDING]);
         $query->matching(
             $query->equals('type', $type)
         );

@@ -33,13 +33,11 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
  * Fuses several relations to the same project or unit into one relation (array) and thereby collects all roles.
  * Generic would be something different, but - oh well.
  */
-
 class FuseRelationsViewHelper extends AbstractViewHelper
 {
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -68,7 +66,7 @@ class FuseRelationsViewHelper extends AbstractViewHelper
         $relations = $this->arguments['relations'];
         $type = $this->arguments['type'];
 
-        $fusedRelations = array();
+        $fusedRelations = [];
 
         if (count($relations) > 1) {
 

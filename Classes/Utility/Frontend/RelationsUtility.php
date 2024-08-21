@@ -30,7 +30,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class RelationsUtility
 {
-
     /**
      * Groups relations within an array by their respective type
      *
@@ -41,7 +40,7 @@ class RelationsUtility
     public static function groupRelationsbyType(ObjectStorage $relations)
     {
 
-        $groupedRelations = array();
+        $groupedRelations = [];
 
         if ($relations->count() > 0) {
             foreach ($relations as $relation) {

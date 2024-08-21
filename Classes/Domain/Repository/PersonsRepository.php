@@ -28,12 +28,11 @@ namespace Digicademy\Academy\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
-
 class PersonsRepository extends CommonRepository
 {
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
         'familyName' => QueryInterface::ORDER_ASCENDING,
-        'givenName' => QueryInterface::ORDER_ASCENDING
-    );
+        'givenName' => QueryInterface::ORDER_ASCENDING,
+    ];
 }

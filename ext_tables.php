@@ -117,4 +117,3 @@ ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_p
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_academy_domain_model_services', 'EXT:academy/Resources/Private/Language/locallang_csh_tx_academy_domain_model_services.xml');
 ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_services');
-

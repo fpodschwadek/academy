@@ -26,23 +26,20 @@ namespace Digicademy\Academy\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
-use \TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
-    protected $defaultOrderings = array(
-        'title' => QueryInterface::ORDER_ASCENDING
-    );
+    protected $defaultOrderings = [
+        'title' => QueryInterface::ORDER_ASCENDING,
+    ];
 
     protected $childCategoryUids = [];
 
     /**
-     * @param integer $categoryUid
-     * @param integer $maxLevels
-     * @param integer $getChildrenOnLevel
+     * @param int $categoryUid
+     * @param int $maxLevels
+     * @param int $getChildrenOnLevel
      *
      * @return array
      */
@@ -65,19 +62,20 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     }
 
     /**
-     * @param integer $categoryUid
-     * @param integer $maxLevels
-     * @param integer $currentLevel
+     * @param int $categoryUid
+     * @param int $maxLevels
+     * @param int $currentLevel
      *
-     * @return boolean
+     * @return bool
      */
-     protected function collectChildren($categoryUid, $maxLevels, $currentLevel = 1) {
+    protected function collectChildren($categoryUid, $maxLevels, $currentLevel = 1)
+    {
 
         if ($currentLevel <= $maxLevels) {
 
             $query = $this->createQuery();
 
-            $constraints = array();
+            $constraints = [];
             $constraints[] = $query->equals('parent', $categoryUid);
 
             $query->matching(
@@ -96,6 +94,6 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         }
 
         return true;
-     }
+    }
 
 }

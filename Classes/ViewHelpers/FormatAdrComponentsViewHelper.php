@@ -34,7 +34,6 @@ class FormatAdrComponentsViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -55,15 +54,15 @@ class FormatAdrComponentsViewHelper extends AbstractViewHelper
     {
         $components = $this->arguments['components'];
 
-        $componentsArray = array(
-            'pobox' => array(),
-            'ext' => array(),
-            'street' => array(),
-            'locality' => array(),
-            'region' => array(),
-            'code' => array(),
-            'country' => array(),
-        );
+        $componentsArray = [
+            'pobox' => [],
+            'ext' => [],
+            'street' => [],
+            'locality' => [],
+            'region' => [],
+            'code' => [],
+            'country' => [],
+        ];
 
         foreach ($components as $component) {
             switch ($component->getType()) {

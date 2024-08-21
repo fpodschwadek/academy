@@ -28,42 +28,29 @@ namespace Digicademy\Academy\Controller;
 
 class SearchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * Initializes the current action
-     *
-     * @return void
      */
-    public function initializeAction()
-    {
-    }
+    public function initializeAction() {}
 
     /**
      * Displays a simple search form
-     *
-     * @return void
      */
-    public function searchFormAction()
-    {
-    }
+    public function searchFormAction() {}
 
     /**
      * Sphinx search through object indexes. Either searches all indexes with a limit of 5 matches if no index
      * type is specified (searchAll) or a single index if a valid index name is submitted (forwarded from searchSingle)
-     *
-     * @return void
      */
     public function searchAllAction()
     {
-die('SearchController->searchAllAction needs to be reimplemented');
+        die('SearchController->searchAllAction needs to be reimplemented');
         if ($this->request->hasArgument('keywords')) {
         }
     }
 
     /**
      * Search through a single object index. Forwards to searchAll to avoid DRY
-     *
-     * @return void
      */
     public function searchSingleAction()
     {

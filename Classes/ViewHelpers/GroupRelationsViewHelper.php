@@ -31,11 +31,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 class GroupRelationsViewHelper extends AbstractViewHelper
 {
-
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -63,9 +61,6 @@ class GroupRelationsViewHelper extends AbstractViewHelper
         );
     }
 
-    /**
-     * @return void
-     */
     public function render()
     {
         $relations = $this->arguments['relations'];

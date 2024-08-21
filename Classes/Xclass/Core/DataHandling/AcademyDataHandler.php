@@ -17,12 +17,11 @@ namespace Digicademy\Academy\Xclass\Core\DataHandling;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\RelationHandler;
-use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
+use TYPO3\CMS\Core\Utility\MathUtility;
 
 class AcademyDataHandler extends DataHandler
 {
-
     /**
      * Processes child records in an inline (IRRE) element when the parent record is copied.
      *
@@ -75,15 +74,14 @@ class AcademyDataHandler extends DataHandler
                 // if a valid localization already exists we return immediately with its uid
                 if (is_array($possibleExistingLocalization) && $possibleExistingLocalization[0]['l10n_parent'] == $v['id']) {
                     return $possibleExistingLocalization[0]['uid'];
-                // and only if not we start the localization of the inline child
-                } else {
-                    $newId = $this->localize($v['table'], $v['id'], $language);
+                    // and only if not we start the localization of the inline child
                 }
+                $newId = $this->localize($v['table'], $v['id'], $language);
 
             } else {
                 if (!MathUtility::canBeInterpretedAsInteger($realDestPid)) {
                     $newId = $this->copyRecord($v['table'], $v['id'], -$v['id']);
-                // If the destination page id is a NEW string, keep it on the same page
+                    // If the destination page id is a NEW string, keep it on the same page
                 } elseif ($this->BE_USER->workspace > 0 && BackendUtility::isTableWorkspaceEnabled($v['table'])) {
                     // A filled $workspaceOptions indicated that this call
                     // has it's origin in previous versionizeRecord() processing
@@ -97,7 +95,7 @@ class AcademyDataHandler extends DataHandler
                             $workspaceOptions['label'] ?? 'Auto-created for WS #' . $this->BE_USER->workspace,
                             $workspaceOptions['delete'] ?? false
                         );
-                    // Otherwise just use plain copyRecord() to create placeholders etc.
+                        // Otherwise just use plain copyRecord() to create placeholders etc.
                     } else {
                         // If a record has been copied already during this request,
                         // prevent superfluous duplication and use the existing copy

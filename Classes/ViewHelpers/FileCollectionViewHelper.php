@@ -27,19 +27,17 @@ namespace Digicademy\Academy\ViewHelpers;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Resource\Collection\FolderBasedFileCollection;
+use TYPO3\CMS\Core\Resource\Collection\StaticFileCollection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3\CMS\Core\Resource\Collection\FolderBasedFileCollection;
-use TYPO3\CMS\Core\Resource\Collection\StaticFileCollection;
 
 class FileCollectionViewHelper extends AbstractViewHelper
 {
-
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -62,7 +60,10 @@ class FileCollectionViewHelper extends AbstractViewHelper
 
         $collectionRecord = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getConnectionForTable('sys_file_collection')
-            ->select(['*'], 'sys_file_collection', ['uid' => $uid]
+            ->select(
+                ['*'],
+                'sys_file_collection',
+                ['uid' => $uid]
             )->fetch();
 
         switch ($collectionRecord['type']) {

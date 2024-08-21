@@ -34,7 +34,6 @@ class FormatTelTypeComponentViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */

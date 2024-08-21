@@ -34,7 +34,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class ProductsController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\ProductsRepository
      */
@@ -58,8 +57,6 @@ class ProductsController extends ActionController
 
     /**
      * Initializes the current action
-     *
-     * @return void
      */
     public function initializeAction()
     {
@@ -84,8 +81,6 @@ class ProductsController extends ActionController
 
     /**
      * Displays a list of products
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -112,8 +107,6 @@ class ProductsController extends ActionController
      * Displays a product by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Products $product
-     *
-     * @return void
      */
     public function showAction(Products $product)
     {

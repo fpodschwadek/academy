@@ -36,7 +36,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -100,14 +99,14 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Temporal existence of the unit
      *
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
-    protected $dateRange = null;
+    protected $dateRange;
 
     /**
      * Relations of the unit with persons, events, news, media etc.
@@ -115,7 +114,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      * @Extbase\ORM\Lazy
      */
-    protected $relations = null;
+    protected $relations;
 
     /**
      * Selected categories for the unit
@@ -123,7 +122,7 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * Returns the persistentIdentifier
@@ -139,8 +138,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -151,8 +148,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the title
      *
      * @param string $title
-     *
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -183,8 +178,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the acronym
      *
      * @param string $acronym
-     *
-     * @return void
      */
     public function setAcronym(string $acronym): void
     {
@@ -205,8 +198,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {
@@ -227,8 +218,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the sorting
      *
      * @param string $sorting
-     *
-     * @return void
      */
     public function setSorting(string $sorting): void
     {
@@ -249,8 +238,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the description
      *
      * @param string $description
-     *
-     * @return void
      */
     public function setDescription(string $description): void
     {
@@ -271,7 +258,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Set content element list
      *
      * @param ObjectStorage $contentElements content elements
-     * @return void
      */
     public function setContentElements(ObjectStorage $contentElements): void
     {
@@ -292,8 +278,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the page
      *
      * @param int $page
-     *
-     * @return void
      */
     public function setPage(int $page): void
     {
@@ -314,8 +298,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the image
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     *
-     * @return void
      */
     public function setImage($image): void
     {
@@ -336,8 +318,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the dateRange
      *
      * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     *
-     * @return void
      */
     public function setDateRange(DateRanges $dateRange): void
     {
@@ -367,8 +347,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     *
-     * @return void
      */
     public function setRelations($relations): void
     {
@@ -389,8 +367,6 @@ class Units extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     *
-     * @return void
      */
     public function setCategories($categories): void
     {

@@ -24,7 +24,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'value',
-        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards_email.svg'
+        'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards_email.svg',
     ],
     'interface' => [
         'showRecordFieldList' => '
@@ -51,7 +51,7 @@ return [
                 l10n_parent,
                 l10n_diffsource,
                 sorting
-        '
+        ',
         ],
     ],
     'palettes' => [
@@ -69,11 +69,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -98,7 +98,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'max' => '255',
-            ]
+            ],
         ],
         'hidden' => [
             'exclude' => 1,
@@ -138,7 +138,7 @@ return [
                 'default' => '0',
                 'range' => [
                     'upper' => mktime(0, 0, 0, 12, 31, date('Y') + 10),
-                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+                    'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y')),
                 ],
             ],
         ],
@@ -165,12 +165,12 @@ return [
                 'items' => [
                     [
                         'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards_email.type.I.31',
-                        '31'
+                        '31',
                     ],
                 ],
                 'size' => 1,
                 'maxitems' => 1,
-                'eval' => 'required'
+                'eval' => 'required',
             ],
         ],
         'value' => [
@@ -180,7 +180,7 @@ return [
                 'type' => 'input',
                 'size' => '255',
                 'max' => '255',
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'freetext' => [
@@ -190,7 +190,7 @@ return [
                 'type' => 'input',
                 'size' => '255',
                 'max' => '255',
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
     ],

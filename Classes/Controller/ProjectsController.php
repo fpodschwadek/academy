@@ -26,14 +26,13 @@ namespace Digicademy\Academy\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Digicademy\Academy\Domain\Model\Projects;
+use Digicademy\Academy\Domain\Repository\ProjectsRepository;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use Digicademy\Academy\Domain\Repository\ProjectsRepository;
-use Digicademy\Academy\Domain\Model\Projects;
 
 class ProjectsController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\ProjectsRepository
      */
@@ -49,16 +48,13 @@ class ProjectsController extends ActionController
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
         ProjectsRepository $projectsRepository
-    )
-    {
+    ) {
         $this->injectConfigurationManager($configurationManager);
         $this->projectsRepository = $projectsRepository;
     }
 
     /**
      * Initializes the current action
-     *
-     * @return void
      */
     public function initializeAction()
     {
@@ -69,8 +65,6 @@ class ProjectsController extends ActionController
 
     /**
      * Displays a list of projects, possibly filtered by categories
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -85,8 +79,6 @@ class ProjectsController extends ActionController
      * Displays a selected list of projects
      *
      * @param \Digicademy\Academy\Domain\Model\Projects $project
-     *
-     * @return void
      */
     public function listBySelectionAction()
     {
@@ -100,8 +92,6 @@ class ProjectsController extends ActionController
      * Displays a project by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Projects $project
-     *
-     * @return void
      */
     public function showAction(Projects $project)
     {
@@ -115,8 +105,6 @@ class ProjectsController extends ActionController
      * Displays a teaser of a project
      *
      * @param \Digicademy\Academy\Domain\Model\Projects $project
-     *
-     * @return void
      */
     public function teaserAction(Projects $project)
     {

@@ -31,7 +31,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdr extends AbstractValueObject
 {
-
     /**
      * The label of the address
      *
@@ -59,7 +58,7 @@ class HcardsAdr extends AbstractValueObject
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents>
      * @Extbase\ORM\Lazy
      */
-    protected $adrcomponents = null;
+    protected $adrcomponents;
 
     /**
      * Returns the label
@@ -75,8 +74,6 @@ class HcardsAdr extends AbstractValueObject
      * Sets the label
      *
      * @param string $label
-     *
-     * @return void
      */
     public function setLabel(string $label): void
     {
@@ -97,8 +94,6 @@ class HcardsAdr extends AbstractValueObject
      * Sets the org
      *
      * @param string $org
-     *
-     * @return void
      */
     public function setOrg(string $org): void
     {
@@ -119,8 +114,6 @@ class HcardsAdr extends AbstractValueObject
      * Sets the type
      *
      * @param int $type
-     *
-     * @return void
      */
     public function setType(int $type): void
     {
@@ -141,8 +134,6 @@ class HcardsAdr extends AbstractValueObject
      * Sets the address components
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents> $adrcomponents
-     *
-     * @return void
      */
     public function setAdrcomponents($adrcomponents): void
     {

@@ -24,7 +24,7 @@ $tca = [
             ],
             'size' => 1,
             'maxitems' => 1,
-        ]
+        ],
     ],
     'news_relations' => [
         'exclude' => 1,
@@ -42,7 +42,7 @@ $tca = [
             'maxitems' => 9999,
             'behaviour' => [
                 'disableMovingChildrenWithParent' => 1,
-//                    'allowLanguageSynchronization' => true,
+                //                    'allowLanguageSynchronization' => true,
             ],
             'appearance' => [
                 'collapseAll' => 1,
@@ -57,47 +57,47 @@ $tca = [
                             'items' => [
                                 14 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.14',
-                                    '14'
+                                    '14',
                                 ],
                                 22 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.22',
-                                    '22'
+                                    '22',
                                 ],
                                 33 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.33',
-                                    '33'
+                                    '33',
                                 ],
                                 40 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.40',
-                                    '40'
+                                    '40',
                                 ],
                                 41 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.41',
-                                    '41'
+                                    '41',
                                 ],
                                 42 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.42',
-                                    '42'
+                                    '42',
                                 ],
                                 43 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.43',
-                                    '43'
+                                    '43',
                                 ],
                                 74 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.74',
-                                    '74'
+                                    '74',
                                 ],
                                 84 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.84',
-                                    '84'
+                                    '84',
                                 ],
                                 94 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.94',
-                                    '94'
+                                    '94',
                                 ],
-                            ]
-                        ]
-                    ]
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -118,7 +118,7 @@ $tca = [
             'maxitems' => 9999,
             'behaviour' => [
                 'disableMovingChildrenWithParent' => 1,
-//                    'allowLanguageSynchronization' => true,
+                //                    'allowLanguageSynchronization' => true,
             ],
             'appearance' => [
                 'collapseAll' => 1,
@@ -133,47 +133,47 @@ $tca = [
                             'items' => [
                                 13 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.13',
-                                    '13'
+                                    '13',
                                 ],
                                 23 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.23',
-                                    '23'
+                                    '23',
                                 ],
                                 41 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.41',
-                                    '41'
+                                    '41',
                                 ],
                                 34 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.34',
-                                    '34'
+                                    '34',
                                 ],
                                 50 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.50',
-                                    '50'
+                                    '50',
                                 ],
                                 51 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.51',
-                                    '51'
+                                    '51',
                                 ],
                                 52 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.52',
-                                    '52'
+                                    '52',
                                 ],
                                 75 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.75',
-                                    '75'
+                                    '75',
                                 ],
                                 85 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.85',
-                                    '85'
+                                    '85',
                                 ],
                                 95 => [
                                     'LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_relations.type.I.95',
-                                    '95'
+                                    '95',
                                 ],
-                            ]
-                        ]
-                    ]
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],

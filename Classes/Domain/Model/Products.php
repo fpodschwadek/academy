@@ -27,11 +27,11 @@ namespace Digicademy\Academy\Domain\Model;
  ***************************************************************/
 
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
+use Digicademy\ChfTime\Domain\Model\DateRanges;
 use GeorgRinger\News\Domain\Model\TtContent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -106,14 +106,14 @@ class Products extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Duration of the product
      *
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
-    protected $dateRange = null;
+    protected $dateRange;
 
     /**
      * The page where the product details are listed
@@ -128,7 +128,7 @@ class Products extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
      * @Extbase\ORM\Lazy
      */
-    protected $relations = null;
+    protected $relations;
 
     /**
      * Selected categories for the product
@@ -136,7 +136,7 @@ class Products extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * Returns the persistentIdentifier
@@ -152,8 +152,6 @@ class Products extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -174,8 +172,6 @@ class Products extends AbstractEntity
      * Sets the identifier
      *
      * @param string $identifier
-     *
-     * @return void
      */
     public function setIdentifier(string $identifier): void
     {
@@ -196,8 +192,6 @@ class Products extends AbstractEntity
      * Sets the title
      *
      * @param string $title
-     *
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -218,8 +212,6 @@ class Products extends AbstractEntity
      * Sets the version
      *
      * @param string $version
-     *
-     * @return void
      */
     public function setVersion(string $version): void
     {
@@ -240,8 +232,6 @@ class Products extends AbstractEntity
      * Sets the acronym
      *
      * @param string $acronym
-     *
-     * @return void
      */
     public function setAcronym(string $acronym): void
     {
@@ -262,8 +252,6 @@ class Products extends AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {
@@ -284,8 +272,6 @@ class Products extends AbstractEntity
      * Sets the sorting
      *
      * @param string $sorting
-     *
-     * @return void
      */
     public function setSorting(string $sorting): void
     {
@@ -306,8 +292,6 @@ class Products extends AbstractEntity
      * Sets the description
      *
      * @param string $description
-     *
-     * @return void
      */
     public function setDescription(string $description): void
     {
@@ -328,7 +312,6 @@ class Products extends AbstractEntity
      * Set content element list
      *
      * @param ObjectStorage $contentElements content elements
-     * @return void
      */
     public function setContentElements(ObjectStorage $contentElements): void
     {
@@ -349,8 +332,6 @@ class Products extends AbstractEntity
      * Sets the image
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     *
-     * @return void
      */
     public function setImage($image): void
     {
@@ -371,8 +352,6 @@ class Products extends AbstractEntity
      * Sets the dateRange
      *
      * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     *
-     * @return void
      */
     public function setDateRange(DateRanges $dateRange): void
     {
@@ -393,8 +372,6 @@ class Products extends AbstractEntity
      * Sets the page
      *
      * @param int $page
-     *
-     * @return void
      */
     public function setPage(int $page): void
     {
@@ -424,8 +401,6 @@ class Products extends AbstractEntity
      * Sets the relations
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     *
-     * @return void
      */
     public function setRelations($relations): void
     {
@@ -446,8 +421,6 @@ class Products extends AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     *
-     * @return void
      */
     public function setCategories($categories): void
     {

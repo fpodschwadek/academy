@@ -34,7 +34,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class PublicationsController extends ActionController
 {
-
     /**
      * @var \Digicademy\Academy\Domain\Repository\PublicationsRepository
      */
@@ -58,8 +57,6 @@ class PublicationsController extends ActionController
 
     /**
      * Initializes the current action
-     *
-     * @return void
      */
     public function initializeAction()
     {
@@ -84,8 +81,6 @@ class PublicationsController extends ActionController
 
     /**
      * Displays a list of publications
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -112,8 +107,6 @@ class PublicationsController extends ActionController
      * Displays a publication by uid
      *
      * @param \Digicademy\Academy\Domain\Model\Publications $publication
-     *
-     * @return void
      */
     public function showAction(Publications $publication)
     {

@@ -31,11 +31,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 class RelationsByRoleViewHelper extends AbstractViewHelper
 {
-
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */

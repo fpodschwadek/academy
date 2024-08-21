@@ -31,7 +31,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Hcards extends AbstractEntity
 {
-
     /**
      * persistentIdentifier
      *
@@ -62,7 +61,7 @@ class Hcards extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr>
      * @Extbase\ORM\Lazy
      */
-    protected $adr = null;
+    protected $adr;
 
     /**
      * Telefone numbers
@@ -70,7 +69,7 @@ class Hcards extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel>
      * @Extbase\ORM\Lazy
      */
-    protected $tel = null;
+    protected $tel;
 
     /**
      * Email Addresses
@@ -78,7 +77,7 @@ class Hcards extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail>
      * @Extbase\ORM\Lazy
      */
-    protected $email = null;
+    protected $email;
 
     /**
      * URLs
@@ -86,7 +85,7 @@ class Hcards extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl>
      * @Extbase\ORM\Lazy
      */
-    protected $url = null;
+    protected $url;
 
     /**
      * Geo coordinates
@@ -114,8 +113,6 @@ class Hcards extends AbstractEntity
      * Sets the persistentIdentifier
      *
      * @param string $persistentIdentifier
-     *
-     * @return void
      */
     public function setPersistentIdentifier(string $persistentIdentifier): void
     {
@@ -136,8 +133,6 @@ class Hcards extends AbstractEntity
      * Sets the label
      *
      * @param string $label
-     *
-     * @return void
      */
     public function setLabel(string $label): void
     {
@@ -158,8 +153,6 @@ class Hcards extends AbstractEntity
      * Sets the type
      *
      * @param string $type
-     *
-     * @return void
      */
     public function setType(string $type): void
     {
@@ -180,8 +173,6 @@ class Hcards extends AbstractEntity
      * Sets the addresses
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr> $adr
-     *
-     * @return void
      */
     public function setAdr($adr): void
     {
@@ -202,8 +193,6 @@ class Hcards extends AbstractEntity
      * Sets the telephone numbers
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel> $tel
-     *
-     * @return void
      */
     public function setTel($tel): void
     {
@@ -224,8 +213,6 @@ class Hcards extends AbstractEntity
      * Sets the email addresses
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail> $email
-     *
-     * @return void
      */
     public function setEmail($email): void
     {
@@ -246,8 +233,6 @@ class Hcards extends AbstractEntity
      * Sets the urls
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl> $url
-     *
-     * @return void
      */
     public function setUrl($url): void
     {
@@ -268,8 +253,6 @@ class Hcards extends AbstractEntity
      * Sets geo
      *
      * @param string $geo
-     *
-     * @return void
      */
     public function setGeo(string $geo): void
     {
@@ -290,8 +273,6 @@ class Hcards extends AbstractEntity
      * Sets the slug
      *
      * @param string $slug
-     *
-     * @return void
      */
     public function setSlug(string $slug): void
     {

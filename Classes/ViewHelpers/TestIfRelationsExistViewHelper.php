@@ -26,16 +26,15 @@ namespace Digicademy\Academy\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class TestIfRelationsExistViewHelper extends AbstractViewHelper
 {
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -59,7 +58,7 @@ class TestIfRelationsExistViewHelper extends AbstractViewHelper
     /**
      * Tests if news, events or media exist in the submitted grouped relations array and returns TRUE if so
      *
-     * @return boolean
+     * @return bool
      */
     public function render(): bool
     {

@@ -1,9 +1,10 @@
 <?php
+
 namespace Digicademy\Academy\Hooks\Backend;
 
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 /***************************************************************
  *  Copyright notice
@@ -30,7 +31,6 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 class DataHandler
 {
-
     /**
      * Generates a persistent identifier (uuid) on new and save for this extension's tables
      *
@@ -65,7 +65,10 @@ class DataHandler
                 default:
                     $record = GeneralUtility::makeInstance(ConnectionPool::class)
                         ->getConnectionForTable($table)
-                        ->select(['persistent_identifier'], $table, ['uid' => (int)$id]
+                        ->select(
+                            ['persistent_identifier'],
+                            $table,
+                            ['uid' => (int)$id]
                         )->fetch();
 
                     if (!$record['persistent_identifier']) {
@@ -102,7 +105,7 @@ class DataHandler
 
                 // relation field names
                 $relationFields = [
-                    'medium', 'medium_symmetric','person','person_symmetric','product','product_symmetric','project','project_symmetric','publication','publication_symmetric','service','service_symmetric','unit','unit_symmetric','news','news_symmetric','event','event_symmetric'
+                    'medium', 'medium_symmetric', 'person', 'person_symmetric', 'product', 'product_symmetric', 'project', 'project_symmetric', 'publication', 'publication_symmetric', 'service', 'service_symmetric', 'unit', 'unit_symmetric', 'news', 'news_symmetric', 'event', 'event_symmetric',
                 ];
 
                 // walk through all fields of a relation ...
@@ -134,8 +137,8 @@ class DataHandler
                             && $localizedForeignRecord[0]['sys_language_uid'] == $relation['sys_language_uid']
                         ) {
                             $fieldArray[$fieldName] = $localizedForeignRecord[0]['uid'];
-                        // if not we force the original entity id (this caters for scenarios where only one side
-                        // of a relation is translated
+                            // if not we force the original entity id (this caters for scenarios where only one side
+                            // of a relation is translated
                         } else {
                             $fieldArray[$fieldName] = $localizationParentRelation[$fieldName];
                         }
@@ -154,7 +157,8 @@ class DataHandler
      */
     private function generateUUID()
     {
-        return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        return sprintf(
+            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
             mt_rand(0, 0xffff),
             mt_rand(0, 0xffff),
             mt_rand(0, 0xffff),
@@ -162,7 +166,8 @@ class DataHandler
             mt_rand(0, 0x3fff) | 0x8000,
             mt_rand(0, 0xffff),
             mt_rand(0, 0xffff),
-            mt_rand(0, 0xffff));
+            mt_rand(0, 0xffff)
+        );
     }
 
 }

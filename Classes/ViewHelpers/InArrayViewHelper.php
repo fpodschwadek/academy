@@ -34,7 +34,6 @@ class InArrayViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments
      *
-     * @return void
      *
      * @throws Exception
      */
@@ -55,7 +54,7 @@ class InArrayViewHelper extends AbstractViewHelper
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function render(): bool
     {

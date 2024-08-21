@@ -21,7 +21,6 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 class AcademyTcaInline extends TcaInline
 {
-
     /**
      * Substitute the value in databaseRow of this inline field with an array
      * that contains the databaseRows of currently connected records and some meta information.

@@ -26,12 +26,10 @@ namespace Digicademy\Academy\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsEmail extends AbstractValueObject
 {
-
     /**
      * The label of the address
      *
@@ -74,8 +72,6 @@ class HcardsEmail extends AbstractValueObject
      * Sets the parent
      *
      * @param int $parent
-     *
-     * @return void
      */
     public function setParent(int $parent): void
     {
@@ -96,8 +92,6 @@ class HcardsEmail extends AbstractValueObject
      * Sets the type
      *
      * @param int $type
-     *
-     * @return void
      */
     public function setType(int $type): void
     {
@@ -118,8 +112,6 @@ class HcardsEmail extends AbstractValueObject
      * Sets the value
      *
      * @param string $value
-     *
-     * @return void
      */
     public function setValue(string $value): void
     {
@@ -140,8 +132,6 @@ class HcardsEmail extends AbstractValueObject
      * Sets the freetext
      *
      * @param string $freetext
-     *
-     * @return void
      */
     public function setFreetext(string $freetext): void
     {
