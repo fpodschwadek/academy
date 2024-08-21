@@ -15,8 +15,10 @@
 
 namespace Digicademy\Academy\Xclass\Backend\Form\FormDataProvider;
 
+use TYPO3\CMS\Backend\Form\Exception\DatabaseRecordException;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaInline;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+
 class AcademyTcaInline extends TcaInline
 {
 
