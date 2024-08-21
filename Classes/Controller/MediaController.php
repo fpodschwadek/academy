@@ -34,24 +34,14 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class MediaController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\MediaRepository
-     */
-    protected $mediaRepository;
-
-    /**
-     * Use constructor DI and not @inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
      * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
      * @param \Digicademy\Academy\Domain\Repository\MediaRepository          $mediaRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
-        MediaRepository $mediaRepository
+        protected MediaRepository $mediaRepository
     ) {
         $this->injectConfigurationManager($configurationManager);
-        $this->mediaRepository = $mediaRepository;
     }
 
     /**
@@ -67,10 +57,8 @@ class MediaController extends ActionController
 
     /**
      * Displays a list of media, possibly filtered by categories
-     *
-     * @param int $type
      */
-    public function listByTypesAction($type): int
+    public function listByTypesAction($type): void
     {
         $arguments = $this->request->getArguments();
         $this->view->assign('arguments', $arguments);
