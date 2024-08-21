@@ -27,11 +27,37 @@
 namespace Digicademy\Academy\Utility\Backend;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class LabelUtility
 {
     public function relationsLabel(array &$parameters)
     {
+        // Define empty variables that are used later on in code but might get
+        // no values from the parameters.
+        $eventLabel = '';
+        $eventSymmetricLabel = '';
+        $hcardLabel = '';
+        $mediumLabel = '';
+        $mediumSymmetricLabel = '';
+        $news = null;
+        $news_symmetric = null;
+        $newsLabel = '';
+        $newsSymmetricLabel = '';
+        $personLabel = '';
+        $personSymmetricLabel = '';
+        $productLabel = '';
+        $productSymmetricLabel = '';
+        $projectLabel = '';
+        $projectSymmetricLabel = '';
+        $publicationLabel = '';
+        $publicationSymmetricLabel = '';
+        $serviceLabel = '';
+        $serviceSymmetricLabel = '';
+        $unitLabel = '';
+        $unitSymmetricLabel = '';
+
         // get basic contact information label from lang file
         $contactInformationLabel = $GLOBALS['LANG']->sL('LLL:EXT:academy/Resources/Private/Language/locallang_db.xml:tx_academy_domain_model_hcards');
 
@@ -164,9 +190,9 @@ class LabelUtility
                 break;
             case 11:
                 if ($parameters['parent']['config']['foreign_label'] == 'projects') {
-                    $parameters['title'] = $roleAndSeparator . $personLabel;
+                    $parameters['title'] = $roleAndSeparator  . $personLabel;
                 } elseif ($parameters['parent']['config']['foreign_label'] == 'persons') {
-                    $parameters['title'] = $roleAndSeparator . $projectLabel;
+                    $parameters['title'] = $roleAndSeparator  . $projectLabel;
                 } else {
                     $parameters['title'] = $roleAndSeparator . $personLabel . ' (' . $projectLabel . ')';
                 }
