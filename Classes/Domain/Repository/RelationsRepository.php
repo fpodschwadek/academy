@@ -27,10 +27,21 @@
 namespace Digicademy\Academy\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\{
+    QueryInterface,
+    Repository
+};
 
-class RelationsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class RelationsRepository extends Repository
 {
+    /**
+     * @param Typo3QuerySettings $querySettings
+     */
+    public function __construct(protected Typo3QuerySettings $querySettings)
+    {
+        parent::__construct();
+    }
+
     protected $defaultOrderings = [
         'type' => QueryInterface::ORDER_ASCENDING,
         'role' => QueryInterface::ORDER_ASCENDING,
@@ -39,9 +50,7 @@ class RelationsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
     public function initializeObject()
     {
-        /** @var Typo3QuerySettings $querySettings */
-        $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
-        $querySettings->setRespectStoragePage(false);
-        $this->setDefaultQuerySettings($querySettings);
+        $this->querySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($this->querySettings);
     }
 }
