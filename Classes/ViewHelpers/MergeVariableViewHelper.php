@@ -90,7 +90,16 @@ class MergeVariableViewHelper extends AbstractViewHelper
             // first remove the identified variable from the current container
             $this->templateVariableContainer->remove($key);
             // melt both arrays
-            $melt = ArrayUtility::mergeRecursiveWithOverrule($array1[$key], $array2);
+            //
+            // Change: with TYPO3 12.4, the return value of ArrayUtility::mergeRecursiveWithOverrule
+            // if void (a return value is not needed anyway, because the original
+            // array is modified and an be used for further operations.)
+            //
+            // @see https://api.typo3.org/12.4/classes/TYPO3-CMS-Core-Utility-ArrayUtility.html#method_mergeRecursiveWithOverrule
+            //
+            // For clarity, we just use $melt as reference to the original array.
+            $melt = $array1[$key];
+            ArrayUtility::mergeRecursiveWithOverrule($melt, $array2);
             // possibly remove zeros, NULL and empty values
             if ($removeEmptyElements === true && $keepZeros === true) {
                 $melt = array_diff($melt, array(''));
