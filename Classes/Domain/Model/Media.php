@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Domain\Model;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,8 @@ namespace Digicademy\Academy\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
