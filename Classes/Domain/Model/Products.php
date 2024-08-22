@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    ContentsElementTrait,
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
@@ -48,6 +49,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Products extends AbstractEntity
 {
     use CategoriesTrait,
+        ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
@@ -72,13 +74,6 @@ class Products extends AbstractEntity
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * Additional free text information about a product
-     *
-     * @var ObjectStorage<TtContent>
-     */
-    protected $contentElements;
 
     /**
      * A version of the product
@@ -152,26 +147,6 @@ class Products extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Get content elements
-     *
-     * @return ObjectStorage
-     */
-    public function getContentElements(): ObjectStorage
-    {
-        return $this->contentElements;
-    }
-
-    /**
-     * Set content element list
-     *
-     * @param ObjectStorage $contentElements content elements
-     */
-    public function setContentElements(ObjectStorage $contentElements): void
-    {
-        $this->contentElements = $contentElements;
     }
 
     /**

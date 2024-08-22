@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    ContentsElementTrait,
     DateRangeTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -46,6 +47,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Persons extends AbstractEntity
 {
     use CategoriesTrait,
+        ContentsElementTrait,
         DateRangeTrait,
         ImageTrait,
         PersistentIdentifierTrait,
@@ -90,13 +92,6 @@ class Persons extends AbstractEntity
      * @var string $honorificSuffix
      */
     protected $honorificSuffix;
-
-    /**
-     * Additional free text information about a person
-     *
-     * @var ObjectStorage<TtContent>
-     */
-    protected $contentElements;
 
     /**
      * A page where details about the person can be found
@@ -231,26 +226,6 @@ class Persons extends AbstractEntity
     public function setHonorificSuffix(string $honorificSuffix): void
     {
         $this->honorificSuffix = $honorificSuffix;
-    }
-
-    /**
-     * Get content elements
-     *
-     * @return ObjectStorage
-     */
-    public function getContentElements(): ObjectStorage
-    {
-        return $this->contentElements;
-    }
-
-    /**
-     * Set content element list
-     *
-     * @param ObjectStorage $contentElements content elements
-     */
-    public function setContentElements(ObjectStorage $contentElements): void
-    {
-        $this->contentElements = $contentElements;
     }
 
     /**

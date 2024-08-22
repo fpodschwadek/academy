@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    ContentsElementTrait,
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
@@ -47,6 +48,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Publications extends AbstractEntity
 {
     use CategoriesTrait,
+        ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
@@ -139,13 +141,6 @@ class Publications extends AbstractEntity
      * @var string $bibliographicNote
      */
     protected $bibliographicNote;
-
-    /**
-     * Additional free text information about a publication
-     *
-     * @var ObjectStorage<TtContent>
-     */
-    protected $contentElements;
 
     /**
      * The page where the publication details are listed
@@ -392,26 +387,6 @@ class Publications extends AbstractEntity
     public function setBibliographicNote(string $bibliographicNote): void
     {
         $this->bibliographicNote = $bibliographicNote;
-    }
-
-    /**
-     * Get content elements
-     *
-     * @return ObjectStorage
-     */
-    public function getContentElements(): ObjectStorage
-    {
-        return $this->contentElements;
-    }
-
-    /**
-     * Set content element list
-     *
-     * @param ObjectStorage $contentElements content elements
-     */
-    public function setContentElements(ObjectStorage $contentElements): void
-    {
-        $this->contentElements = $contentElements;
     }
 
     /**
