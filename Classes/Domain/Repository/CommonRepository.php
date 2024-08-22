@@ -52,7 +52,7 @@ class CommonRepository extends Repository
         }
 
         $query->matching(
-            $query->logicalOr($constraints)
+            $query->logicalOr(...$constraints)
         );
 
         $result = $query->execute();
@@ -81,7 +81,7 @@ class CommonRepository extends Repository
         }
         // TODO: implement OR mode as well
         $query->matching(
-            $query->logicalAnd($constraints)
+            $query->logicalAnd(...$constraints)
         );
 
         $result = $query->execute();
@@ -105,7 +105,7 @@ class CommonRepository extends Repository
         $constraints[] = $query->equals('relations.role', $role);
 
         $query->matching(
-            $query->logicalAnd($constraints)
+            $query->logicalAnd(...$constraints)
         );
 
         $result = $query->execute();
