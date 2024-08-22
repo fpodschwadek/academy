@@ -111,7 +111,6 @@ class FuseRelationsViewHelper extends AbstractViewHelper
 
                     default:
                         throw new Exception('Invalid value for type.', 1380654017);
-                        break;
                 }
             }
 

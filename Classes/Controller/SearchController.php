@@ -49,8 +49,10 @@ class SearchController extends ActionController
     public function searchAllAction()
     {
         die('SearchController->searchAllAction needs to be reimplemented');
+        /*
         if ($this->request->hasArgument('keywords')) {
         }
+        */
     }
 
     /**
