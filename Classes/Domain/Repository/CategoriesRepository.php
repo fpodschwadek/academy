@@ -85,11 +85,8 @@ class CategoriesRepository extends Repository
 
             $query = $this->createQuery();
 
-            $constraints = [];
-            $constraints[] = $query->equals('parent', $categoryUid);
-
             $query->matching(
-                $query->logicalAnd($constraints)
+                $query->logicalAnd($query->equals('parent', $categoryUid))
             );
 
             $queryResult = $query->execute()->toArray();
