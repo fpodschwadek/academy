@@ -28,7 +28,8 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
-    RelationsTrait
+    RelationsTrait,
+    TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use Digicademy\ChfTime\Domain\Model\DateRanges;
@@ -40,7 +41,9 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Services extends AbstractEntity
 {
-    use PersistentIdentifierTrait, RelationsTrait;
+    use PersistentIdentifierTrait,
+        RelationsTrait,
+        TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
 
@@ -50,14 +53,6 @@ class Services extends AbstractEntity
      * @var string $identifier
      */
     protected $identifier;
-
-    /**
-     * The title of the service
-     *
-     * @var string $title
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $title;
 
     /**
      * An acronym for the service
@@ -141,26 +136,6 @@ class Services extends AbstractEntity
     public function setIdentifier(string $identifier): void
     {
         $this->identifier = $identifier;
-    }
-
-    /**
-     * Returns the title
-     *
-     * @return string $title
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
     }
 
     /**

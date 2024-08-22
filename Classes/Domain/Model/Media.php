@@ -29,6 +29,7 @@ namespace Digicademy\Academy\Domain\Model;
 use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
     RelationsTrait,
+    TitleTrait,
     TypeTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -39,7 +40,10 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-    use PersistentIdentifierTrait, RelationsTrait, TypeTrait;
+    use PersistentIdentifierTrait,
+        RelationsTrait,
+        TitleTrait,
+        TypeTrait;
 
     protected const RELATIONS_CRITERION = 'medium_symmetric';
 
@@ -49,14 +53,6 @@ class Media extends AbstractEntity
      * @var int $crdate
      */
     protected $crdate;
-
-    /**
-     * The title of the medium
-     *
-     * @var string $title
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $title;
 
     /**
      * A description of the mediums scientific activities
@@ -120,26 +116,6 @@ class Media extends AbstractEntity
     public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
-    }
-
-    /**
-     * Returns the title
-     *
-     * @return string $title
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
     }
 
     /**

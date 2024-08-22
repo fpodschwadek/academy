@@ -28,7 +28,8 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
-    RelationsTrait
+    RelationsTrait,
+    TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use Digicademy\ChfTime\Domain\Model\DateRanges;
@@ -40,17 +41,11 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Units extends AbstractEntity
 {
-    use PersistentIdentifierTrait, RelationsTrait;
+    use PersistentIdentifierTrait,
+        RelationsTrait,
+        TitleTrait;
 
     protected const RELATIONS_CRITERION = 'unit_symmetric';
-
-    /**
-     * The title of the unit
-     *
-     * @var string $title
-     * @Validate("NotEmpty")
-     */
-    protected $title;
 
     /**
      * An acronym for the unit
@@ -114,26 +109,6 @@ class Units extends AbstractEntity
      * @Extbase\ORM\Lazy
      */
     protected $categories;
-
-    /**
-     * Sets the title
-     *
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Returns the title
-     *
-     * @return string
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
 
     /**
      * Returns the acronym

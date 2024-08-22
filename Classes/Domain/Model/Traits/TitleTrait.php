@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2017 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  Copyright (C) 2024 Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -24,16 +24,44 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-namespace Digicademy\Academy\Domain\Model;
+namespace Digicademy\Academy\Domain\Model\Traits;
 
-use Digicademy\Academy\Domain\Model\Traits\{
-    PersistentIdentifierTrait,
-    TitleTrait
-};
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Annotation\Validate;
 
-class Roles extends AbstractEntity
+/**
+ * Provides all necessary variables and methods for handling model title
+ * properties.
+ *
+ * @author Frodo Podschwadek <frodo.podschwadek@adwmainz.de>
+ * @author Linnaea Söhn <linnaea.soehn@adwmainz.de>
+ */
+trait TitleTrait
 {
-    use PersistentIdentifierTrait,
-        TitleTrait;
+    /**
+     * The title of the object
+     *
+     * @var string $title
+     * @Validate("NotEmpty")
+     */
+    protected string $title;
+
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
 }
