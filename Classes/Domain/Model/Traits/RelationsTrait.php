@@ -89,7 +89,7 @@ trait RelationsTrait
     {
         if (
             defined(self::RELATIONS_CRITERION) &&
-            !empty(self::RELATIONS_CRITERION)
+            is_string(self::RELATIONS_CRITERION)
         ) {
             $symmetricRelations = $this->relationsRepository->findBy(
                 self::RELATIONS_CRITERION,
