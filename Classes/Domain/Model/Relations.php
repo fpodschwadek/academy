@@ -41,6 +41,7 @@ use Digicademy\Academy\Domain\Model\{
 };
 use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
+    FreeTextTrait,
     PersistentIdentifierTrait,
     TypeTrait
 };
@@ -50,6 +51,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Relations extends AbstractEntity
 {
     use DateRangeTrait,
+        FreeTextTrait,
         PersistentIdentifierTrait,
         TypeTrait;
 
@@ -219,13 +221,6 @@ class Relations extends AbstractEntity
      * @Lazy
      */
     protected $publicationSymmetric;
-
-    /**
-     * Freetext relation
-     *
-     * @var string $freetext
-     */
-    protected $freetext;
 
     /**
      * getRole
@@ -645,25 +640,5 @@ class Relations extends AbstractEntity
     public function setPublicationSymmetric(Publications $publicationSymmetric): void
     {
         $this->publicationSymmetric = $publicationSymmetric;
-    }
-
-    /**
-     * getFreetext
-     *
-     * @return string $freetext
-     */
-    public function getFreetext(): string
-    {
-        return $this->freetext;
-    }
-
-    /**
-     * setFreetext
-     *
-     * @param string $freetext
-     */
-    public function setFreetext(string $freetext): void
-    {
-        $this->freetext = $freetext;
     }
 }

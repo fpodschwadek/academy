@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2017 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  Copyright (C) 2024 Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -24,20 +24,41 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-namespace Digicademy\Academy\Domain\Model;
+namespace Digicademy\Academy\Domain\Model\Traits;
 
-use Digicademy\Academy\Domain\Model\Traits\{
-    FreeTextTrait,
-    ParentTrait,
-    TypeTrait,
-    ValueTrait
-};
-use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
-
-class HcardsTel extends AbstractValueObject
+/**
+ * Provides all necessary variables and methods for handling parent
+ * properties.
+ *
+ * @author Frodo Podschwadek <frodo.podschwadek@adwmainz.de>
+ * @author Linnaea Söhn <linnaea.soehn@adwmainz.de>
+ */
+trait ParentTrait
 {
-    use FreeTextTrait,
-        ParentTrait,
-        TypeTrait,
-        ValueTrait;
+    /**
+     * The id of the parent object
+     *
+     * @var int $parent
+     */
+    protected int $parent;
+
+    /**
+     * Returns the parent
+     *
+     * @return int $parent
+     */
+    public function getParent(): int
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Sets the parent
+     *
+     * @param int $parent
+     */
+    public function setParent(int $parent): void
+    {
+        $this->parent = $parent;
+    }
 }

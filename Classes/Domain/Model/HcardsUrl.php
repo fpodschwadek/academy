@@ -26,91 +26,18 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\Traits\TypeTrait;
+use Digicademy\Academy\Domain\Model\Traits\{
+    FreeTextTrait,
+    ParentTrait,
+    TypeTrait,
+    ValueTrait
+};
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsUrl extends AbstractValueObject
 {
-    use TypeTrait;
-
-    /**
-     * The label of the address
-     *
-     * @var int $parent
-     */
-    protected $parent;
-
-    /**
-     * The value of the component
-     *
-     * @var string $value
-     */
-    protected $value;
-
-    /**
-     * Some freetext
-     *
-     * @var string $freetext
-     */
-    protected $freetext;
-
-    /**
-     * Returns the parent
-     *
-     * @return int $parent
-     */
-    public function getParent(): int
-    {
-        return $this->parent;
-    }
-
-    /**
-     * Sets the parent
-     *
-     * @param int $parent
-     */
-    public function setParent(int $parent): void
-    {
-        $this->parent = $parent;
-    }
-
-    /**
-     * Returns the value
-     *
-     * @return string $value
-     */
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-
-    /**
-     * Sets the value
-     *
-     * @param string $value
-     */
-    public function setValue(string $value): void
-    {
-        $this->value = $value;
-    }
-
-    /**
-     * Returns the freetext
-     *
-     * @return string $freetext
-     */
-    public function getFreetext(): string
-    {
-        return $this->freetext;
-    }
-
-    /**
-     * Sets the freetext
-     *
-     * @param string $freetext
-     */
-    public function setFreetext(string $freetext): void
-    {
-        $this->freetext = $freetext;
-    }
+    use FreeTextTrait,
+        ParentTrait,
+        TypeTrait,
+        ValueTrait;
 }
