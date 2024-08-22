@@ -95,6 +95,9 @@ class FormatAdrComponentsViewHelper extends AbstractViewHelper
             $componentsArray[$key] = implode('\n', $fields);
         }
 
+        // Alright, this can never have worked. You can't implode arrays of
+        // arrays.
+        // What was it supposed to do?
         return implode(';', $componentsArray);
     }
 }
