@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     TitleTrait,
@@ -40,7 +41,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
+    use DescriptionTrait,
+        PersistentIdentifierTrait,
         RelationsTrait,
         TitleTrait,
         TypeTrait;
@@ -53,13 +55,6 @@ class Media extends AbstractEntity
      * @var int $crdate
      */
     protected $crdate;
-
-    /**
-     * A description of the mediums scientific activities
-     *
-     * @var string $description
-     */
-    protected $description;
 
     /**
      * @var string $slug
@@ -116,26 +111,6 @@ class Media extends AbstractEntity
     public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
-    }
-
-    /**
-     * Returns the description
-     *
-     * @return string $description
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Sets the description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**

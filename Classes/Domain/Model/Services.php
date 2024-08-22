@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     TitleTrait
@@ -41,7 +42,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Services extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
+    use DescriptionTrait,
+        PersistentIdentifierTrait,
         RelationsTrait,
         TitleTrait;
 
@@ -72,13 +74,6 @@ class Services extends AbstractEntity
      * @var string $sorting
      */
     protected $sorting;
-
-    /**
-     * A description of the services scientific activities
-     *
-     * @var string $description
-     */
-    protected $description;
 
     /**
      * Additional free text information about a service
@@ -199,16 +194,6 @@ class Services extends AbstractEntity
     }
 
     /**
-     * Returns the description
-     *
-     * @return string $description
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
      * Get content elements
      *
      * @return ObjectStorage
@@ -226,16 +211,6 @@ class Services extends AbstractEntity
     public function setContentElements(ObjectStorage $contentElements): void
     {
         $this->contentElements = $contentElements;
-    }
-
-    /**
-     * Sets the description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**

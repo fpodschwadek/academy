@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     TitleTrait
@@ -41,7 +42,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Publications extends AbstractEntity
 {
-    use RelationsTrait,
+    use DescriptionTrait,
+        RelationsTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
@@ -127,13 +129,6 @@ class Publications extends AbstractEntity
      * @var string $slug
      */
     protected $slug;
-
-    /**
-     * A description of the publication
-     *
-     * @var string $description
-     */
-    protected $description;
 
     /**
      * A bibliographic note
@@ -417,26 +412,6 @@ class Publications extends AbstractEntity
     public function setSlug(string $slug): void
     {
         $this->slug = $slug;
-    }
-
-    /**
-     * Returns the description
-     *
-     * @return string $description
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Sets the description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**

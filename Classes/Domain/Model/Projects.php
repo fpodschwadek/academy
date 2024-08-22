@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     TitleTrait
@@ -41,7 +42,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Projects extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
+    use DescriptionTrait,
+        PersistentIdentifierTrait,
         RelationsTrait,
         TitleTrait;
 
@@ -72,13 +74,6 @@ class Projects extends AbstractEntity
      * @var string $sorting
      */
     protected $sorting;
-
-    /**
-     * A description of the projects scientific activities
-     *
-     * @var string $description
-     */
-    protected $description;
 
     /**
      * Additional free text information about a project
@@ -195,26 +190,6 @@ class Projects extends AbstractEntity
     public function setSorting(string $sorting): void
     {
         $this->sorting = $sorting;
-    }
-
-    /**
-     * Returns the description
-     *
-     * @return string $description
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Sets the description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**
