@@ -43,8 +43,11 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return array
      */
-    public function findAllChildren($categoryUid, $maxLevels = 1, $getChildrenOnLevel = 0): array
-    {
+    public function findAllChildren(
+        int $categoryUid,
+        int $maxLevels = 1,
+        int $getChildrenOnLevel = 0
+    ): array {
 
         $this->childCategoryUids = [];
 
@@ -52,7 +55,7 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         if ($getChildrenOnLevel > 0 && $getChildrenOnLevel <= $maxLevels) {
             // extract specific level
-            $result = $this->childCategoryUids[$getChildrenOnLevel];
+            $result = $this->childCategoryUids[$getChildrenOnLevel] ?? [];
         } else {
             // return all levels as two dimensional array (slice of level dimension)
             $result = array_merge(...$this->childCategoryUids);
