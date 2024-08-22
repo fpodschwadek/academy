@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    CategoriesTrait,
     DescriptionTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -43,7 +44,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-    use DescriptionTrait,
+    use CategoriesTrait,
+        DescriptionTrait,
         ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
@@ -75,14 +77,6 @@ class Media extends AbstractEntity
      * @Extbase\ORM\Lazy
      */
     protected $collections;
-
-    /**
-     * Selected categories for the medium
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
-     * @Extbase\ORM\Lazy
-     */
-    protected $categories;
 
     /**
      * Returns the crdate
@@ -143,25 +137,4 @@ class Media extends AbstractEntity
     {
         $this->collections = $collections;
     }
-
-    /**
-     * Returns the categories
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    /**
-     * Sets the categories
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function setCategories($categories): void
-    {
-        $this->categories = $categories;
-    }
-
 }

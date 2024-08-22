@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    CategoriesTrait,
     DescriptionTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -44,7 +45,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Units extends AbstractEntity
 {
-    use DescriptionTrait,
+    use CategoriesTrait,
+        DescriptionTrait,
         ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
@@ -87,14 +89,6 @@ class Units extends AbstractEntity
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
     protected $dateRange;
-
-    /**
-     * Selected categories for the unit
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
-     * @Extbase\ORM\Lazy
-     */
-    protected $categories;
 
     /**
      * Returns the acronym
@@ -195,25 +189,4 @@ class Units extends AbstractEntity
     {
         $this->dateRange = $dateRange;
     }
-
-    /**
-     * Returns the categories
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    /**
-     * Sets the categories
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function setCategories($categories): void
-    {
-        $this->categories = $categories;
-    }
-
 }

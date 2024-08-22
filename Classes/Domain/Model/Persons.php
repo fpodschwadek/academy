@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    CategoriesTrait,
     ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
@@ -42,7 +43,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Persons extends AbstractEntity
 {
-    use ImageTrait,
+    use CategoriesTrait,
+        ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait;
@@ -140,14 +142,6 @@ class Persons extends AbstractEntity
      * @var string $publications
      */
     protected $publications;
-
-    /**
-     * Selected categories for the person
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
-     * @Extbase\ORM\Lazy
-     */
-    protected $categories;
 
     /**
      * Returns the given name
@@ -388,25 +382,4 @@ class Persons extends AbstractEntity
     {
         $this->publications = $publications;
     }
-
-    /**
-     * Returns the categories
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    /**
-     * Sets the categories
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories> $categories
-     */
-    public function setCategories($categories): void
-    {
-        $this->categories = $categories;
-    }
-
 }
