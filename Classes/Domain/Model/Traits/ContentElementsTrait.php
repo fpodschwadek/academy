@@ -43,7 +43,7 @@ trait ContentsElementTrait
      *
      * @var ObjectStorage<TtContent>
      */
-    protected $contentElements;
+    protected ObjectStorage $contentElements;
 
     /**
      * Get content elements
