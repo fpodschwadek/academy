@@ -30,6 +30,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
+    SlugTrait,
     TitleTrait,
     TypeTrait
 };
@@ -45,6 +46,7 @@ class Media extends AbstractEntity
         PersistentIdentifierTrait,
         RelationsTrait,
         TitleTrait,
+        SlugTrait,
         TypeTrait;
 
     protected const RELATIONS_CRITERION = 'medium_symmetric';
@@ -55,11 +57,6 @@ class Media extends AbstractEntity
      * @var int $crdate
      */
     protected $crdate;
-
-    /**
-     * @var string $slug
-     */
-    protected $slug;
 
     /**
      * Images
@@ -111,26 +108,6 @@ class Media extends AbstractEntity
     public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
-    }
-
-    /**
-     * Returns the slug
-     *
-     * @return string $slug
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Sets the slug
-     *
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
     }
 
     /**

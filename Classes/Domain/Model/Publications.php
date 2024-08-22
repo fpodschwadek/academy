@@ -30,6 +30,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
+    SlugTrait,
     TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -44,6 +45,7 @@ class Publications extends AbstractEntity
 {
     use DescriptionTrait,
         RelationsTrait,
+        SlugTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
@@ -124,11 +126,6 @@ class Publications extends AbstractEntity
      * @var string $totalPages
      */
     protected $totalPages;
-
-    /**
-     * @var string $slug
-     */
-    protected $slug;
 
     /**
      * A bibliographic note
@@ -392,26 +389,6 @@ class Publications extends AbstractEntity
     public function setTotalPages(string $totalPages): void
     {
         $this->totalPages = $totalPages;
-    }
-
-    /**
-     * Returns the slug
-     *
-     * @return string $slug
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Sets the slug
-     *
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
     }
 
     /**

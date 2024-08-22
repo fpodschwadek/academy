@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
+    SlugTrait,
     TypeTrait
 };
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -35,7 +36,9 @@ use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 class Hcards extends AbstractEntity
 {
-    use PersistentIdentifierTrait, TypeTrait;
+    use PersistentIdentifierTrait,
+        SlugTrait,
+        TypeTrait;
 
     /**
      * The label of the hcard
@@ -83,11 +86,6 @@ class Hcards extends AbstractEntity
      * @var string $geo
      */
     protected $geo;
-
-    /**
-     * @var string $slug
-     */
-    protected $slug;
 
     /**
      * Returns the label
@@ -207,25 +205,5 @@ class Hcards extends AbstractEntity
     public function setGeo(string $geo): void
     {
         $this->geo = $geo;
-    }
-
-    /**
-     * Returns the slug
-     *
-     * @return string $slug
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Sets the slug
-     *
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
     }
 }

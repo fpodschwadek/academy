@@ -30,6 +30,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
+    SlugTrait,
     TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -45,6 +46,7 @@ class Units extends AbstractEntity
     use DescriptionTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
+        SlugTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'unit_symmetric';
@@ -55,11 +57,6 @@ class Units extends AbstractEntity
      * @var string $acronym
      */
     protected string $acronym;
-
-    /**
-     * @var string $slug
-     */
-    protected string $slug;
 
     /**
      * The internal sorting for unit list (if not alphabetic)
@@ -123,26 +120,6 @@ class Units extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the slug
-     *
-     * @return string $slug
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Sets the slug
-     *
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
     }
 
     /**

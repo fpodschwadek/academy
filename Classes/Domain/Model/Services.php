@@ -30,6 +30,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
+    SlugTrait,
     TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -45,6 +46,7 @@ class Services extends AbstractEntity
     use DescriptionTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
+        SlugTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
@@ -62,11 +64,6 @@ class Services extends AbstractEntity
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * @var string $slug
-     */
-    protected $slug;
 
     /**
      * The internal sorting for service list (if not alphabetic)
@@ -151,26 +148,6 @@ class Services extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the slug
-     *
-     * @return string $slug
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Sets the slug
-     *
-     * @param string $slug
-     */
-    public function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
     }
 
     /**
