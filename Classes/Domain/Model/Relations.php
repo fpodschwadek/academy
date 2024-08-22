@@ -26,19 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\{
-    Events,
-    Hcards,
-    Media,
-    News,
-    Persons,
-    Products,
-    Projects,
-    Publications,
-    Roles,
-    Services,
-    Units
-};
 use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     FreeTextTrait,
@@ -50,10 +37,10 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Relations extends AbstractEntity
 {
-    use DateRangeTrait,
-        FreeTextTrait,
-        PersistentIdentifierTrait,
-        TypeTrait;
+    use DateRangeTrait;
+    use FreeTextTrait;
+    use PersistentIdentifierTrait;
+    use TypeTrait;
 
     /**
      * The role of the relation

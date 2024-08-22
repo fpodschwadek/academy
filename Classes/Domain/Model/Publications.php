@@ -43,17 +43,17 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Publications extends AbstractEntity
 {
-    use CategoriesTrait,
-        ContentElementsTrait,
-        DateRangeTrait,
-        DescriptionTrait,
-        IdentifierTrait,
-        ImageTrait,
-        PageTrait,
-        PersistentIdentifierTrait,
-        RelationsTrait,
-        SlugTrait,
-        TitleTrait;
+    use CategoriesTrait;
+    use ContentElementsTrait;
+    use DateRangeTrait;
+    use DescriptionTrait;
+    use IdentifierTrait;
+    use ImageTrait;
+    use PageTrait;
+    use PersistentIdentifierTrait;
+    use RelationsTrait;
+    use SlugTrait;
+    use TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
 

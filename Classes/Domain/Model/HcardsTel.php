@@ -36,8 +36,8 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsTel extends AbstractValueObject
 {
-    use FreeTextTrait,
-        ParentTrait,
-        TypeTrait,
-        ValueTrait;
+    use FreeTextTrait;
+    use ParentTrait;
+    use TypeTrait;
+    use ValueTrait;
 }

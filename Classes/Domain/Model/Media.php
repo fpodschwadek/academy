@@ -26,7 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\FileCollection;
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
     DescriptionTrait,
@@ -44,14 +43,14 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-    use CategoriesTrait,
-        DescriptionTrait,
-        ImageTrait,
-        PersistentIdentifierTrait,
-        RelationsTrait,
-        TitleTrait,
-        SlugTrait,
-        TypeTrait;
+    use CategoriesTrait;
+    use DescriptionTrait;
+    use ImageTrait;
+    use PersistentIdentifierTrait;
+    use RelationsTrait;
+    use TitleTrait;
+    use SlugTrait;
+    use TypeTrait;
 
     protected const RELATIONS_CRITERION = 'medium_symmetric';
 

@@ -81,7 +81,7 @@ class ProductsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'products'=> $this->productsRepository->findAll()
+                'products' => $this->productsRepository->findAll(),
             ]
         );
     }
@@ -91,7 +91,7 @@ class ProductsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'products'=> $this->productsRepository->findBySelection($this->settings['selectedProducts'])
+                'products' => $this->productsRepository->findBySelection($this->settings['selectedProducts']),
             ]
         );
     }
@@ -106,7 +106,7 @@ class ProductsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'product'=> $product
+                'product' => $product,
             ]
         );
     }

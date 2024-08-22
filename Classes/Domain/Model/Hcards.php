@@ -26,12 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\{
-    HcardsAdr,
-    HcardsEmail,
-    HcardsTel,
-    HcardsUrl
-};
 use Digicademy\Academy\Domain\Model\Traits\{
     LabelTrait,
     PersistentIdentifierTrait,
@@ -44,10 +38,10 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Hcards extends AbstractEntity
 {
-    use LabelTrait,
-        PersistentIdentifierTrait,
-        SlugTrait,
-        TypeTrait;
+    use LabelTrait;
+    use PersistentIdentifierTrait;
+    use SlugTrait;
+    use TypeTrait;
 
     /**
      * Addresses

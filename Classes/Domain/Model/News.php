@@ -26,7 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\Relations;
 use Digicademy\Academy\Domain\Model\Traits\RelationsTrait;
 use GeorgRinger\News\Domain\Model\News as GeorgRingerNews;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;

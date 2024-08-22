@@ -26,7 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model\Traits;
 
-use Exception;
 use Digicademy\Academy\Domain\Model\Relations;
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
@@ -99,14 +98,13 @@ trait RelationsTrait
                 $this->relations->attach($symmetricRelation);
             }
             return $this->relations;
-        } else {
-            throw new Exception(
-                'Criterion to get relations by not set.',
-                855563544182
-            );
         }
-    }
+        throw new \Exception(
+            'Criterion to get relations by not set.',
+            855563544182
+        );
 
+    }
 
     /**
      * Sets the relations

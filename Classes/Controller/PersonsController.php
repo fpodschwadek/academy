@@ -60,7 +60,7 @@ class PersonsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'persons'=> $this->personsRepository->findAll()
+                'persons' => $this->personsRepository->findAll(),
             ]
         );
     }
@@ -70,7 +70,7 @@ class PersonsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'persons'=> $this->personsRepository->findBySelection($this->settings['selectedPersons'])
+                'persons' => $this->personsRepository->findBySelection($this->settings['selectedPersons']),
             ]
         );
     }
@@ -100,7 +100,7 @@ class PersonsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'person'=> $person
+                'person' => $person,
             ]
         );
     }

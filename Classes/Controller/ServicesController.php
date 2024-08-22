@@ -81,7 +81,7 @@ class ServicesController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'services'=> $this->servicesRepository->findAll()
+                'services' => $this->servicesRepository->findAll(),
             ]
         );
     }
@@ -91,7 +91,7 @@ class ServicesController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'services'=> $this->servicesRepository->findBySelection($this->settings['selectedServices'])
+                'services' => $this->servicesRepository->findBySelection($this->settings['selectedServices']),
             ]
         );
     }
@@ -106,7 +106,7 @@ class ServicesController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'service'=> $service
+                'service' => $service,
             ]
         );
     }

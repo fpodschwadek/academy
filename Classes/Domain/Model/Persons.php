@@ -42,15 +42,15 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Persons extends AbstractEntity
 {
-    use CategoriesTrait,
-        ContentElementsTrait,
-        DateRangeTrait,
-        ImageTrait,
-        PageTrait,
-        PersistentIdentifierTrait,
-        RelationsTrait,
-        SlugTrait,
-        SortingTrait;
+    use CategoriesTrait;
+    use ContentElementsTrait;
+    use DateRangeTrait;
+    use ImageTrait;
+    use PageTrait;
+    use PersistentIdentifierTrait;
+    use RelationsTrait;
+    use SlugTrait;
+    use SortingTrait;
 
     protected const RELATIONS_CRITERION = 'person_symmetric';
 

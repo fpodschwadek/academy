@@ -64,7 +64,7 @@ class HcardsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'selectedHcards'=> $selectedHcards
+                'selectedHcards' => $selectedHcards,
             ]
         );
     }

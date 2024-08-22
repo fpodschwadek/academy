@@ -84,7 +84,7 @@ class UnitsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'units'=> $this->unitsRepository->findAll()
+                'units' => $this->unitsRepository->findAll(),
             ]
         );
     }
@@ -94,7 +94,7 @@ class UnitsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'units'=> $this->unitsRepository->findBySelection($this->settings['selectedUnits'])
+                'units' => $this->unitsRepository->findBySelection($this->settings['selectedUnits']),
             ]
         );
     }
@@ -109,7 +109,7 @@ class UnitsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'units'=> $unit
+                'units' => $unit,
             ]
         );
     }

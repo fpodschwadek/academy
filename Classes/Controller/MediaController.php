@@ -52,7 +52,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'media'=> $this->mediaRepository->findAll()
+                'media' => $this->mediaRepository->findAll(),
             ]
         );
     }
@@ -65,7 +65,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'media'=> $this->mediaRepository->findByType($type)
+                'media' => $this->mediaRepository->findByType($type),
             ]
         );
     }
@@ -78,7 +78,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'media'=> $this->mediaRepository->findGrouped()
+                'media' => $this->mediaRepository->findGrouped(),
             ]
         );
     }
@@ -91,7 +91,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'media'=> $this->mediaRepository->findRecent()
+                'media' => $this->mediaRepository->findRecent(),
             ]
         );
     }
@@ -109,7 +109,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'medium'=> $medium
+                'medium' => $medium,
             ]
         );
     }
@@ -136,7 +136,7 @@ class MediaController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'medium'=> $medium
+                'medium' => $medium,
             ]
         );
     }

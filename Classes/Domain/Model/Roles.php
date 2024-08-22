@@ -34,6 +34,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Roles extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
-        TitleTrait;
+    use PersistentIdentifierTrait;
+    use TitleTrait;
 }

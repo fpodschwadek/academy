@@ -28,5 +28,4 @@ namespace Digicademy\Academy\Domain\Repository;
 
 use GeorgRinger\Eventnews\Domain\Repository\AbstractRepository;
 
-class EventsRepository extends AbstractRepository
-{}
+class EventsRepository extends AbstractRepository {}

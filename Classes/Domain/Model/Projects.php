@@ -45,19 +45,19 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Projects extends AbstractEntity
 {
-    use AcronymTrait,
-        CategoriesTrait,
-        ContentElementsTrait,
-        DateRangeTrait,
-        DescriptionTrait,
-        IdentifierTrait,
-        ImageTrait,
-        PageTrait,
-        PersistentIdentifierTrait,
-        RelationsTrait,
-        SlugTrait,
-        SortingTrait,
-        TitleTrait;
+    use AcronymTrait;
+    use CategoriesTrait;
+    use ContentElementsTrait;
+    use DateRangeTrait;
+    use DescriptionTrait;
+    use IdentifierTrait;
+    use ImageTrait;
+    use PageTrait;
+    use PersistentIdentifierTrait;
+    use RelationsTrait;
+    use SlugTrait;
+    use SortingTrait;
+    use TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
 }

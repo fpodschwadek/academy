@@ -81,7 +81,7 @@ class PublicationsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'publications'=> $this->publicationsRepository->findAll()
+                'publications' => $this->publicationsRepository->findAll(),
 
             ]
         );
@@ -92,7 +92,7 @@ class PublicationsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'publications'=> $this->publicationsRepository->findBySelection($this->settings['selectedPublications'])
+                'publications' => $this->publicationsRepository->findBySelection($this->settings['selectedPublications']),
             ]
         );
     }
@@ -107,7 +107,7 @@ class PublicationsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'publication'=> $publication
+                'publication' => $publication,
             ]
         );
     }

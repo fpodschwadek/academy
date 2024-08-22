@@ -26,7 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\HcardsAdrcomponents;
 use Digicademy\Academy\Domain\Model\Traits\{
     LabelTrait,
     TypeTrait
@@ -37,8 +36,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class HcardsAdr extends AbstractValueObject
 {
-    use LabelTrait,
-        TypeTrait;
+    use LabelTrait;
+    use TypeTrait;
 
     /**
      * The name of the organisation

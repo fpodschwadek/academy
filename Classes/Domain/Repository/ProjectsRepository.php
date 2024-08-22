@@ -26,7 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Repository;
 
-use Digicademy\Academy\Domain\Repository\CommonRepository;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class ProjectsRepository extends CommonRepository

@@ -35,7 +35,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdrcomponents extends AbstractValueObject
 {
-    use ParentTrait,
-        TypeTrait,
-        ValueTrait;
+    use ParentTrait;
+    use TypeTrait;
+    use ValueTrait;
 }

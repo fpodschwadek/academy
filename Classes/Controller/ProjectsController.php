@@ -68,7 +68,7 @@ class ProjectsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'projects'=> $this->projectsRepository->findAll()
+                'projects' => $this->projectsRepository->findAll(),
             ]
         );
     }
@@ -81,7 +81,7 @@ class ProjectsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'projects'=> $this->projectsRepository->findBySelection($this->settings['selectedProjects'])
+                'projects' => $this->projectsRepository->findBySelection($this->settings['selectedProjects']),
             ]
         );
     }
@@ -96,7 +96,7 @@ class ProjectsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'project'=> $project
+                'project' => $project,
             ]
         );
     }
@@ -111,7 +111,7 @@ class ProjectsController extends ActionController
         $this->view->assignMultiple(
             [
                 'arguments' => $this->request->getArguments(),
-                'project'=> $project
+                'project' => $project,
             ]
         );
     }
