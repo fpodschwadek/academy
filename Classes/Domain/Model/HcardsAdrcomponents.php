@@ -38,14 +38,14 @@ class HcardsAdrcomponents extends AbstractValueObject
      *
      * @var int $parent
      */
-    protected $parent;
+    protected int $parent;
 
     /**
      * The value of the component
      *
      * @var string $value
      */
-    protected $value;
+    protected string $value;
 
     /**
      * Returns the parent

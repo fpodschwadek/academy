@@ -26,6 +26,7 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\FileCollection;
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
     DescriptionTrait,
@@ -37,6 +38,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     TypeTrait
 };
 use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -63,7 +65,7 @@ class Media extends AbstractEntity
     /**
      * Files
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      * @Extbase\ORM\Lazy
      */
     protected $files;
@@ -71,7 +73,7 @@ class Media extends AbstractEntity
     /**
      * File collections
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\FileCollection>
+     * @var ObjectStorage<FileCollection>
      * @Extbase\ORM\Lazy
      */
     protected $collections;
@@ -99,7 +101,7 @@ class Media extends AbstractEntity
     /**
      * Returns the files
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $files
+     * @return ObjectStorage<FileReference> $files
      */
     public function getFiles()
     {
@@ -109,7 +111,7 @@ class Media extends AbstractEntity
     /**
      * Sets the files
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $files
+     * @param ObjectStorage<FileReference> $files
      */
     public function setFiles($files): void
     {
@@ -119,7 +121,7 @@ class Media extends AbstractEntity
     /**
      * Returns the collections
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\FileCollection> $collections
+     * @return ObjectStorage<FileCollection> $collections
      */
     public function getCollections()
     {
@@ -129,7 +131,7 @@ class Media extends AbstractEntity
     /**
      * Sets the collections
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\FileCollection> $collections
+     * @param ObjectStorage<FileCollection> $collections
      */
     public function setCollections($collections): void
     {

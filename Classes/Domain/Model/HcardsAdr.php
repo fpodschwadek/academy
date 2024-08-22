@@ -26,12 +26,14 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\HcardsAdrcomponents;
 use Digicademy\Academy\Domain\Model\Traits\{
     LabelTrait,
     TypeTrait
 };
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class HcardsAdr extends AbstractValueObject
 {
@@ -43,15 +45,15 @@ class HcardsAdr extends AbstractValueObject
      *
      * @var string $org
      */
-    protected $org;
+    protected string $org;
 
     /**
      * Address components
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents>
+     * @var ObjectStorage<HcardsAdrcomponents>
      * @Lazy
      */
-    protected $adrcomponents;
+    protected ObjectStorage $adrcomponents;
 
     /**
      * Returns the org
@@ -76,9 +78,9 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Returns the address components
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents> $adrcomponents
+     * @return ObjectStorage<HcardsAdrcomponents>
      */
-    public function getAdrcomponents()
+    public function getAdrcomponents(): ObjectStorage
     {
         return $this->adrcomponents;
     }
@@ -86,9 +88,9 @@ class HcardsAdr extends AbstractValueObject
     /**
      * Sets the address components
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents> $adrcomponents
+     * @param ObjectStorage<HcardsAdrcomponents> $adrcomponents
      */
-    public function setAdrcomponents($adrcomponents): void
+    public function setAdrcomponents(ObjectStorage $adrcomponents): void
     {
         $this->adrcomponents = $adrcomponents;
     }

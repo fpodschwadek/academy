@@ -38,21 +38,21 @@ class HcardsTel extends AbstractValueObject
      *
      * @var int $parent
      */
-    protected $parent;
+    protected int $parent;
 
     /**
      * The value of the component
      *
      * @var string $value
      */
-    protected $value;
+    protected string $value;
 
     /**
      * Some freetext
      *
      * @var string $freetext
      */
-    protected $freetext;
+    protected string $freetext;
 
     /**
      * Returns the parent

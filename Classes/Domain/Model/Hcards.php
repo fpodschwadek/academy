@@ -26,14 +26,21 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\{
+    HcardsAdr,
+    HcardsEmail,
+    HcardsTel,
+    HcardsUrl
+};
 use Digicademy\Academy\Domain\Model\Traits\{
     LabelTrait,
     PersistentIdentifierTrait,
     SlugTrait,
     TypeTrait
 };
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Hcards extends AbstractEntity
 {
@@ -45,48 +52,48 @@ class Hcards extends AbstractEntity
     /**
      * Addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr>
+     * @var ObjectStorage<HcardsAdr>
      * @Lazy
      */
-    protected $adr;
+    protected ObjectStorage $adr;
 
     /**
      * Telefone numbers
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel>
+     * @var ObjectStorage<HcardsTel>
      * @Lazy
      */
-    protected $tel;
+    protected ObjectStorage $tel;
 
     /**
      * Email Addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail>
+     * @var ObjectStorage<HcardsEmail>
      * @Lazy
      */
-    protected $email;
+    protected ObjectStorage $email;
 
     /**
      * URLs
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl>
+     * @var ObjectStorage<HcardsUrl>
      * @Lazy
      */
-    protected $url;
+    protected ObjectStorage $url;
 
     /**
      * Geo coordinates
      *
      * @var string $geo
      */
-    protected $geo;
+    protected string $geo;
 
     /**
      * Returns the addresses
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr> $adr
+     * @return ObjectStorage<HcardsAdr> $adr
      */
-    public function getAdr()
+    public function getAdr(): ObjectStorage
     {
         return $this->adr;
     }
@@ -94,9 +101,9 @@ class Hcards extends AbstractEntity
     /**
      * Sets the addresses
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr> $adr
+     * @param ObjectStorage<HcardsAdr> $adr
      */
-    public function setAdr($adr): void
+    public function setAdr(ObjectStorage $adr): void
     {
         $this->adr = $adr;
     }
@@ -104,9 +111,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the telephone numbers
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel> $tel
+     * @return ObjectStorage<HcardsTel> $tel
      */
-    public function getTel()
+    public function getTel(): ObjectStorage
     {
         return $this->tel;
     }
@@ -114,9 +121,9 @@ class Hcards extends AbstractEntity
     /**
      * Sets the telephone numbers
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel> $tel
+     * @param ObjectStorage<HcardsTel> $tel
      */
-    public function setTel($tel): void
+    public function setTel(ObjectStorage $tel): void
     {
         $this->tel = $tel;
     }
@@ -124,9 +131,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the email addresses
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail> $email
+     * @return ObjectStorage<HcardsEmail> $email
      */
-    public function getEmail()
+    public function getEmail(): ObjectStorage
     {
         return $this->email;
     }
@@ -134,9 +141,9 @@ class Hcards extends AbstractEntity
     /**
      * Sets the email addresses
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail> $email
+     * @param ObjectStorage<HcardsEmail> $email
      */
-    public function setEmail($email): void
+    public function setEmail(ObjectStorage $email): void
     {
         $this->email = $email;
     }
@@ -144,9 +151,9 @@ class Hcards extends AbstractEntity
     /**
      * Returns the urls
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl> $url
+     * @return ObjectStorage<HcardsUrl> $url
      */
-    public function getUrl()
+    public function getUrl(): ObjectStorage
     {
         return $this->url;
     }
@@ -154,9 +161,9 @@ class Hcards extends AbstractEntity
     /**
      * Sets the urls
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl> $url
+     * @param ObjectStorage<HcardsUrl> $url
      */
-    public function setUrl($url): void
+    public function setUrl(ObjectStorage $url): void
     {
         $this->url = $url;
     }
