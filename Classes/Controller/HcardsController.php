@@ -58,7 +58,7 @@ class HcardsController extends ActionController
         $selectedHcardsArray = GeneralUtility::trimExplode(',', $this->request->getArgument('selectedHcards'));
         $selectedHcards = GeneralUtility::makeInstance(ObjectStorage::class);
         foreach ($selectedHcardsArray as $selectedHcard) {
-            $selectedHcards->attach($this->hcardsRepository->findByUid($selectedHcard));
+            $selectedHcards->attach($this->hcardsRepository->findByUid((int)$selectedHcard));
         }
 
         $this->view->assignMultiple(
