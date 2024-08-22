@@ -1,11 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Hooks\Backend;
-
-use TYPO3\CMS\Backend\Utility\BackendUtility;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -28,6 +22,12 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Hooks\Backend;
+
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class DataHandler
 {

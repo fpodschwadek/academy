@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\Utility\Frontend;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,8 @@ namespace Digicademy\Academy\Utility\Frontend;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+namespace Digicademy\Academy\Utility\Frontend;
 
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 

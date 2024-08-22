@@ -1,7 +1,5 @@
 <?php
 
-namespace Digicademy\Academy\ViewHelpers;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -25,6 +23,7 @@ namespace Digicademy\Academy\ViewHelpers;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+namespace Digicademy\Academy\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
