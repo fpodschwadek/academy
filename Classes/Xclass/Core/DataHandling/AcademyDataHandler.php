@@ -32,7 +32,7 @@ class AcademyDataHandler extends DataHandler
      * @param array $row
      * @param array $conf
      * @param int $realDestPid
-     * @param string $language
+     * @param int $language
      * @param array $workspaceOptions
      * @return string
      */
@@ -44,7 +44,7 @@ class AcademyDataHandler extends DataHandler
         array $row,
         array $conf,
         int $realDestPid,
-        string $language,
+        int $language,
         array $workspaceOptions
     ): string {
         // Fetch the related child records using \TYPO3\CMS\Core\Database\RelationHandler
