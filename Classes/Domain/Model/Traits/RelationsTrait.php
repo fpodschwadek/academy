@@ -86,24 +86,36 @@ trait RelationsTrait
      */
     public function getRelations(): ObjectStorage
     {
-        if (
-            defined(self::RELATIONS_CRITERION) &&
-            is_string(self::RELATIONS_CRITERION)
-        ) {
-            $symmetricRelations = $this->relationsRepository->findBy(
-                self::RELATIONS_CRITERION,
-                $this
-            )->toArray();
-            foreach ($symmetricRelations as $symmetricRelation) {
-                $this->relations->attach($symmetricRelation);
-            }
-            return $this->relations;
+        if (!defined(self::RELATIONS_CRITERION)) {
+            throw new \Exception(
+                'Criterion to get relations by not set.',
+                855563544182
+            );
         }
-        throw new \Exception(
-            'Criterion to get relations by not set.',
-            855563544182
-        );
 
+        if (!is_string(self::RELATIONS_CRITERION)) {
+            throw new \Exception(
+                'Criterion to get relations by not a string.',
+                855563544183
+            );
+        }
+
+        if (empty($this->persistentIdentifier)) {
+            throw new \Exception(
+                'Persistent identifier to get relations for not set.',
+                855563544184
+            );
+        }
+
+        $symmetricRelations = $this->relationsRepository->findBy(
+            [
+                self::RELATIONS_CRITERION => $this->persistentIdentifier
+            ]
+        )->toArray();
+        foreach ($symmetricRelations as $symmetricRelation) {
+            $this->relations->attach($symmetricRelation);
+        }
+        return $this->relations;
     }
 
     /**
