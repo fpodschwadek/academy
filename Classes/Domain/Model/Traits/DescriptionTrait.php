@@ -26,8 +26,6 @@
 
 namespace Digicademy\Academy\Domain\Model\Traits;
 
-use TYPO3\CMS\Extbase\Annotation\Validate;
-
 /**
  * Provides all necessary variables and methods for handling model description
  * properties.
