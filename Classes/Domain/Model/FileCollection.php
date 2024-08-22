@@ -29,4 +29,5 @@ namespace Digicademy\Academy\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-class FileCollection extends AbstractEntity {}
+class FileCollection extends AbstractEntity
+{}

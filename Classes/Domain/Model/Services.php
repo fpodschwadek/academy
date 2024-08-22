@@ -26,25 +26,23 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\Traits\{
+    PersistentIdentifierTrait,
+    RelationsTrait
+};
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use Digicademy\ChfTime\Domain\Model\DateRanges;
 use GeorgRinger\News\Domain\Model\TtContent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Services extends AbstractEntity
 {
-    /**
-     * persistentIdentifier
-     *
-     * @var string
-     *
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $persistentIdentifier;
+    use PersistentIdentifierTrait, RelationsTrait;
+
+    protected const RELATIONS_CRITERION = 'project_symmetric';
 
     /**
      * The identifier of the service
@@ -118,40 +116,12 @@ class Services extends AbstractEntity
     protected $page;
 
     /**
-     * Relations of the service with persons, events, news, media etc.
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
-     * @Extbase\ORM\Lazy
-     */
-    protected $relations;
-
-    /**
      * Selected categories for the service
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Categories>
      * @Extbase\ORM\Lazy
      */
     protected $categories;
-
-    /**
-     * Returns the persistentIdentifier
-     *
-     * @return string $persistentIdentifier
-     */
-    public function getPersistentIdentifier(): string
-    {
-        return $this->persistentIdentifier;
-    }
-
-    /**
-     * Sets the persistentIdentifier
-     *
-     * @param string $persistentIdentifier
-     */
-    public function setPersistentIdentifier(string $persistentIdentifier): void
-    {
-        $this->persistentIdentifier = $persistentIdentifier;
-    }
 
     /**
      * Returns the identifier
@@ -351,35 +321,6 @@ class Services extends AbstractEntity
     public function setPage(int $page): void
     {
         $this->page = $page;
-    }
-
-    /**
-     * Returns the relations
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     */
-    public function getRelations()
-    {
-        $objectStorage = GeneralUtility::makeInstance(ObjectStorage::class);
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $relationsRepository = $objectManager->get(RelationsRepository::class);
-        $symmetricRelations = $relationsRepository->findByProjectSymmetric($this);
-        if ($symmetricRelations) {
-            foreach ($symmetricRelations as $symmetricRelation) {
-                $this->relations->attach($symmetricRelation);
-            }
-        }
-        return $this->relations;
-    }
-
-    /**
-     * Sets the relations
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $relations
-     */
-    public function setRelations($relations): void
-    {
-        $this->relations = $relations;
     }
 
     /**

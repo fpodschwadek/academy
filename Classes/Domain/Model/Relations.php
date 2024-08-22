@@ -27,19 +27,13 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\ChfTime\Domain\Model\DateRanges;
+use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Relations extends AbstractEntity
 {
-    /**
-     * persistentIdentifier
-     *
-     * @var string
-     *
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $persistentIdentifier;
+    use PersistentIdentifierTrait;
 
     /**
      * The type of relation
@@ -229,26 +223,6 @@ class Relations extends AbstractEntity
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
     protected $dateRange;
-
-    /**
-     * Returns the persistentIdentifier
-     *
-     * @return string $persistentIdentifier
-     */
-    public function getPersistentIdentifier()
-    {
-        return $this->persistentIdentifier;
-    }
-
-    /**
-     * Sets the persistentIdentifier
-     *
-     * @param string $persistentIdentifier
-     */
-    public function setPersistentIdentifier(string $persistentIdentifier): void
-    {
-        $this->persistentIdentifier = $persistentIdentifier;
-    }
 
     /**
      * Returns the type

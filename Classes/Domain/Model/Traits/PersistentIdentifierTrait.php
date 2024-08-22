@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2017 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  Copyright (C) 2024 Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -24,39 +24,46 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-namespace Digicademy\Academy\Domain\Model;
+namespace Digicademy\Academy\Domain\Model\Traits;
 
 use Digicademy\Academy\Domain\Model\Relations;
-use Digicademy\Academy\Domain\Model\Traits\RelationsTrait;
-use GeorgRinger\News\Domain\Model\News as GeorgRingerNews;
+use Digicademy\Academy\Domain\Repository\RelationsRepository;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class News extends GeorgRingerNews
+/**
+ * Provides all necessary variables and methods for handling model persistent
+ * identifier properties.
+ *
+ * @author Frodo Podschwadek <frodo.podschwadek@adwmainz.de>
+ * @author Linnaea Söhn <linnaea.soehn@adwmainz.de>
+ */
+trait PersistentIdentifierTrait
 {
-    use RelationsTrait;
-
-    protected const RELATIONS_CRITERION = 'news_symmetric';
+    /**
+     * @var string
+     *
+     * @Validate("NotEmpty")
+     */
+    protected string $persistentIdentifier;
 
     /**
-     * Returns the relations
+     * Returns the persistentIdentifier
      *
-     * @return ObjectStorage<Relations> $newsRelations
+     * @return string $persistentIdentifier
      */
-    public function getNewsRelations(): ObjectStorage
+    public function getPersistentIdentifier(): string
     {
-        return $this->getRelations();
+        return $this->persistentIdentifier;
     }
 
     /**
-     * Sets the relations
+     * Sets the persistentIdentifier
      *
-     * For backwards compatibility, we keep this method as a wrapper around the
-     * generic setRelations() method from the Relations trait.
-     *
-     * @param ObjectStorage<Relations> $newsRelations
+     * @param string $persistentIdentifier
      */
-    public function setNewsRelations(ObjectStorage $newsRelations): void
+    public function setPersistentIdentifier(string $persistentIdentifier): void
     {
-        $this->setRelations($newsRelations);
+        $this->persistentIdentifier = $persistentIdentifier;
     }
 }

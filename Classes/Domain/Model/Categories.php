@@ -26,37 +26,10 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 
 class Categories extends Category
 {
-    /**
-     * persistentIdentifier
-     *
-     * @var string
-     *
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $persistentIdentifier;
-
-    /**
-     * Returns the persistentIdentifier
-     *
-     * @return string $persistentIdentifier
-     */
-    public function getPersistentIdentifier()
-    {
-        return $this->persistentIdentifier;
-    }
-
-    /**
-     * Sets the persistentIdentifier
-     *
-     * @param string $persistentIdentifier
-     */
-    public function setPersistentIdentifier($persistentIdentifier): void
-    {
-        $this->persistentIdentifier = $persistentIdentifier;
-    }
+    use PersistentIdentifierTrait;
 }

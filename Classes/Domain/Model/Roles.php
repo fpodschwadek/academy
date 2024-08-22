@@ -26,19 +26,13 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Roles extends AbstractEntity
 {
-    /**
-     * persistentIdentifier
-     *
-     * @var string
-     *
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $persistentIdentifier;
+    use PersistentIdentifierTrait;
 
     /**
      * The title of the role
@@ -47,26 +41,6 @@ class Roles extends AbstractEntity
      * @Extbase\Validate("NotEmpty")
      */
     protected $title;
-
-    /**
-     * Returns the persistentIdentifier
-     *
-     * @return string $persistentIdentifier
-     */
-    public function getPersistentIdentifier(): string
-    {
-        return $this->persistentIdentifier;
-    }
-
-    /**
-     * Sets the persistentIdentifier
-     *
-     * @param string $persistentIdentifier
-     */
-    public function setPersistentIdentifier(string $persistentIdentifier): void
-    {
-        $this->persistentIdentifier = $persistentIdentifier;
-    }
 
     /**
      * Sets the title

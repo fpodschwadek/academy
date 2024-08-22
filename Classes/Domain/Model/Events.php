@@ -26,49 +26,40 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
+use Digicademy\Academy\Domain\Model\Relations;
+use Digicademy\Academy\Domain\Model\Traits\RelationsTrait;
 use GeorgRinger\Eventnews\Domain\Model\News as EventNews;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Events extends EventNews
 {
-    /**
-     * Relations of the event with persons, projects, events, news, media etc.
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations>
-     */
-    protected $eventRelations;
+    use RelationsTrait;
+
+    protected const RELATIONS_CRITERION = 'event_symmetric';
 
     /**
      * Returns the relations
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $eventRelations
+     * For backwards compatibility, we keep this method as a wrapper around the
+     * generic getRelations() method from the Relations trait.
+     *
+     * @return ObjectStorage<Relations> $eventRelations
      */
-    public function getEventRelations()
+    public function getEventRelations(): ObjectStorage
     {
-        $objectStorage = GeneralUtility::makeInstance(ObjectStorage::class);
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $relationsRepository = $objectManager->get(RelationsRepository::class);
-        $symmetricRelations = $relationsRepository->findByEventSymmetric($this);
-
-        if ($symmetricRelations) {
-            foreach ($symmetricRelations as $symmetricRelation) {
-                $this->eventRelations->attach($symmetricRelation);
-            }
-        }
-        return $this->eventRelations;
+        return $this->getRelations();
     }
 
     /**
      * Sets the relations
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\Relations> $eventRelations
+     * For backwards compatibility, we keep this method as a wrapper around the
+     * generic setRelations() method from the Relations trait.
+     *
+     * @param ObjectStorage<Relations> $eventRelations
      */
-    public function setEventRelations($eventRelations): void
+    public function setEventRelations(ObjectStorage $eventRelations): void
     {
-        $this->eventRelations = $eventRelations;
+        $this->setRelations($eventRelations);
     }
-
 }

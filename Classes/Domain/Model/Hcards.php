@@ -26,19 +26,13 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 class Hcards extends AbstractEntity
 {
-    /**
-     * persistentIdentifier
-     *
-     * @var string
-     *
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $persistentIdentifier;
+    use PersistentIdentifierTrait;
 
     /**
      * The label of the hcard
@@ -98,26 +92,6 @@ class Hcards extends AbstractEntity
      * @var string $slug
      */
     protected $slug;
-
-    /**
-     * Returns the persistentIdentifier
-     *
-     * @return string $persistentIdentifier
-     */
-    public function getPersistentIdentifier(): string
-    {
-        return $this->persistentIdentifier;
-    }
-
-    /**
-     * Sets the persistentIdentifier
-     *
-     * @param string $persistentIdentifier
-     */
-    public function setPersistentIdentifier(string $persistentIdentifier): void
-    {
-        $this->persistentIdentifier = $persistentIdentifier;
-    }
 
     /**
      * Returns the label
