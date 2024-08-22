@@ -31,6 +31,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     ContentsElementTrait,
     DateRangeTrait,
     DescriptionTrait,
+    IdentifierTrait,
     ImageTrait,
     PageTrait,
     PersistentIdentifierTrait,
@@ -52,6 +53,7 @@ class Publications extends AbstractEntity
         ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
+        IdentifierTrait,
         ImageTrait,
         PageTrait,
         PersistentIdentifierTrait,
@@ -60,13 +62,6 @@ class Publications extends AbstractEntity
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
-
-    /**
-     * The identifier of the publication
-     *
-     * @var string $identifier
-     */
-    protected $identifier;
 
     /**
      * An subtitle for the publication
@@ -144,26 +139,6 @@ class Publications extends AbstractEntity
      * @var string $bibliographicNote
      */
     protected $bibliographicNote;
-
-    /**
-     * Returns the identifier
-     *
-     * @return string $identifier
-     */
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * Sets the identifier
-     *
-     * @param string $identifier
-     */
-    public function setIdentifier(string $identifier): void
-    {
-        $this->identifier = $identifier;
-    }
 
     /**
      * Returns the subtitle

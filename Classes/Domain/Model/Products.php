@@ -31,6 +31,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     ContentsElementTrait,
     DateRangeTrait,
     DescriptionTrait,
+    IdentifierTrait,
     ImageTrait,
     PageTrait,
     PersistentIdentifierTrait,
@@ -53,6 +54,7 @@ class Products extends AbstractEntity
         ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
+        IdentifierTrait,
         ImageTrait,
         PageTrait,
         PersistentIdentifierTrait,
@@ -62,13 +64,6 @@ class Products extends AbstractEntity
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
-
-    /**
-     * The identifier of the product
-     *
-     * @var string $identifier
-     */
-    protected $identifier;
 
     /**
      * An acronym for the product
@@ -83,26 +78,6 @@ class Products extends AbstractEntity
      * @var string $version
      */
     protected $version;
-
-    /**
-     * Returns the identifier
-     *
-     * @return string $identifier
-     */
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * Sets the identifier
-     *
-     * @param string $identifier
-     */
-    public function setIdentifier(string $identifier): void
-    {
-        $this->identifier = $identifier;
-    }
 
     /**
      * Returns the version

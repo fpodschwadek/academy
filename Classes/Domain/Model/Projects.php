@@ -31,6 +31,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     ContentsElementTrait,
     DateRangeTrait,
     DescriptionTrait,
+    IdentifierTrait,
     ImageTrait,
     PageTrait,
     PersistentIdentifierTrait,
@@ -53,6 +54,7 @@ class Projects extends AbstractEntity
         ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
+        IdentifierTrait,
         ImageTrait,
         PageTrait,
         PersistentIdentifierTrait,
@@ -64,38 +66,11 @@ class Projects extends AbstractEntity
     protected const RELATIONS_CRITERION = 'project_symmetric';
 
     /**
-     * The identifier of the project
-     *
-     * @var string $identifier
-     */
-    protected $identifier;
-
-    /**
      * An acronym for the project
      *
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * Returns the identifier
-     *
-     * @return string $identifier
-     */
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * Sets the identifier
-     *
-     * @param string $identifier
-     */
-    public function setIdentifier(string $identifier): void
-    {
-        $this->identifier = $identifier;
-    }
 
     /**
      * Returns the acronym
