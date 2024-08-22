@@ -32,6 +32,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
+    PageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -53,6 +54,7 @@ class Services extends AbstractEntity
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
+        PageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -74,13 +76,6 @@ class Services extends AbstractEntity
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * The page where the service details are listed
-     *
-     * @var int $page
-     */
-    protected $page;
 
     /**
      * Returns the identifier
@@ -120,25 +115,5 @@ class Services extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the page
-     *
-     * @return int $page
-     */
-    public function getPage(): int
-    {
-        return $this->page;
-    }
-
-    /**
-     * Sets the page
-     *
-     * @param int $page
-     */
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
     }
 }

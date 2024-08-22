@@ -32,6 +32,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
+    PageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -52,6 +53,8 @@ class Publications extends AbstractEntity
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
+        PageTrait,
+        PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
         TitleTrait;
@@ -141,13 +144,6 @@ class Publications extends AbstractEntity
      * @var string $bibliographicNote
      */
     protected $bibliographicNote;
-
-    /**
-     * The page where the publication details are listed
-     *
-     * @var int $page
-     */
-    protected $page;
 
     /**
      * Returns the identifier
@@ -387,25 +383,5 @@ class Publications extends AbstractEntity
     public function setBibliographicNote(string $bibliographicNote): void
     {
         $this->bibliographicNote = $bibliographicNote;
-    }
-
-    /**
-     * Returns the page
-     *
-     * @return int $page
-     */
-    public function getPage(): int
-    {
-        return $this->page;
-    }
-
-    /**
-     * Sets the page
-     *
-     * @param int $page
-     */
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
     }
 }

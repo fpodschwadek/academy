@@ -31,6 +31,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     ContentsElementTrait,
     DateRangeTrait,
     ImageTrait,
+    PageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -50,6 +51,7 @@ class Persons extends AbstractEntity
         ContentsElementTrait,
         DateRangeTrait,
         ImageTrait,
+        PageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -92,13 +94,6 @@ class Persons extends AbstractEntity
      * @var string $honorificSuffix
      */
     protected $honorificSuffix;
-
-    /**
-     * A page where details about the person can be found
-     *
-     * @var int $page
-     */
-    protected $page;
 
     /**
      * cv
@@ -226,26 +221,6 @@ class Persons extends AbstractEntity
     public function setHonorificSuffix(string $honorificSuffix): void
     {
         $this->honorificSuffix = $honorificSuffix;
-    }
-
-    /**
-     * Returns the page
-     *
-     * @return int $page
-     */
-    public function getPage(): int
-    {
-        return $this->page;
-    }
-
-    /**
-     * Sets the page
-     *
-     * @param int $page
-     */
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
     }
 
     /**

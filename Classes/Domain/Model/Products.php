@@ -32,6 +32,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
+    PageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -53,6 +54,7 @@ class Products extends AbstractEntity
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
+        PageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -81,13 +83,6 @@ class Products extends AbstractEntity
      * @var string $version
      */
     protected $version;
-
-    /**
-     * The page where the product details are listed
-     *
-     * @var int $page
-     */
-    protected $page;
 
     /**
      * Returns the identifier
@@ -147,25 +142,5 @@ class Products extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the page
-     *
-     * @return int $page
-     */
-    public function getPage(): int
-    {
-        return $this->page;
-    }
-
-    /**
-     * Sets the page
-     *
-     * @param int $page
-     */
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
     }
 }

@@ -32,6 +32,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
+    PageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -53,6 +54,7 @@ class Units extends AbstractEntity
         DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
+        PageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -67,13 +69,6 @@ class Units extends AbstractEntity
      * @var string $acronym
      */
     protected string $acronym;
-
-    /**
-     * The page where the unit details are listed
-     *
-     * @var int $page
-     */
-    protected $page;
 
     /**
      * Returns the acronym
@@ -93,25 +88,5 @@ class Units extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the page
-     *
-     * @return int $page
-     */
-    public function getPage(): int
-    {
-        return $this->page;
-    }
-
-    /**
-     * Sets the page
-     *
-     * @param int $page
-     */
-    public function setPage(int $page): void
-    {
-        $this->page = $page;
     }
 }
