@@ -26,9 +26,12 @@
 
 namespace Digicademy\Academy\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\{
+    QueryInterface,
+    Repository
+};
 
-class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoriesRepository extends Repository
 {
     protected $defaultOrderings = [
         'title' => QueryInterface::ORDER_ASCENDING,
@@ -71,9 +74,11 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return bool
      */
-    protected function collectChildren($categoryUid, $maxLevels, $currentLevel = 1)
-    {
-
+    protected function collectChildren(
+        int $categoryUid,
+        int $maxLevels,
+        int $currentLevel = 1
+    ): bool {
         if ($currentLevel <= $maxLevels) {
 
             $query = $this->createQuery();
@@ -85,18 +90,15 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
                 $query->logicalAnd($constraints)
             );
 
-            $queryResult = $query->execute();
+            $queryResult = $query->execute()->toArray();
 
-            if ($queryResult) {
-                foreach ($queryResult as $category) {
-                    $categoryUid = $category->getUid();
-                    $this->childCategoryUids[$currentLevel][] = $categoryUid;
-                    self::collectChildren($categoryUid, $maxLevels, $currentLevel + 1);
-                }
+            foreach ($queryResult as $category) {
+                $categoryUid = $category->getUid();
+                $this->childCategoryUids[$currentLevel][] = $categoryUid;
+                self::collectChildren($categoryUid, $maxLevels, $currentLevel + 1);
             }
         }
 
         return true;
     }
-
 }

@@ -37,9 +37,8 @@ class MediaRepository extends CommonRepository
      *
      * @return array
      */
-    public function findGrouped()
+    public function findGrouped(): array
     {
-
         $query10 = $this->createQuery();
         $query10->matching($query10->equals('type', 10));
         $result[10] = $query10->setLimit(5)->execute();
@@ -64,7 +63,7 @@ class MediaRepository extends CommonRepository
      *
      * @return object
      */
-    public function findRecent()
+    public function findRecent(): object
     {
         $query = $this->createQuery();
         $result = $query->setLimit(2)->execute();
@@ -79,7 +78,7 @@ class MediaRepository extends CommonRepository
      *
      * @return object
      */
-    public function findByType($type)
+    public function findByType($type): object
     {
         $query = $this->createQuery();
         $query->setOrderings(['title' => QueryInterface::ORDER_ASCENDING]);

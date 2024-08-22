@@ -27,8 +27,9 @@
 namespace Digicademy\Academy\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
-class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CommonRepository extends Repository
 {
     /**
      * Finds selected objects
@@ -37,7 +38,7 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return object
      */
-    public function findBySelection($selectedObjects)
+    public function findBySelection(string $selectedObjects): object
     {
 
         $query = $this->createQuery();
@@ -66,7 +67,7 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return object
      */
-    public function findByCategories($selectedCategories)
+    public function findByCategories(string $selectedCategories): object
     {
 
         $query = $this->createQuery();
@@ -95,7 +96,7 @@ class CommonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return object
      */
-    public function findByRole($role)
+    public function findByRole(int $role): object
     {
         // TODO: change this to allow multiple selected roles
         $query = $this->createQuery();
