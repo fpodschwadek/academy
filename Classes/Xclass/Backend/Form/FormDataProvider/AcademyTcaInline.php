@@ -29,9 +29,10 @@ class AcademyTcaInline extends TcaInline
      * @param string $fieldName Current handle field name
      * @return array Modified item array
      */
-    protected function resolveRelatedRecords(array $result, $fieldName)
-    {
-
+    protected function resolveRelatedRecords(
+        array $result,
+        string $fieldName
+    ): array {
         if ($result['defaultLanguageRow'] !== null) {
             return $this->resolveRelatedRecordsOverlays($result, $fieldName);
         }

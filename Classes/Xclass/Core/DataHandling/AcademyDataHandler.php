@@ -37,16 +37,16 @@ class AcademyDataHandler extends DataHandler
      * @return string
      */
     protected function copyRecord_processInline(
-        $table,
-        $uid,
-        $field,
+        string $table,
+        int $uid,
+        string $field,
         $value,
-        $row,
-        $conf,
-        $realDestPid,
-        $language,
+        array $row,
+        array $conf,
+        int $realDestPid,
+        string $language,
         array $workspaceOptions
-    ) {
+    ): string {
         // Fetch the related child records using \TYPO3\CMS\Core\Database\RelationHandler
         /** @var RelationHandler $dbAnalysis */
         $dbAnalysis = $this->createRelationHandlerInstance();
@@ -133,5 +133,4 @@ class AcademyDataHandler extends DataHandler
 
         return $value;
     }
-
 }
