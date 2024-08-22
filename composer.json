@@ -41,7 +41,8 @@
     }
   },
   "scripts": {
-    "phpstan": "phpstan analyse -c phpstan.neon --memory-limit 2G"
+    "phpstan": "phpstan analyse -c phpstan.neon --memory-limit 2G",
+    "phpstan-debug": "phpstan analyse -c phpstan.neon --memory-limit 2G --debug"
   },
   "scripts-aliases": {
     "phpstan": ["analyse", "analyze", "stan"]
