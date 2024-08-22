@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait
@@ -41,7 +42,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Persons extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
+    use ImageTrait,
+        PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait;
 
@@ -89,14 +91,6 @@ class Persons extends AbstractEntity
      * @var string $sorting
      */
     protected $sorting;
-
-    /**
-     * Images
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @Extbase\ORM\Lazy
-     */
-    protected $image;
 
     /**
      * Life date of the person
@@ -253,26 +247,6 @@ class Persons extends AbstractEntity
     public function setHonorificSuffix(string $honorificSuffix): void
     {
         $this->honorificSuffix = $honorificSuffix;
-    }
-
-    /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function setImage($image): void
-    {
-        $this->image = $image;
     }
 
     /**

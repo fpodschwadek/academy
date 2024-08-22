@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
+    ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -44,6 +45,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Units extends AbstractEntity
 {
     use DescriptionTrait,
+        ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -78,14 +80,6 @@ class Units extends AbstractEntity
      * @var int $page
      */
     protected $page;
-
-    /**
-     * Image
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @Extbase\ORM\Lazy
-     */
-    protected $image;
 
     /**
      * Temporal existence of the unit
@@ -180,26 +174,6 @@ class Units extends AbstractEntity
     public function setPage(int $page): void
     {
         $this->page = $page;
-    }
-
-    /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function setImage($image): void
-    {
-        $this->image = $image;
     }
 
     /**

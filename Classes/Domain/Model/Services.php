@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
+    ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -44,6 +45,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Services extends AbstractEntity
 {
     use DescriptionTrait,
+        ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
@@ -78,14 +80,6 @@ class Services extends AbstractEntity
      * @var ObjectStorage<TtContent>
      */
     protected $contentElements;
-
-    /**
-     * Image
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @Extbase\ORM\Lazy
-     */
-    protected $image;
 
     /**
      * Duration of the service
@@ -188,26 +182,6 @@ class Services extends AbstractEntity
     public function setContentElements(ObjectStorage $contentElements): void
     {
         $this->contentElements = $contentElements;
-    }
-
-    /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function setImage($image): void
-    {
-        $this->image = $image;
     }
 
     /**

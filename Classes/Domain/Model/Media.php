@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     DescriptionTrait,
+    ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
@@ -43,6 +44,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Media extends AbstractEntity
 {
     use DescriptionTrait,
+        ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
         TitleTrait,
@@ -57,14 +59,6 @@ class Media extends AbstractEntity
      * @var int $crdate
      */
     protected $crdate;
-
-    /**
-     * Images
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @Extbase\ORM\Lazy
-     */
-    protected $image;
 
     /**
      * Files
@@ -108,26 +102,6 @@ class Media extends AbstractEntity
     public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
-    }
-
-    /**
-     * Returns the image
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Sets the image
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
-     */
-    public function setImage($image): void
-    {
-        $this->image = $image;
     }
 
     /**
