@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    AcronymTrait,
     CategoriesTrait,
     ContentsElementTrait,
     DateRangeTrait,
@@ -50,7 +51,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Services extends AbstractEntity
 {
-    use CategoriesTrait,
+    use AcronymTrait,
+        CategoriesTrait,
         ContentsElementTrait,
         DateRangeTrait,
         DescriptionTrait,
@@ -64,31 +66,4 @@ class Services extends AbstractEntity
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
-
-    /**
-     * An acronym for the service
-     *
-     * @var string $acronym
-     */
-    protected $acronym;
-
-    /**
-     * Returns the acronym
-     *
-     * @return string $acronym
-     */
-    public function getAcronym(): string
-    {
-        return $this->acronym;
-    }
-
-    /**
-     * Sets the acronym
-     *
-     * @param string $acronym
-     */
-    public function setAcronym(string $acronym): void
-    {
-        $this->acronym = $acronym;
-    }
 }
