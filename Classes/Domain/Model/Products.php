@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -47,6 +48,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Products extends AbstractEntity
 {
     use CategoriesTrait,
+        DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
         PersistentIdentifierTrait,
@@ -84,13 +86,6 @@ class Products extends AbstractEntity
      * @var string $version
      */
     protected $version;
-
-    /**
-     * Duration of the product
-     *
-     * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    protected $dateRange;
 
     /**
      * The page where the product details are listed
@@ -177,26 +172,6 @@ class Products extends AbstractEntity
     public function setContentElements(ObjectStorage $contentElements): void
     {
         $this->contentElements = $contentElements;
-    }
-
-    /**
-     * Returns the dateRange
-     *
-     * @return \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function getDateRange()
-    {
-        return $this->dateRange;
-    }
-
-    /**
-     * Sets the dateRange
-     *
-     * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function setDateRange(DateRanges $dateRange): void
-    {
-        $this->dateRange = $dateRange;
     }
 
     /**

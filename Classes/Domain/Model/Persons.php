@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    DateRangeTrait,
     ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
@@ -45,6 +46,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Persons extends AbstractEntity
 {
     use CategoriesTrait,
+        DateRangeTrait,
         ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
@@ -88,13 +90,6 @@ class Persons extends AbstractEntity
      * @var string $honorificSuffix
      */
     protected $honorificSuffix;
-
-    /**
-     * Life date of the person
-     *
-     * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    protected $dateRange;
 
     /**
      * Additional free text information about a person
@@ -236,26 +231,6 @@ class Persons extends AbstractEntity
     public function setHonorificSuffix(string $honorificSuffix): void
     {
         $this->honorificSuffix = $honorificSuffix;
-    }
-
-    /**
-     * Returns the dateRange
-     *
-     * @return \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function getDateRange()
-    {
-        return $this->dateRange;
-    }
-
-    /**
-     * Sets the dateRange
-     *
-     * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function setDateRange(DateRanges $dateRange): void
-    {
-        $this->dateRange = $dateRange;
     }
 
     /**

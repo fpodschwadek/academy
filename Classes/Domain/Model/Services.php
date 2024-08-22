@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -47,6 +48,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Services extends AbstractEntity
 {
     use CategoriesTrait,
+        DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
         PersistentIdentifierTrait,
@@ -77,14 +79,6 @@ class Services extends AbstractEntity
      * @var ObjectStorage<TtContent>
      */
     protected $contentElements;
-
-    /**
-     * Duration of the service
-     *
-     * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     * @Extbase\ORM\Lazy
-     */
-    protected $dateRange;
 
     /**
      * The page where the service details are listed
@@ -151,26 +145,6 @@ class Services extends AbstractEntity
     public function setContentElements(ObjectStorage $contentElements): void
     {
         $this->contentElements = $contentElements;
-    }
-
-    /**
-     * Returns the dateRange
-     *
-     * @return \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function getDateRange()
-    {
-        return $this->dateRange;
-    }
-
-    /**
-     * Sets the dateRange
-     *
-     * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function setDateRange(DateRanges $dateRange): void
-    {
-        $this->dateRange = $dateRange;
     }
 
     /**

@@ -28,6 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
+    DateRangeTrait,
     DescriptionTrait,
     ImageTrait,
     PersistentIdentifierTrait,
@@ -47,6 +48,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Units extends AbstractEntity
 {
     use CategoriesTrait,
+        DateRangeTrait,
         DescriptionTrait,
         ImageTrait,
         PersistentIdentifierTrait,
@@ -77,13 +79,6 @@ class Units extends AbstractEntity
      * @var int $page
      */
     protected $page;
-
-    /**
-     * Temporal existence of the unit
-     *
-     * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    protected $dateRange;
 
     /**
      * Returns the acronym
@@ -143,25 +138,5 @@ class Units extends AbstractEntity
     public function setPage(int $page): void
     {
         $this->page = $page;
-    }
-
-    /**
-     * Returns the dateRange
-     *
-     * @return \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function getDateRange()
-    {
-        return $this->dateRange;
-    }
-
-    /**
-     * Sets the dateRange
-     *
-     * @param \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
-     */
-    public function setDateRange(DateRanges $dateRange): void
-    {
-        $this->dateRange = $dateRange;
     }
 }
