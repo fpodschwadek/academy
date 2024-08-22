@@ -46,7 +46,7 @@ class HcardsController extends ActionController
     public function initializeAction(): void
     {
         if ($this->settings['selectedHcards']) {
-            $this->request->setArgument('selectedHcards', $this->settings['selectedHcards']);
+            $this->request = $this->request->withArgument('selectedHcards', $this->settings['selectedHcards']);
         }
     }
 
@@ -60,8 +60,13 @@ class HcardsController extends ActionController
         foreach ($selectedHcardsArray as $selectedHcard) {
             $selectedHcards->attach($this->hcardsRepository->findByUid($selectedHcard));
         }
-        $this->view->assign('selectedHcards', $selectedHcards);
-        $this->view->assign('arguments', $this->request->getArguments());
+
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'selectedHcards'=> $selectedHcards
+            ]
+        );
     }
 
 }

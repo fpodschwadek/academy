@@ -35,17 +35,13 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ServicesController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\ServicesRepository
+     * @var ServicesRepository
      */
-    protected $servicesRepository;
+    protected ServicesRepository $servicesRepository;
 
     /**
-     * Use constructor DI and not (at)inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\ServicesRepository          $servicesRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param ServicesRepository          $servicesRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -63,17 +59,15 @@ class ServicesController extends ActionController
         switch ($this->actionMethodName) {
             case 'listAction':
                 if ($this->settings['selectedCategories']) {
-                    $this->request->setArgument('selectedCategories', $this->settings['selectedCategories']);
+                    $this->request = $this->request->withArgument('selectedCategories', $this->settings['selectedCategories']);
                 }
                 break;
-
             case 'showAction':
                 if ($this->settings['selectedServices']) {
                     $selectedServices = GeneralUtility::trimExplode(',', $this->settings['selectedServices']);
-                    $this->request->setArgument('service', $selectedServices[0]);
+                    $this->request = $this->request->withArgument('service', $selectedServices[0]);
                 }
                 break;
-
             default:
                 break;
         }
@@ -84,36 +78,36 @@ class ServicesController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $services = $this->servicesRepository->findAll();
-
-        $this->view->assign('services', $services);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'services'=> $this->servicesRepository->findAll()
+            ]
+        );
     }
 
-    /**
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $services = $this->servicesRepository->findBySelection($this->settings['selectedServices']);
-        $this->view->assign('services', $services);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'services'=> $this->servicesRepository->findBySelection($this->settings['selectedServices'])
+            ]
+        );
     }
 
     /**
      * Displays a service by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Services $service
+     * @param Services $service
      */
     public function showAction(Services $service)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('service', $service);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'service'=> $service
+            ]
+        );
     }
-
 }

@@ -35,17 +35,13 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ProductsController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\ProductsRepository
+     * @var ProductsRepository
      */
-    protected $productsRepository;
+    protected ProductsRepository $productsRepository;
 
     /**
-     * Use constructor DI and not (at)inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\ProductsRepository          $productsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param ProductsRepository $productsRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -63,17 +59,15 @@ class ProductsController extends ActionController
         switch ($this->actionMethodName) {
             case 'listAction':
                 if ($this->settings['selectedCategories']) {
-                    $this->request->setArgument('selectedCategories', $this->settings['selectedCategories']);
+                    $this->request = $this->request->withArgument('selectedCategories', $this->settings['selectedCategories']);
                 }
                 break;
-
             case 'showAction':
                 if ($this->settings['selectedProducts']) {
                     $selectedProducts = GeneralUtility::trimExplode(',', $this->settings['selectedProducts']);
-                    $this->request->setArgument('product', $selectedProducts[0]);
+                    $this->request = $this->request->withArgument('product', $selectedProducts[0]);
                 }
                 break;
-
             default:
                 break;
         }
@@ -84,36 +78,37 @@ class ProductsController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $products = $this->productsRepository->findAll();
-
-        $this->view->assign('products', $products);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'products'=> $this->productsRepository->findAll()
+            ]
+        );
     }
 
-    /**
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $products = $this->productsRepository->findBySelection($this->settings['selectedProducts']);
-        $this->view->assign('products', $products);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'products'=> $this->productsRepository->findBySelection($this->settings['selectedProducts'])
+            ]
+        );
     }
 
     /**
      * Displays a product by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Products $product
+     * @param Products $product
      */
     public function showAction(Products $product)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('product', $product);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'product'=> $product
+            ]
+        );
     }
 
 }

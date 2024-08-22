@@ -143,7 +143,7 @@ class GroupedForViewHelper extends AbstractViewHelper
      * @param string $groupBy  Group by this property
      *
      * @return array The grouped array in the form array('keys' => array('key1' => [key1value], 'key2' => [key2value], ...), 'values' => array('key1' => array([key1value] => [element1]), ...), ...)
-     * @throws \TYPO3\CMS\Fluid\Core\ViewHelper\Exception
+     * @throws Exception
      */
     protected function groupElements(array $elements, $groupBy)
     {

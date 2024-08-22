@@ -36,17 +36,13 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class PersonsController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\PersonsRepository
+     * @var PersonsRepository
      */
-    protected $personsRepository;
+    protected PersonsRepository $personsRepository;
 
     /**
-     * Use constructor DI and not (at)inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\PersonsRepository        $personsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param PersonsRepository             $personsRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -61,27 +57,26 @@ class PersonsController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $persons = $this->personsRepository->findAll();
-        $this->view->assign('persons', $persons);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'persons'=> $this->personsRepository->findAll()
+            ]
+        );
     }
 
-    /**
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $persons = $this->personsRepository->findBySelection($this->settings['selectedPersons']);
-        $this->view->assign('persons', $persons);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'persons'=> $this->personsRepository->findBySelection($this->settings['selectedPersons'])
+            ]
+        );
     }
 
     /**
      * @return ResponseInterface
-     *
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
      */
     public function listByRoleAction(): ResponseInterface
     {
@@ -98,15 +93,15 @@ class PersonsController extends ActionController
     /**
      * Displays a person by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Persons $person
+     * @param Persons $person
      */
     public function showAction(Persons $person)
     {
-        // assign arguments
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        // assign the person
-        $this->view->assign('person', $person);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'person'=> $person
+            ]
+        );
     }
 }

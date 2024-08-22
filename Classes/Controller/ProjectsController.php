@@ -34,16 +34,13 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ProjectsController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\ProjectsRepository
+     * @var ProjectsRepository
      */
-    protected $projectsRepository;
+    protected ProjectsRepository $projectsRepository;
 
     /**
-     * Use constructor DI and not (a)inject
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface    $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\ProjectsRepository          $projectsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param ProjectsRepository            $projectsRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -59,7 +56,7 @@ class ProjectsController extends ActionController
     public function initializeAction()
     {
         if ($this->settings['selectedProjects'] > 0) {
-            $this->request->setArgument('project', $this->settings['selectedProjects']);
+            $this->request = $this->request->withArgument('project', $this->settings['selectedProjects']);
         }
     }
 
@@ -68,49 +65,54 @@ class ProjectsController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $projects = $this->projectsRepository->findAll();
-        $this->view->assign('projects', $projects);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'projects'=> $this->projectsRepository->findAll()
+            ]
+        );
     }
 
     /**
      * Displays a selected list of projects
-     *
-     * @param \Digicademy\Academy\Domain\Model\Projects $project
      */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $projects = $this->projectsRepository->findBySelection($this->settings['selectedProjects']);
-        $this->view->assign('projects', $projects);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'projects'=> $this->projectsRepository->findBySelection($this->settings['selectedProjects'])
+            ]
+        );
     }
 
     /**
      * Displays a project by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Projects $project
+     * @param Projects $project
      */
     public function showAction(Projects $project)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('project', $project);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'project'=> $project
+            ]
+        );
     }
 
     /**
      * Displays a teaser of a project
      *
-     * @param \Digicademy\Academy\Domain\Model\Projects $project
+     * @param Projects $project
      */
     public function teaserAction(Projects $project)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('project', $project);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'project'=> $project
+            ]
+        );
     }
 }

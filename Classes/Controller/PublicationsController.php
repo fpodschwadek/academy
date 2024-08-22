@@ -35,17 +35,13 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class PublicationsController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\PublicationsRepository
+     * @var PublicationsRepository
      */
-    protected $publicationsRepository;
+    protected PublicationsRepository $publicationsRepository;
 
     /**
-     * Use constructor DI and not (at)inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\PublicationsRepository          $publicationsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param PublicationsRepository          $publicationsRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -63,17 +59,15 @@ class PublicationsController extends ActionController
         switch ($this->actionMethodName) {
             case 'listAction':
                 if ($this->settings['selectedCategories']) {
-                    $this->request->setArgument('selectedCategories', $this->settings['selectedCategories']);
+                    $this->request = $this->request->withArgument('selectedCategories', $this->settings['selectedCategories']);
                 }
                 break;
-
             case 'showAction':
                 if ($this->settings['selectedPublications']) {
                     $selectedPublications = GeneralUtility::trimExplode(',', $this->settings['selectedPublications']);
-                    $this->request->setArgument('publication', $selectedPublications[0]);
+                    $this->request = $this->request->withArgument('publication', $selectedPublications[0]);
                 }
                 break;
-
             default:
                 break;
         }
@@ -84,36 +78,37 @@ class PublicationsController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'publications'=> $this->publicationsRepository->findAll()
 
-        $publications = $this->publicationsRepository->findAll();
-
-        $this->view->assign('publications', $publications);
+            ]
+        );
     }
 
-    /**
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $publications = $this->publicationsRepository->findBySelection($this->settings['selectedPublications']);
-        $this->view->assign('publications', $publications);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'publications'=> $this->publicationsRepository->findBySelection($this->settings['selectedPublications'])
+            ]
+        );
     }
 
     /**
      * Displays a publication by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Publications $publication
+     * @param Publications $publication
      */
     public function showAction(Publications $publication)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('publication', $publication);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'publication'=> $publication
+            ]
+        );
     }
-
 }

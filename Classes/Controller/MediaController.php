@@ -34,8 +34,8 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class MediaController extends ActionController
 {
     /**
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\MediaRepository          $mediaRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param MediaRepository               $mediaRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -49,10 +49,12 @@ class MediaController extends ActionController
      */
     public function listAction(): void
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $media = $this->mediaRepository->findAll();
-        $this->view->assign('media', $media);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'media'=> $this->mediaRepository->findAll()
+            ]
+        );
     }
 
     /**
@@ -60,9 +62,12 @@ class MediaController extends ActionController
      */
     public function listByTypesAction($type): void
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $this->view->assign('media', $this->mediaRepository->findByType($type));
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'media'=> $this->mediaRepository->findByType($type)
+            ]
+        );
     }
 
     /**
@@ -70,10 +75,12 @@ class MediaController extends ActionController
      */
     public function listByGroupsAction(): void
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $media = $this->mediaRepository->findGrouped();
-        $this->view->assign('media', $media);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'media'=> $this->mediaRepository->findGrouped()
+            ]
+        );
     }
 
     /**
@@ -81,9 +88,12 @@ class MediaController extends ActionController
      */
     public function listByRecentAction(): void
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $this->view->assign('media', $this->mediaRepository->findRecent());
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'media'=> $this->mediaRepository->findRecent()
+            ]
+        );
     }
 
     /**
@@ -96,10 +106,12 @@ class MediaController extends ActionController
         // transfer media type to GLOBAL register for use in TypoScript (inclusion of JS files)
         $GLOBALS['TSFE']->register['mediatype'] = $medium->getType();
 
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('medium', $medium);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'medium'=> $medium
+            ]
+        );
     }
 
     /**
@@ -107,13 +119,13 @@ class MediaController extends ActionController
      */
     public function initializeViewerAction(): void
     {
-        $this->request->setArgument('medium', $this->settings['medium']);
+        $this->request = $this->request->withArgument('medium', $this->settings['medium']);
     }
 
     /**
      * Viewer for media to be inserted on standard pages
      *
-     * @param \Digicademy\Academy\Domain\Model\Media $medium
+     * @param Media $medium
      */
     public function viewerAction(Media $medium): void
     {
@@ -121,9 +133,11 @@ class MediaController extends ActionController
         // transfer media type to GLOBAL register for use in TypoScript (inclusion of JS files)
         $GLOBALS['TSFE']->register['mediatype'] = $medium->getType();
 
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $this->view->assign('medium', $medium);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'medium'=> $medium
+            ]
+        );
     }
 }

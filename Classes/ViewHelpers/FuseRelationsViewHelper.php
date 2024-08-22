@@ -59,7 +59,6 @@ class FuseRelationsViewHelper extends AbstractViewHelper
 
     /**
      * @return array
-     * @throws
      */
     public function render(): array
     {

@@ -31,21 +31,18 @@ use Digicademy\Academy\Domain\Repository\UnitsRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\Exception\InvalidArgumentNameException;
 
 class UnitsController extends ActionController
 {
     /**
-     * @var \Digicademy\Academy\Domain\Repository\UnitsRepository
+     * @var UnitsRepository
      */
-    protected $unitsRepository;
+    protected UnitsRepository $unitsRepository;
 
     /**
-     * Use constructor DI and not (at)inject
-     *
-     * @see: https://gist.github.com/NamelessCoder/3b2e5931a6c1af19f9c3f8b46e74f837
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @param \Digicademy\Academy\Domain\Repository\UnitsRepository          $unitsRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     * @param UnitsRepository          $unitsRepository
      */
     public function __construct(
         ConfigurationManagerInterface $configurationManager,
@@ -58,21 +55,20 @@ class UnitsController extends ActionController
     /**
      * Initializes the current action
      *
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidArgumentNameException
+     * @throws InvalidArgumentNameException
      */
     public function initializeAction()
     {
         switch ($this->actionMethodName) {
             case 'listAction':
                 if ($this->settings['selectedCategories']) {
-                    $this->request->setArgument('selectedCategories', $this->settings['selectedCategories']);
+                    $this->request = $this->request->withArgument('selectedCategories', $this->settings['selectedCategories']);
                 }
                 break;
-
             case 'showAction':
                 if ($this->settings['selectedUnits']) {
                     $selectedUnits = GeneralUtility::trimExplode(',', $this->settings['selectedUnits']);
-                    $this->request->setArgument('unit', $selectedUnits[0]);
+                    $this->request = $this->request->withArgument('unit', $selectedUnits[0]);
                 }
                 // no break
             default:
@@ -85,35 +81,36 @@ class UnitsController extends ActionController
      */
     public function listAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-
-        $units = $this->unitsRepository->findAll();
-
-        $this->view->assign('units', $units);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'units'=> $this->unitsRepository->findAll()
+            ]
+        );
     }
 
-    /**
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     */
     public function listBySelectionAction()
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $units = $this->unitsRepository->findBySelection($this->settings['selectedUnits']);
-        $this->view->assign('units', $units);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'units'=> $this->unitsRepository->findBySelection($this->settings['selectedUnits'])
+            ]
+        );
     }
 
     /**
      * Displays a unit by uid
      *
-     * @param \Digicademy\Academy\Domain\Model\Units $unit
+     * @param Units $unit
      */
     public function showAction(Units $unit)
     {
-        $arguments = $this->request->getArguments();
-        $this->view->assign('arguments', $arguments);
-        $this->view->assign('unit', $unit);
+        $this->view->assignMultiple(
+            [
+                'arguments' => $this->request->getArguments(),
+                'units'=> $unit
+            ]
+        );
     }
-
 }
