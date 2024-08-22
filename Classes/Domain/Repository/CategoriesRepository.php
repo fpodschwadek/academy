@@ -56,9 +56,13 @@ class CategoriesRepository extends Repository
 
         $this->collectChildren($categoryUid, $maxLevels);
 
-        if ($getChildrenOnLevel > 0 && $getChildrenOnLevel <= $maxLevels) {
+        if (
+            $maxLevels > 1 &&
+            $getChildrenOnLevel > 0 &&
+            $getChildrenOnLevel <= $maxLevels
+        ) {
             // extract specific level
-            $result = $this->childCategoryUids[$getChildrenOnLevel] ?? [];
+            $result = $this->childCategoryUids[$getChildrenOnLevel];
         } else {
             // return all levels as two dimensional array (slice of level dimension)
             $result = array_merge(...$this->childCategoryUids);
@@ -71,14 +75,12 @@ class CategoriesRepository extends Repository
      * @param int $categoryUid
      * @param int $maxLevels
      * @param int $currentLevel
-     *
-     * @return bool
      */
     protected function collectChildren(
         int $categoryUid,
         int $maxLevels,
         int $currentLevel = 1
-    ): bool {
+    ): void {
         if ($currentLevel <= $maxLevels) {
 
             $query = $this->createQuery();
@@ -98,7 +100,5 @@ class CategoriesRepository extends Repository
                 self::collectChildren($categoryUid, $maxLevels, $currentLevel + 1);
             }
         }
-
-        return true;
     }
 }
