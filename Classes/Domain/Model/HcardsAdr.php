@@ -30,7 +30,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     LabelTrait,
     TypeTrait
 };
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdr extends AbstractValueObject
@@ -49,7 +49,7 @@ class HcardsAdr extends AbstractValueObject
      * Address components
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdrcomponents>
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $adrcomponents;
 

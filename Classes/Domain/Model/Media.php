@@ -36,8 +36,6 @@ use Digicademy\Academy\Domain\Model\Traits\{
     TitleTrait,
     TypeTrait
 };
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;

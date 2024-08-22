@@ -36,7 +36,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  * @author Frodo Podschwadek <frodo.podschwadek@adwmainz.de>
  * @author Linnaea Söhn <linnaea.soehn@adwmainz.de>
  */
-trait ContentsElementTrait
+trait ContentElementsTrait
 {
     /**
      * Additional free text information about an object

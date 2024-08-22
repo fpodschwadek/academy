@@ -33,7 +33,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     TypeTrait
 };
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 
 class Hcards extends AbstractEntity
 {
@@ -46,7 +46,7 @@ class Hcards extends AbstractEntity
      * Addresses
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsAdr>
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $adr;
 
@@ -54,7 +54,7 @@ class Hcards extends AbstractEntity
      * Telefone numbers
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsTel>
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $tel;
 
@@ -62,7 +62,7 @@ class Hcards extends AbstractEntity
      * Email Addresses
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsEmail>
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $email;
 
@@ -70,7 +70,7 @@ class Hcards extends AbstractEntity
      * URLs
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Digicademy\Academy\Domain\Model\HcardsUrl>
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $url;
 

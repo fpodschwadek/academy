@@ -29,7 +29,7 @@ namespace Digicademy\Academy\Domain\Model;
 use Digicademy\Academy\Domain\Model\Traits\{
     AcronymTrait,
     CategoriesTrait,
-    ContentsElementTrait,
+    ContentElementsTrait,
     DateRangeTrait,
     DescriptionTrait,
     IdentifierTrait,
@@ -41,19 +41,13 @@ use Digicademy\Academy\Domain\Model\Traits\{
     SortingTrait,
     TitleTrait
 };
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
-use GeorgRinger\News\Domain\Model\TtContent;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Products extends AbstractEntity
 {
     use AcronymTrait,
         CategoriesTrait,
-        ContentsElementTrait,
+        ContentElementsTrait,
         DateRangeTrait,
         DescriptionTrait,
         IdentifierTrait,

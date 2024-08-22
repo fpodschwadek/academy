@@ -28,7 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
-    ContentsElementTrait,
+    ContentElementsTrait,
     DateRangeTrait,
     ImageTrait,
     PageTrait,
@@ -37,18 +37,13 @@ use Digicademy\Academy\Domain\Model\Traits\{
     SlugTrait,
     SortingTrait
 };
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
-use GeorgRinger\News\Domain\Model\TtContent;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Persons extends AbstractEntity
 {
     use CategoriesTrait,
-        ContentsElementTrait,
+        ContentElementsTrait,
         DateRangeTrait,
         ImageTrait,
         PageTrait,
@@ -77,7 +72,7 @@ class Persons extends AbstractEntity
      * Family name of the person
      *
      * @var string $familyName
-     * @Extbase\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $familyName;
 

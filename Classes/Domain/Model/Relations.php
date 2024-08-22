@@ -26,13 +26,12 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\ChfTime\Domain\Model\DateRanges;
 use Digicademy\Academy\Domain\Model\Traits\{
     DateRangeTrait,
     PersistentIdentifierTrait,
     TypeTrait
 };
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Relations extends AbstractEntity
@@ -45,7 +44,7 @@ class Relations extends AbstractEntity
      * The role of the relation
      *
      * @var \Digicademy\Academy\Domain\Model\Roles $role
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $role;
 
@@ -60,7 +59,7 @@ class Relations extends AbstractEntity
      * Related project
      *
      * @var \Digicademy\Academy\Domain\Model\Projects $project
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $project;
 
@@ -68,7 +67,7 @@ class Relations extends AbstractEntity
      * Related project
      *
      * @var \Digicademy\Academy\Domain\Model\Projects $projectSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $projectSymmetric;
 
@@ -76,7 +75,7 @@ class Relations extends AbstractEntity
      * Related Person
      *
      * @var \Digicademy\Academy\Domain\Model\Persons $person
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $person;
 
@@ -84,7 +83,7 @@ class Relations extends AbstractEntity
      * Related Person
      *
      * @var \Digicademy\Academy\Domain\Model\Persons $personSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $personSymmetric;
 
@@ -92,7 +91,7 @@ class Relations extends AbstractEntity
      * Related Hcard
      *
      * @var \Digicademy\Academy\Domain\Model\Hcards $hcard
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $hcard;
 
@@ -100,7 +99,7 @@ class Relations extends AbstractEntity
      * Related Unit
      *
      * @var \Digicademy\Academy\Domain\Model\Units $unit
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $unit;
 
@@ -108,7 +107,7 @@ class Relations extends AbstractEntity
      * Related Unit
      *
      * @var \Digicademy\Academy\Domain\Model\Units $unitSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $unitSymmetric;
 
@@ -116,7 +115,7 @@ class Relations extends AbstractEntity
      * Related News
      *
      * @var \Digicademy\Academy\Domain\Model\News $news
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $news;
 
@@ -124,7 +123,7 @@ class Relations extends AbstractEntity
      * Related News
      *
      * @var \Digicademy\Academy\Domain\Model\News $newsSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $newsSymmetric;
 
@@ -132,7 +131,7 @@ class Relations extends AbstractEntity
      * Related Event
      *
      * @var \Digicademy\Academy\Domain\Model\Events $event
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $event;
 
@@ -140,7 +139,7 @@ class Relations extends AbstractEntity
      * Related Event
      *
      * @var \Digicademy\Academy\Domain\Model\Events $eventSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $eventSymmetric;
 
@@ -148,7 +147,7 @@ class Relations extends AbstractEntity
      * Related medium
      *
      * @var \Digicademy\Academy\Domain\Model\Media $medium
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $medium;
 
@@ -156,7 +155,7 @@ class Relations extends AbstractEntity
      * Related medium
      *
      * @var \Digicademy\Academy\Domain\Model\Media $mediumSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $mediumSymmetric;
 
@@ -164,7 +163,7 @@ class Relations extends AbstractEntity
      * Related Service
      *
      * @var \Digicademy\Academy\Domain\Model\Services $service
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $service;
 
@@ -172,7 +171,7 @@ class Relations extends AbstractEntity
      * Related Service
      *
      * @var \Digicademy\Academy\Domain\Model\Services $serviceSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $serviceSymmetric;
 
@@ -180,7 +179,7 @@ class Relations extends AbstractEntity
      * Related Products
      *
      * @var \Digicademy\Academy\Domain\Model\Products $product
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $product;
 
@@ -188,7 +187,7 @@ class Relations extends AbstractEntity
      * Related symmetric products
      *
      * @var \Digicademy\Academy\Domain\Model\Products $productSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $productSymmetric;
 
@@ -196,7 +195,7 @@ class Relations extends AbstractEntity
      * Related Publications
      *
      * @var \Digicademy\Academy\Domain\Model\Publications $publication
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $publication;
 
@@ -204,7 +203,7 @@ class Relations extends AbstractEntity
      * Related symmetric publication
      *
      * @var \Digicademy\Academy\Domain\Model\Publications $publicationSymmetric
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected $publicationSymmetric;
 

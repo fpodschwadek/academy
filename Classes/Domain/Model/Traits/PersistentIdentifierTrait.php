@@ -26,10 +26,7 @@
 
 namespace Digicademy\Academy\Domain\Model\Traits;
 
-use Digicademy\Academy\Domain\Model\Relations;
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Annotation\Validate;
 
 /**
  * Provides all necessary variables and methods for handling model persistent

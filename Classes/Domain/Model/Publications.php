@@ -28,7 +28,7 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     CategoriesTrait,
-    ContentsElementTrait,
+    ContentElementsTrait,
     DateRangeTrait,
     DescriptionTrait,
     IdentifierTrait,
@@ -39,18 +39,12 @@ use Digicademy\Academy\Domain\Model\Traits\{
     SlugTrait,
     TitleTrait
 };
-use Digicademy\Academy\Domain\Repository\RelationsRepository;
-use Digicademy\ChfTime\Domain\Model\DateRanges;
-use GeorgRinger\News\Domain\Model\TtContent;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Publications extends AbstractEntity
 {
     use CategoriesTrait,
-        ContentsElementTrait,
+        ContentElementsTrait,
         DateRangeTrait,
         DescriptionTrait,
         IdentifierTrait,
