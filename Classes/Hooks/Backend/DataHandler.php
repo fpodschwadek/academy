@@ -27,7 +27,6 @@ namespace Digicademy\Academy\Hooks\Backend;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class DataHandler
@@ -39,14 +38,14 @@ class DataHandler
      * @param string $table
      * @param int $id
      * @param array $fieldArray
-     * @param DataHandler $pObj
+     * @param object $pObj
      */
     public function processDatamap_postProcessFieldArray(
         string $status,
         string $table,
         int $id,
         array &$fieldArray,
-        DataHandler &$pObj
+        object &$pObj
     ): void {
 
         // generate xml conformant uuids as persistent identifiers

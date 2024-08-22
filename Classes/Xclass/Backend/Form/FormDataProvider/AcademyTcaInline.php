@@ -31,7 +31,7 @@ class AcademyTcaInline extends TcaInline
      */
     protected function resolveRelatedRecords(
         array $result,
-        string $fieldName
+        $fieldName
     ): array {
         if ($result['defaultLanguageRow'] !== null) {
             return $this->resolveRelatedRecordsOverlays($result, $fieldName);
