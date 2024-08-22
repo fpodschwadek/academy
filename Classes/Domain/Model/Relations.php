@@ -27,21 +27,16 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\ChfTime\Domain\Model\DateRanges;
-use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
+use Digicademy\Academy\Domain\Model\Traits\{
+    PersistentIdentifierTrait,
+    TypeTrait
+};
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Relations extends AbstractEntity
 {
-    use PersistentIdentifierTrait;
-
-    /**
-     * The type of relation
-     *
-     * @var int $type
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $type;
+    use PersistentIdentifierTrait, TypeTrait;
 
     /**
      * The role of the relation
@@ -223,26 +218,6 @@ class Relations extends AbstractEntity
      * @var \Digicademy\ChfTime\Domain\Model\DateRanges $dateRange
      */
     protected $dateRange;
-
-    /**
-     * Returns the type
-     *
-     * @return int $type
-     */
-    public function getType(): int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Sets the type
-     *
-     * @param int $type
-     */
-    public function setType(int $type): void
-    {
-        $this->type = $type;
-    }
 
     /**
      * getRole

@@ -26,11 +26,14 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\Traits\TypeTrait;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdr extends AbstractValueObject
 {
+    use TypeTrait;
+
     /**
      * The label of the address
      *
@@ -44,13 +47,6 @@ class HcardsAdr extends AbstractValueObject
      * @var string $org
      */
     protected $org;
-
-    /**
-     * The type of the address
-     *
-     * @var int $type
-     */
-    protected $type;
 
     /**
      * Address components
@@ -98,26 +94,6 @@ class HcardsAdr extends AbstractValueObject
     public function setOrg(string $org): void
     {
         $this->org = $org;
-    }
-
-    /**
-     * Returns the type
-     *
-     * @return int $type
-     */
-    public function getType(): int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Sets the type
-     *
-     * @param int $type
-     */
-    public function setType(int $type): void
-    {
-        $this->type = $type;
     }
 
     /**

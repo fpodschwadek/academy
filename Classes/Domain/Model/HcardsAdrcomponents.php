@@ -26,23 +26,19 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
+use Digicademy\Academy\Domain\Model\Traits\TypeTrait;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdrcomponents extends AbstractValueObject
 {
+    use TypeTrait;
+
     /**
      * The label of the address
      *
      * @var int $parent
      */
     protected $parent;
-
-    /**
-     * The type of the address component
-     *
-     * @var int $type
-     */
-    protected $type;
 
     /**
      * The value of the component
@@ -69,26 +65,6 @@ class HcardsAdrcomponents extends AbstractValueObject
     public function setParent(int $parent): void
     {
         $this->parent = $parent;
-    }
-
-    /**
-     * Returns the type
-     *
-     * @return int $type
-     */
-    public function getType(): int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Sets the type
-     *
-     * @param int $type
-     */
-    public function setType(int $type): void
-    {
-        $this->type = $type;
     }
 
     /**

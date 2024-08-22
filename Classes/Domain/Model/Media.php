@@ -28,7 +28,8 @@ namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
-    RelationsTrait
+    RelationsTrait,
+    TypeTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -38,16 +39,9 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Media extends AbstractEntity
 {
-    use PersistentIdentifierTrait, RelationsTrait;
+    use PersistentIdentifierTrait, RelationsTrait, TypeTrait;
 
     protected const RELATIONS_CRITERION = 'medium_symmetric';
-
-    /**
-     * Display type of the media object
-     *
-     * @var int $type
-     */
-    protected $type;
 
     /**
      * Creation date of the media object
@@ -107,26 +101,6 @@ class Media extends AbstractEntity
      * @Extbase\ORM\Lazy
      */
     protected $categories;
-
-    /**
-     * Returns the type
-     *
-     * @return int $type
-     */
-    public function getType(): int
-    {
-        return $this->type;
-    }
-
-    /**
-     * Sets the type
-     *
-     * @param int $type
-     */
-    public function setType(int $type): void
-    {
-        $this->type = $type;
-    }
 
     /**
      * Returns the crdate

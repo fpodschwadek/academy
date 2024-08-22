@@ -26,13 +26,16 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\Traits\PersistentIdentifierTrait;
+use Digicademy\Academy\Domain\Model\Traits\{
+    PersistentIdentifierTrait,
+    TypeTrait
+};
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 class Hcards extends AbstractEntity
 {
-    use PersistentIdentifierTrait;
+    use PersistentIdentifierTrait, TypeTrait;
 
     /**
      * The label of the hcard
@@ -41,13 +44,6 @@ class Hcards extends AbstractEntity
      * @Extbase\Validate("NotEmpty")
      */
     protected $label;
-
-    /**
-     * The type of the hcard
-     *
-     * @var int $type
-     */
-    protected $type;
 
     /**
      * Addresses
@@ -111,26 +107,6 @@ class Hcards extends AbstractEntity
     public function setLabel(string $label): void
     {
         $this->label = $label;
-    }
-
-    /**
-     * Returns the type
-     *
-     * @return string $type
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * Sets the type
-     *
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
     }
 
     /**
