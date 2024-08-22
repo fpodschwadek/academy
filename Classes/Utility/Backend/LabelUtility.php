@@ -32,6 +32,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class LabelUtility
 {
+    /**
+     * @param  array &$parameters
+     * @return array
+     */
     public function relationsLabel(array &$parameters)
     {
         // Define empty variables that are used later on in code but might get
@@ -358,5 +362,4 @@ class LabelUtility
 
         return $parameters;
     }
-
 }

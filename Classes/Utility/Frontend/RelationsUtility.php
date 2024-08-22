@@ -33,7 +33,7 @@ class RelationsUtility
     /**
      * Groups relations within an array by their respective type
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $relations
+     * @param ObjectStorage $relations
      *
      * @return array
      */

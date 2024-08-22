@@ -27,6 +27,7 @@ namespace Digicademy\Academy\Hooks\Backend;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class DataHandler
@@ -34,14 +35,19 @@ class DataHandler
     /**
      * Generates a persistent identifier (uuid) on new and save for this extension's tables
      *
-     * @param $status
-     * @param $table
-     * @param $id
-     * @param $fieldArray
-     * @param $pObj
+     * @param string $status
+     * @param string $table
+     * @param int $id
+     * @param array $fieldArray
+     * @param DataHandler $pObj
      */
-    public function processDatamap_postProcessFieldArray($status, $table, $id, &$fieldArray, &$pObj)
-    {
+    public function processDatamap_postProcessFieldArray(
+        string $status,
+        string $table,
+        int $id,
+        array &$fieldArray,
+        DataHandler &$pObj
+    ): void {
 
         // generate xml conformant uuids as persistent identifiers
         if ($table == 'tx_academy_domain_model_projects' ||
@@ -150,12 +156,13 @@ class DataHandler
 
     /**
      * Generates a universally unique identifier (UUID) according to RFC 4122 v4.
-     * The algorithm used here, might not be completely random. Copied from the identity extension.
+     * The algorithm used here, might not be completely random. Copied from the
+     * identity extension.
      *
      * @return string The universally unique id
      * @author Unknown
      */
-    private function generateUUID()
+    private function generateUUID(): string
     {
         return sprintf(
             '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
