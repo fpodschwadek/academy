@@ -26,20 +26,17 @@
 
 namespace Digicademy\Academy\Domain\Model;
 
-use Digicademy\Academy\Domain\Model\Traits\TypeTrait;
+use Digicademy\Academy\Domain\Model\Traits\{
+    LabelTrait,
+    TypeTrait
+};
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 class HcardsAdr extends AbstractValueObject
 {
-    use TypeTrait;
-
-    /**
-     * The label of the address
-     *
-     * @var string $label
-     */
-    protected $label;
+    use LabelTrait,
+        TypeTrait;
 
     /**
      * The name of the organisation
@@ -55,26 +52,6 @@ class HcardsAdr extends AbstractValueObject
      * @Extbase\ORM\Lazy
      */
     protected $adrcomponents;
-
-    /**
-     * Returns the label
-     *
-     * @return string $label
-     */
-    public function getLabel(): string
-    {
-        return $this->label;
-    }
-
-    /**
-     * Sets the label
-     *
-     * @param string $label
-     */
-    public function setLabel(string $label): void
-    {
-        $this->label = $label;
-    }
 
     /**
      * Returns the org

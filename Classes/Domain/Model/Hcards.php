@@ -27,6 +27,7 @@
 namespace Digicademy\Academy\Domain\Model;
 
 use Digicademy\Academy\Domain\Model\Traits\{
+    LabelTrait,
     PersistentIdentifierTrait,
     SlugTrait,
     TypeTrait
@@ -36,17 +37,10 @@ use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 class Hcards extends AbstractEntity
 {
-    use PersistentIdentifierTrait,
+    use LabelTrait,
+        PersistentIdentifierTrait,
         SlugTrait,
         TypeTrait;
-
-    /**
-     * The label of the hcard
-     *
-     * @var string $label
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $label;
 
     /**
      * Addresses
@@ -86,26 +80,6 @@ class Hcards extends AbstractEntity
      * @var string $geo
      */
     protected $geo;
-
-    /**
-     * Returns the label
-     *
-     * @return string $label
-     */
-    public function getLabel(): string
-    {
-        return $this->label;
-    }
-
-    /**
-     * Sets the label
-     *
-     * @param string $label
-     */
-    public function setLabel(string $label): void
-    {
-        $this->label = $label;
-    }
 
     /**
      * Returns the addresses
