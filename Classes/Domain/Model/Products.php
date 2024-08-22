@@ -33,6 +33,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
+    SortingTrait,
     TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -51,6 +52,7 @@ class Products extends AbstractEntity
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
+        SortingTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
@@ -68,13 +70,6 @@ class Products extends AbstractEntity
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * The internal sorting for product list (if not alphabetic)
-     *
-     * @var string $sorting
-     */
-    protected $sorting;
 
     /**
      * Additional free text information about a product
@@ -162,26 +157,6 @@ class Products extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the sorting
-     *
-     * @return string $sorting
-     */
-    public function getSorting(): string
-    {
-        return $this->sorting;
-    }
-
-    /**
-     * Sets the sorting
-     *
-     * @param string $sorting
-     */
-    public function setSorting(string $sorting): void
-    {
-        $this->sorting = $sorting;
     }
 
     /**

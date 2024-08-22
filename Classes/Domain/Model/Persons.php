@@ -31,7 +31,8 @@ use Digicademy\Academy\Domain\Model\Traits\{
     ImageTrait,
     PersistentIdentifierTrait,
     RelationsTrait,
-    SlugTrait
+    SlugTrait,
+    SortingTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
 use Digicademy\ChfTime\Domain\Model\DateRanges;
@@ -47,7 +48,8 @@ class Persons extends AbstractEntity
         ImageTrait,
         PersistentIdentifierTrait,
         RelationsTrait,
-        SlugTrait;
+        SlugTrait,
+        SortingTrait;
 
     protected const RELATIONS_CRITERION = 'person_symmetric';
 
@@ -86,13 +88,6 @@ class Persons extends AbstractEntity
      * @var string $honorificSuffix
      */
     protected $honorificSuffix;
-
-    /**
-     * sorting
-     *
-     * @var string $sorting
-     */
-    protected $sorting;
 
     /**
      * Life date of the person

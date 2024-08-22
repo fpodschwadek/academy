@@ -33,6 +33,7 @@ use Digicademy\Academy\Domain\Model\Traits\{
     PersistentIdentifierTrait,
     RelationsTrait,
     SlugTrait,
+    SortingTrait,
     TitleTrait
 };
 use Digicademy\Academy\Domain\Repository\RelationsRepository;
@@ -51,6 +52,7 @@ class Projects extends AbstractEntity
         PersistentIdentifierTrait,
         RelationsTrait,
         SlugTrait,
+        SortingTrait,
         TitleTrait;
 
     protected const RELATIONS_CRITERION = 'project_symmetric';
@@ -68,13 +70,6 @@ class Projects extends AbstractEntity
      * @var string $acronym
      */
     protected $acronym;
-
-    /**
-     * The internal sorting for project list (if not alphabetic)
-     *
-     * @var string $sorting
-     */
-    protected $sorting;
 
     /**
      * Additional free text information about a project
@@ -135,26 +130,6 @@ class Projects extends AbstractEntity
     public function setAcronym(string $acronym): void
     {
         $this->acronym = $acronym;
-    }
-
-    /**
-     * Returns the sorting
-     *
-     * @return string $sorting
-     */
-    public function getSorting(): string
-    {
-        return $this->sorting;
-    }
-
-    /**
-     * Sets the sorting
-     *
-     * @param string $sorting
-     */
-    public function setSorting(string $sorting): void
-    {
-        $this->sorting = $sorting;
     }
 
     /**
