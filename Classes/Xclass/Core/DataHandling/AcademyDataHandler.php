@@ -23,10 +23,6 @@ use TYPO3\CMS\Core\Utility\MathUtility;
 
 class AcademyDataHandler extends DataHandler
 {
-    // Get the backend user
-    /** @var BackendUserAuthentication $backendUser */
-    $backendUser = $GLOBALS['BE_USER'];
-
     /**
      * Processes child records in an inline (IRRE) element when the parent record is copied.
      *
@@ -87,7 +83,7 @@ class AcademyDataHandler extends DataHandler
                 if (!MathUtility::canBeInterpretedAsInteger($realDestPid)) {
                     $newId = $this->copyRecord($v['table'], $v['id'], -$v['id']);
                     // If the destination page id is a NEW string, keep it on the same page
-                } elseif ($backendUser && $backendUser->workspace > 0 && BackendUtility::isTableWorkspaceEnabled($v['table'])) {
+                } elseif ($this->BE_USER->workspace > 0 && BackendUtility::isTableWorkspaceEnabled($v['table'])) {
                     // A filled $workspaceOptions indicated that this call
                     // has it's origin in previous versionizeRecord() processing
                     if (!empty($workspaceOptions)) {
@@ -97,7 +93,7 @@ class AcademyDataHandler extends DataHandler
                         $this->versionizeRecord(
                             $v['table'],
                             $v['id'],
-                            $workspaceOptions['label'] ?? 'Auto-created for WS #' . $backendUser->workspace,
+                            $workspaceOptions['label'] ?? 'Auto-created for WS #' . $this->BE_USER->workspace,
                             $workspaceOptions['delete'] ?? false
                         );
                         // Otherwise just use plain copyRecord() to create placeholders etc.
@@ -110,7 +106,7 @@ class AcademyDataHandler extends DataHandler
                             $newId = $this->copyRecord($v['table'], $v['id'], $realDestPid);
                         }
                     }
-                } elseif ($backendUser && $backendUser->workspace > 0 && !BackendUtility::isTableWorkspaceEnabled($v['table'])) {
+                } elseif ($this->BE_USER->workspace > 0 && !BackendUtility::isTableWorkspaceEnabled($v['table'])) {
                     // We are in workspace context creating a new parent version and have a child table
                     // that is not workspace aware. We don't do anything with this child.
                     continue;
