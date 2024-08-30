@@ -27,7 +27,7 @@
 namespace Digicademy\Academy\Domain\Model\Traits;
 
 use Digicademy\Academy\Domain\Model\Categories;
-use TYPO3\CMS\Extbase\Annotation\Extbase\ORM\Lazy;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
