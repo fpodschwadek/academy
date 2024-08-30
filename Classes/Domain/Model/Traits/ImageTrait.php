@@ -26,7 +26,7 @@
 
 namespace Digicademy\Academy\Domain\Model\Traits;
 
-use TYPO3\CMS\Extbase\Annotation\Extbase\ORM\Lazy;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
