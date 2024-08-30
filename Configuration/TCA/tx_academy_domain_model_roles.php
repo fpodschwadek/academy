@@ -25,6 +25,9 @@ return [
         ],
         'searchFields' => 'title',
         'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_roles.svg',
+        'security' => [
+            'ignorePageTypeRestriction' => true
+        ]
     ],
     'interface' => [
         'showRecordFieldList' => '

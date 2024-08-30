@@ -71,19 +71,3 @@ ExtensionUtility::registerPlugin(
     'Academy: Publications'
 );
 
-// TABLES
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_projects');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_units');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_persons');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards_adr');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards_adrcomponents');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards_tel');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards_email');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_hcards_url');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_relations');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_roles');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_media');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_products');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_publications');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_academy_domain_model_services');

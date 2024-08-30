@@ -25,6 +25,9 @@ return [
         ],
         'searchFields' => 'value',
         'iconfile' => ExtensionManagementUtility::extPath('academy') . 'Resources/Public/Icons/tx_academy_domain_model_hcards_adrcomponents.svg',
+        'security' => [
+            'ignorePageTypeRestriction' => true
+        ]
     ],
     'interface' => [
         'showRecordFieldList' => '
